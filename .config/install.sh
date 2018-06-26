@@ -8,22 +8,30 @@ function configure() {
 }
 
 function configure_vim(){
-    echo -e "\nInstalling Neovim"
-    sudo add-apt-repository ppa:neovim-ppa/stable
-    sudo apt-get update
-    sudo apt install neovim
+    if ! [ -x "$(command -v nvim)" ]; then
+        echo -e "\nNeovim is not installed. Installing Neovim"
+        sudo add-apt-repository ppa:neovim-ppa/stable
+        sudo apt-get update
+        sudo apt install neovim
+    fi
 
-    echo -e "\nInstalling vim Plug"
-    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    if [ ! -f $HOME/.local/share/nvim/site/autoload/plug.vim ]; then
+        echo -e "Vim plug is not installed. \nInstalling vim Plug"
+        curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    fi
 }
 
 function configure_haskell() {
-    echo -e "\nInstalling Nix"
-    curl https://nixos.org/nix/install | sh && . $HOME/.nix-profile/etc/profile.d/nix.sh
+    if [ ! -d $HOME/.nix-profile ]; then
+        echo -e "\nnix-profile does not exist. Installing nix-profile"
+        curl https://nixos.org/nix/install | sh && . $HOME/.nix-profile/etc/profile.d/nix.sh
+    fi
 
-    echo -e "\nInstalling Stack"
-    curl -sSL https://get.haskellstack.org/ | sh
+    if ! [ -x "$(command -v stack)" ]; then
+        echo -e "\nStack does not exist. Installing stack"
+        curl -sSL https://get.haskellstack.org/ | sh
+    fi
 }
 
 function configure_zsh() {
@@ -42,12 +50,12 @@ function configure_github() {
 
 function create_dirs_if_not_exist() {
     echo -e "Making directories...\n"
-    if [ ! -d ~/personal ]; then
-        sudo mkdir ~/personal/
+    if [ ! -d $HOME/personal ]; then
+        sudo mkdir $HOME/personal/
     fi
     
-    if [ ! -d ~/haskell ]; then
-        sudo mkdir ~/haskell/
+    if [ ! -d $HOME/haskell ]; then
+        sudo mkdir $HOME/haskell/
     fi
 }
 
@@ -81,11 +89,11 @@ function exit_msg() {
 
 
 function main() {
-  #  update
+    update
     install_programs
- #   configure
- #   set_github_config
- #   create_dirs_if_not_exist
+    configure
+    set_github_config
+    create_dirs_if_not_exist
     exit_msg
 }
 
