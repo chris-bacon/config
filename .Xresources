@@ -1,0 +1,9 @@
+URxvt.font: xft:monospace:size=12
+URxvt.scrollBar: false
+
+#151718
+URxvt*background: rgba:0000/0000/0200/c800
+URxvt*foreground: #d6d6d6
+URxvt*cursorColor: #d6d6d6
+
+URxvt*depth: 32
