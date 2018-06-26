@@ -9,4 +9,3 @@
 
 ## TODO
 
-- Update install script for i3 and the like
