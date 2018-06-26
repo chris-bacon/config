@@ -58,11 +58,13 @@ function update() {
 }
 
 function install_programs() {
-    install_programs=$1
-    for i in ${install_programs[@]}
+    unix=(git git-flow zsh python-dev python-pip python3-dev python3-dev python3 software-properties-common tmux mlocate curl i3 rxvt-unicode rxdb)
+    for i in ${unix[@]}
         do
-            echo -e "\nInstalling $i"
-            sudo apt install $i
+            if ! [ -x "$(command -v $i)" ]; then
+                echo -e "\n$i not installed. Installing $i now"
+                sudo apt install $i
+            fi
         done
 }
 
@@ -77,14 +79,13 @@ function exit_msg() {
     """
 }
 
-unix=(git git-flow zsh python-dev python-pip python3-dev python3-dev python3 software-properties-common tmux mlocate curl i3 rxvt-unicode rxdb)
 
 function main() {
-    update
-    install_programs unix
-    configure
-    set_github_config
-    create_dirs_if_not_exist
+  #  update
+    install_programs
+ #   configure
+ #   set_github_config
+ #   create_dirs_if_not_exist
     exit_msg
 }
 
