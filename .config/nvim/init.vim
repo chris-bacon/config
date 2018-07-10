@@ -6,7 +6,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'neovimhaskell/haskell-vim' " Haskell-vim, self-explanatory really
 Plug 'eagletmt/neco-ghc' "Haskell completion
-Plug 'parsonsmatt/intero-neovim' " interactive environment
 Plug 'neomake/neomake'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown' "Markdown syntax highlighter
@@ -60,6 +59,7 @@ set softtabstop=0
 set expandtab 
 set shiftwidth=4 
 set smarttab
+set scrolloff=6
 
 "************
 " Ctrlp - Fuzzy finder
@@ -80,15 +80,15 @@ autocmd Filetype haskell nnoremap <leader>b :!stack build<cr>
 autocmd Filetype elm nnoremap <leader>b :!elm-make Main.elm<cr>
 
 " autocmd FileType haskell nnoremap <buffer> <leader>if <esc>:InteroLoadCurrentFile<CR>
-augroup interoMaps
-  au!
+"augroup interoMaps
+""  au!
   " Automatically reload on save
-  au BufWritePost *.hs InteroReload
-  au FileType haskell nnoremap <silent> <leader>io :InteroOpen<CR>
-  au FileType haskell nnoremap <silent> <leader>lf :InteroLoadCurrentFile<CR>
-  au FileType haskell nnoremap <silent> <leader>jd :InteroGoToDef<CR>
-  au FileType haskell nnoremap <silent> <leader>T :InteroType<CR>
-augroup END
+""  au BufWritePost *.hs InteroReload
+""  au FileType haskell nnoremap <silent> <leader>io :InteroOpen<CR>
+""  au FileType haskell nnoremap <silent> <leader>lf :InteroLoadCurrentFile<CR>
+""  au FileType haskell nnoremap <silent> <leader>jd :InteroGoToDef<CR>
+""  au FileType haskell nnoremap <silent> <leader>T :InteroType<CR>
+"augroup END
 
 "************
 " Mappings
