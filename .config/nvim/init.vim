@@ -126,6 +126,7 @@ inoremap jk <esc>
 " NERDTree
 let g:NERDTreeShowHidden = 1 " Display hidden files in Nerdtree by default
 let g:NERDTreeMouseMode=3
+let g:NERDTreeWinPos = "right"
 set mouse=a
 
 let g:vim_markdown_folding_disabled = 1
