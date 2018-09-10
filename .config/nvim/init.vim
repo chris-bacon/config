@@ -23,6 +23,7 @@ Plug 'ervandew/supertab' "Use tab key instead of arrow keys for autocomplete
 Plug 'kassio/neoterm' " Terminal
 Plug 'tpope/vim-commentary' " Comments
 Plug 'chrisbra/NrrwRgn' " Crazy comment stuff - select a region and do :NR, then save to return
+Plug 'Xuyuanp/nerdtree-git-plugin' " Git for NERDTree
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
@@ -67,6 +68,10 @@ set wildignore+=*/tmp/*,*/.tmp/*,*.so,*.swp,*.zip,*.gz,.bz2,*.tar,*.keep,*.DS_St
 " Use pleasant but very visible search hilighting
 hi Search ctermfg=white ctermbg=173 cterm=none guifg=#ffffff guibg=#e5786d gui=none
 hi! link Visual Search
+
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let g:NERDTreeWinSize = 40
 
 "************
 " Ctrlp - Fuzzy finder
