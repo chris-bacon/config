@@ -21,6 +21,8 @@ Plug 'billyvg/tigris.nvim', { 'do': './install.sh' } " JS and Node
 Plug 'ctrlpvim/ctrlp.vim' " Fuzzy finder
 Plug 'ervandew/supertab' "Use tab key instead of arrow keys for autocomplete
 Plug 'kassio/neoterm' " Terminal
+Plug 'tpope/vim-commentary' " Comments
+Plug 'chrisbra/NrrwRgn' " Crazy comment stuff - select a region and do :NR, then save to return
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
@@ -60,6 +62,11 @@ set expandtab
 set shiftwidth=4 
 set smarttab
 set scrolloff=6
+set lazyredraw
+set wildignore+=*/tmp/*,*/.tmp/*,*.so,*.swp,*.zip,*.gz,.bz2,*.tar,*.keep,*.DS_Store,*/.git/*
+" Use pleasant but very visible search hilighting
+hi Search ctermfg=white ctermbg=173 cterm=none guifg=#ffffff guibg=#e5786d gui=none
+hi! link Visual Search
 
 "************
 " Ctrlp - Fuzzy finder
@@ -71,9 +78,6 @@ let g:ctrlp_custom_ignore = {
 "************
 " Autocommands - syntax: autocmd <event> <pattern> <command>
 "************
-autocmd FileType haskell nnoremap <buffer> <leader>c 0i--<esc>
-autocmd FileType javascript nnoremap <buffer> <leader>c 0i//<esc>
-autocmd FileType python nnoremap <buffer> <leader>c 0i#<esc>
 " Build scripts
 autocmd Filetype javascript nnoremap <leader>b :!npm run build<cr> 
 autocmd Filetype haskell nnoremap <leader>b :!stack build<cr> 
@@ -122,6 +126,8 @@ noremap <right> <nop>
 tnoremap <ESC> <C-\><C-n>  
 " Escape out insert mode
 inoremap jk <esc>  
+nmap \\\ <Plug>CommentaryLine
+vmap \\ <Plug>Commentary
 
 " NERDTree
 let g:NERDTreeShowHidden = 1 " Display hidden files in Nerdtree by default
