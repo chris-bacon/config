@@ -68,6 +68,7 @@ set wildignore+=*/tmp/*,*/.tmp/*,*.so,*.swp,*.zip,*.gz,.bz2,*.tar,*.keep,*.DS_St
 " Use pleasant but very visible search hilighting
 hi Search ctermfg=white ctermbg=173 cterm=none guifg=#ffffff guibg=#e5786d gui=none
 hi! link Visual Search
+hi LineNr ctermfg=yellow
 
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
