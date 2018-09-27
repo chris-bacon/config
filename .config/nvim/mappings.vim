@@ -28,5 +28,6 @@ noremap <C-n> :NERDTreeToggle<CR>
 tnoremap <ESC> <C-\><C-n>  
 " Escape out insert mode
 inoremap jk <esc>  
+vnoremap jk <esc>  
 nmap \\\ <Plug>CommentaryLine
 vmap \\ <Plug>Commentary
