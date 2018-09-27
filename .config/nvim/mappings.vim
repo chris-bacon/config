@@ -19,10 +19,11 @@ noremap <leader>( viw<esc>a)<esc>bi(<esc>lel
 " Toggle NERDTree
 noremap <C-n> :NERDTreeToggle<CR>  
 " Disable arrow keys
-noremap <up> <nop>  
-noremap <down> <nop>
-noremap <left> <nop>
-noremap <right> <nop>
+" noremap <up> <nop>  
+" noremap <down> <nop>
+" noremap <left> <nop>
+" noremap <right> <nop>
+
 " Escape out of terminal mode
 tnoremap <ESC> <C-\><C-n>  
 " Escape out insert mode
