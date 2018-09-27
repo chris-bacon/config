@@ -1,20 +1,20 @@
 "************
 " Plugins
 "************
-so plugins.vim
+so ~/.config/nvim/plugins.vim
 
 "************
 " Config
 "************
-so config_vars.vim
+so ~/.config/nvim/config_vars.vim
 
 "************
 " Autocommands - syntax: autocmd <event> <pattern> <command>
 "************
-so autocommands.vim
+so ~/.config/nvim/autocommands.vim
 
 "************
 " Mappings
 "************
-so mappings.vim
+so ~/.config/nvim/mappings.vim
 
