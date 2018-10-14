@@ -40,14 +40,24 @@ function! ExtractHaskellType(...)
     execute "normal! gvdmm" . FindPreviousEmptyLine() . "o" . CreateType(newTypeName) . "\<esc>po\<esc>`mi\<space>" . newTypeName . "\<esc>:noh"
 endfunction
 
-function! CreateTypeSignature(name)
-    return a:name . "\<space>::\<space>_\<space>->\<space>_"
+function! CreateTypeSignature(name, numArgs)
+    let typeSig = "\<space>::\<space>"
+    let i = 1
+    while i <= a:numArgs
+        let typeSig .= "\<space>_\<space>->"
+        let i += 1
+    endwhile
+    let typeSig .= "\<space>_"
+    return a:name . typeSig
 endfunction
 
 function! ExtractHaskellFunction(...)
-    let fName = exists('a:1') ? a:1 : "f"
-    let arg1 = exists('a:2') ? a:2 : ''
-    execute "normal! gvdmm" . FindNextEmptyLine() . "o" . CreateTypeSignature(fName) . "\<esc>o" . CreateFunction(fName, arg1) . "\<esc>po\<esc>`mi" . fName . "\<esc>:noh"
+    let args = a:0 > 0 ? split(a:000[0], " ") : []
+    let numArgs = len(args)
+    let fName = numArgs > 0 ? args[0] : "f"
+    let arg1 = numArgs > 1 ? args[1] : ''
+    let fParams = numArgs - 1
+    execute "normal! gvdmm" . FindNextEmptyLine() . "o" . CreateTypeSignature(fName, fParams) . "\<esc>o" . CreateFunction(fName, arg1) . "\<esc>po\<esc>`mi" . fName . "\<esc>:noh"
 endfunction
 
 command! -range -nargs=? ExtractHaskellType     call ExtractHaskellType(<f-args>)
