@@ -14,7 +14,7 @@ function! WrapWith(str)
 endfunction
 
 " Haskell Refactor
-let g:equals = "\<space>=\<space>"
+let g:equals = " = "
 
 function! FindNextEmptyLine()
     return "/^$\<cr>"
@@ -25,7 +25,7 @@ function! FindPreviousEmptyLine()
 endfunction
 
 function! CreateType(name)
-    return "data\<space>" . a:name . g:equals
+    return "data " . a:name . g:equals
 endfunction
 
 function! ExtractHaskellType(...)
@@ -34,13 +34,13 @@ function! ExtractHaskellType(...)
 endfunction
 
 function! CreateTypeSignature(name, numArgs)
-    let typeSig = "\<space>::"
+    let typeSig = " ::"
     let i = 1
     while i <= a:numArgs
-        let typeSig .= "\<space>_\<space>->"
+        let typeSig .= " _ ->"
         let i += 1
     endwhile
-    let typeSig .= "\<space>_"
+    let typeSig .= " _"
     return a:name . typeSig
 endfunction
 
