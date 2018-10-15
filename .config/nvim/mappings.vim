@@ -28,20 +28,13 @@ function! CreateType(name)
     return "data\<space>" . a:name . g:equals
 endfunction
 
-function! CreateFunction(name, ...)
-    if exists('a:1') && a:1 != ""
-        return a:name . "\<space>" . a:1 . g:equals
-    endif
-    return a:name . g:equals
-endfunction
-
 function! ExtractHaskellType(...)
     let newTypeName = exists('a:1') ? a:1 : "MyType"
     execute "normal! gvdmm" . FindPreviousEmptyLine() . "o" . CreateType(newTypeName) . "\<esc>po\<esc>`mi\<space>" . newTypeName . "\<esc>:noh"
 endfunction
 
 function! CreateTypeSignature(name, numArgs)
-    let typeSig = "\<space>::\<space>"
+    let typeSig = "\<space>::"
     let i = 1
     while i <= a:numArgs
         let typeSig .= "\<space>_\<space>->"
@@ -51,13 +44,20 @@ function! CreateTypeSignature(name, numArgs)
     return a:name . typeSig
 endfunction
 
+function! CreateFunction(name, params)
+    if a:params != ""
+        return a:name . " " . a:params . g:equals
+    endif
+    return a:name . g:equals
+endfunction
+
 function! ExtractHaskellFunction(...)
     let args = a:0 > 0 ? split(a:000[0], " ") : []
     let numArgs = len(args)
     let fName = numArgs > 0 ? args[0] : "f"
-    let arg1 = numArgs > 1 ? args[1] : ''
-    let fParams = numArgs - 1
-    execute "normal! gvdmm" . FindNextEmptyLine() . "o" . CreateTypeSignature(fName, fParams) . "\<esc>o" . CreateFunction(fName, arg1) . "\<esc>po\<esc>`mi" . fName . "\<esc>:noh"
+    let numFParams = numArgs - 1
+    let fParams = args != [] ? join(args[1:], " ") : ""
+    execute "normal! gvdmm" . FindNextEmptyLine() . "o" . CreateTypeSignature(fName, numFParams) . "\<esc>o" . CreateFunction(fName, fParams) . "\<esc>po\<esc>`mi" . fName . (fParams != "" ? " " . fParams : "") . "\<esc>:noh"
 endfunction
 
 command! -range -nargs=? ExtractHaskellType     call ExtractHaskellType(<f-args>)
