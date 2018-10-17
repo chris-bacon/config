@@ -5,3 +5,7 @@
 !.Xresources
 !.zshrc
 !.gitignore
+
+.config/discord
+.config/asciinema
+.config/ranger/*
