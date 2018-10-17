@@ -1,4 +1,4 @@
-export TERM=xterm-256color
+export TERM="xterm-256color"
 
 [[ $TMUX != "" ]] && export TERM="screen-256color" # If running tmux, then set TERM to screen
 $NVIM_TUI_ENABLE_TRUE_COLOR="true"
@@ -23,9 +23,8 @@ plugins=(
 
 # Aliases
 alias p="~/personal"
-alias ez="nvim ~/config/zsh/zshrc"
-alias sz="source ~/config/zsh/zshrc"
-alias bbcnpm="npm --registry https://npm.morph.int.tools.bbc.co.uk --cert=\"$(cat /etc/pki/certificate.pem)\" --key=\"$(cat /etc/pki/certificate.pem)\" --cafile=/etc/pki/tls/certs/ca-bundle.crt"
+alias ez="nvim ~/.zshrc"
+alias sz="source ~/.zshrc"
 alias v="nvim"
 alias gll="git log --graph --oneline --abbrev-commit --decorate --all"
 
@@ -41,7 +40,5 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-location=$(/usr/sbin/scselect | /usr/bin/grep "^\W\*" | /usr/bin/awk -F'[()]' '{ print $2 }')
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
