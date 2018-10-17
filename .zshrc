@@ -5,7 +5,7 @@ $NVIM_TUI_ENABLE_TRUE_COLOR="true"
 #export COLORTERM=xterm-256color
 
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="af-magic"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
