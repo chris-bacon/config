@@ -1,4 +1,4 @@
-" Specify a directory for plugins (neovim: ~/.local/share/nvim/plugged); avoid standard Vim dirs like 'plugin'
+Demo" Specify a directory for plugins (neovim: ~/.local/share/nvim/plugged); avoid standard Vim dirs like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'neovimhaskell/haskell-vim' " Haskell-vim, self-explanatory really
@@ -22,6 +22,7 @@ Plug 'tpope/vim-commentary' " Comments
 Plug 'chrisbra/NrrwRgn' " Crazy comment stuff - select a region and do :NR, then save to return
 Plug 'Xuyuanp/nerdtree-git-plugin' " Git for NERDTree
 Plug 'chris-bacon/haskell-refactor'
+Plug 'junegunn/vader.vim'
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
