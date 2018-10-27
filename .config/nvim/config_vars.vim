@@ -36,9 +36,16 @@ set softtabstop                                   =0
 set shiftwidth                                    =4
 set scrolloff                                     =6
 set wildignore+=*/tmp/*,*/.tmp/*,*.so,*.swp,*.zip,*.gz,.bz2,*.tar,*.keep,*.DS_Store,*/.git/*
-" Use pleasant but very visible search hilighting
-hi Search ctermfg=white ctermbg=173 cterm=none guifg=#ffffff guibg=#e5786d gui=none
-hi LineNr ctermfg                                 = yellow
+
+"************
+"Highlighting
+"************
+hi Search     ctermfg=red cterm=none
+hi LineNr     ctermfg=yellow
+hi Pmenu      ctermfg=yellow
+hi PmenuSel   ctermfg=black ctermbg=yellow
+hi PmenuSbar  ctermbg=black
+hi PmenuThumb ctermbg=yellow
 hi! link Visual Search
 
 " NERDTree
