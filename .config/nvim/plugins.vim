@@ -24,6 +24,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin' " Git for NERDTree
 Plug 'chris-bacon/haskell-refactor'
 Plug 'junegunn/vader.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
