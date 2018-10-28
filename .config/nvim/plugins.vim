@@ -23,6 +23,7 @@ Plug 'chrisbra/NrrwRgn' " Crazy comment stuff - select a region and do :NR, then
 Plug 'Xuyuanp/nerdtree-git-plugin' " Git for NERDTree
 Plug 'chris-bacon/haskell-refactor'
 Plug 'junegunn/vader.vim'
+Plug 'tpope/vim-fugitive'
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
