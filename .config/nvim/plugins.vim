@@ -27,6 +27,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'kburdett/vim-nuuid'
+Plug 'junegunn/fzf.vim'
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
