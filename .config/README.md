@@ -6,6 +6,3 @@
 - i3-gaps
 - polybar
 - compton
-
-## TODO
-
