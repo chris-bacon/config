@@ -23,6 +23,7 @@ nnoremap <leader>(  :call WrapWith("(")<cr>
 nnoremap <leader>ii :echo synIDattr(synID(line('.'), col('.'), 1), 'name')<CR>
 noremap  <C-n>      :NERDTreeToggle<CR>
 nnoremap <leader>-  yyp  
+nnoremap <C-p>      :FZF<CR>
 nnoremap <leader><space> viwhh  
 " Escape out of terminal mode
 tnoremap <ESC> <C-\><C-n>  
