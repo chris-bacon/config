@@ -15,7 +15,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'} " TypeScript
 Plug 'leafgarland/typescript-vim' " Syntax highlighter
 Plug 'neovim/node-host', { 'do': 'npm install' } " JS and Node
 Plug 'billyvg/tigris.nvim', { 'do': './install.sh' } " JS and Node
-Plug 'ctrlpvim/ctrlp.vim' " Fuzzy finder
 Plug 'ervandew/supertab' "Use tab key instead of arrow keys for autocomplete
 Plug 'kassio/neoterm' " Terminal
 Plug 'tpope/vim-commentary' " Comments
@@ -27,6 +26,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'kburdett/vim-nuuid'
+Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 
