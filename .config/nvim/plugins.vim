@@ -25,6 +25,7 @@ Plug 'chris-bacon/haskell-refactor'
 Plug 'junegunn/vader.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'pbrisbin/vim-syntax-shakespeare'
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
