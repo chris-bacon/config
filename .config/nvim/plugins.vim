@@ -28,6 +28,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'kburdett/vim-nuuid'
 Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
