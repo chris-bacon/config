@@ -4,7 +4,7 @@
 colorscheme one
 set background          =dark
 let g:one_allow_italics =1
-let g:airline_theme     ='one'
+let g:airline_theme     ='simple'
 
 " Ctrlp - Fuzzy finder
 let g:ctrlp_custom_ignore = {
@@ -48,15 +48,24 @@ hi PmenuSbar  ctermbg=black
 hi PmenuThumb ctermbg=yellow
 hi! link Visual Search
 
-" NERDTree
+
+"************
+"NERDTree
+"************
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize = 40
 
 let g:NERDTreeShowHidden = 1 " Display hidden files in Nerdtree by default
 let g:NERDTreeMouseMode  = 3
-let g:NERDTreeWinPos     = "right"
+let g:NERDTreeWinPos     = "left"
 set mouse                =a
+
+"************
+"Ale
+"************
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 let g:vim_markdown_folding_disabled = 1
 let g:deoplete#enable_at_startup    = 1
