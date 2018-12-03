@@ -6,11 +6,6 @@ set background          =dark
 let g:one_allow_italics =1
 let g:airline_theme     ='simple'
 
-" Ctrlp - Fuzzy finder
-let g:ctrlp_custom_ignore = {
-\ 'dir': '\v[\/](node_modules)$'
-\}
-
 "************
 "Necoghc
 "************
