@@ -33,7 +33,6 @@ vmap \\ <Plug>Commentary
 vnoremap <leader>=   :Tab /=<cr>
 vnoremap <leader>-   :Tab /-><cr>
 vnoremap <leader>:   :Tab /::<cr>
-
 " Copy vscode's CMD-D
 " Use with # or * in N-mode to change all occurances of a word
 nnoremap <leader>d :%s///g
