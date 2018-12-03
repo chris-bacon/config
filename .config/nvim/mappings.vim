@@ -30,6 +30,9 @@ nnoremap <leader><space> viwhh
 tnoremap <ESC> <C-\><C-n>  
 nmap \\\ <Plug>CommentaryLine
 vmap \\ <Plug>Commentary
+vnoremap <leader>=   :Tab /=<cr>
+vnoremap <leader>-   :Tab /-><cr>
+vnoremap <leader>:   :Tab /::<cr>
 
 " Copy vscode's CMD-D
 " Use with # or * in N-mode to change all occurances of a word
