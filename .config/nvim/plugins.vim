@@ -1,4 +1,4 @@
-" Specify a directory for plugins (neovim: ~/.local/share/nvim/plugged); avoid standard Vim dirs like 'plugin'
+" Plugins directory: ~/.local/share/nvim/plugged; avoid standard Vim dirs like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'neovimhaskell/haskell-vim' " Haskell-vim, self-explanatory really
