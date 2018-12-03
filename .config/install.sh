@@ -66,7 +66,7 @@ function update() {
 }
 
 function install_programs() {
-    unix=(git git-flow zsh python-dev python-pip python3-dev python3-dev python3 software-properties-common tmux mlocate curl i3 rxvt-unicode rxdb)
+    unix=(git git-flow zsh python-dev python-pip python3-dev python3-dev python3 software-properties-common tmux mlocate curl i3 rxvt-unicode rxdb fonts-powerline)
     for i in ${unix[@]}
         do
             if ! [ -x "$(command -v $i)" ]; then
