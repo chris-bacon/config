@@ -31,7 +31,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
 Plug 'Shougo/vimproc.vim', {'do': 'make'} " required for ghcmod
-Plug 'parsonsmatt/intero-neovim'
 Plug 'w0rp/ale'
 
 " Themes
