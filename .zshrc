@@ -49,6 +49,6 @@ runTest(){
     if [ -z "$1" ]; then
         echo "I need a module name"
     else
-        stack test tracs-enterprise:test --fast --test-arguments="-m $1"
+        stack test --fast --test-arguments="-m $1"
     fi
 }
