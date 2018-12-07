@@ -44,3 +44,11 @@ export NVM_DIR="$HOME/.nvm"
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+runTest(){
+    if [ -z "$1" ]; then
+        echo "I need a module name"
+    else
+        stack test tracs-enterprise:test --fast --test-arguments="-m $1"
+    fi
+}
