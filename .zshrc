@@ -67,6 +67,6 @@ encryptFile(){
     if [ -z "$1" ]; then
         echo "I need an email and a file name"
     else
-        gpg -e -r $1 $1
+        gpg -e -r $1 $2
     fi
 }
