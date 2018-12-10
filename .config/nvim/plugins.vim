@@ -7,7 +7,6 @@ Plug 'neomake/neomake'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown' "Markdown syntax highlighter
 Plug 'Raimondi/delimitMate' "Matches brackets and parentheses
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'}
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes' "Airline theme
@@ -32,6 +31,8 @@ Plug 'mileszs/ack.vim'
 Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
 Plug 'Shougo/vimproc.vim', {'do': 'make'} " required for ghcmod
 Plug 'w0rp/ale'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neosnippet.vim'
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
