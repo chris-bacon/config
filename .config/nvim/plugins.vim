@@ -19,7 +19,6 @@ Plug 'kassio/neoterm' " Terminal
 Plug 'tpope/vim-commentary' " Comments
 Plug 'chrisbra/NrrwRgn' " Crazy comment stuff - select a region and do :NR, then save to return
 Plug 'Xuyuanp/nerdtree-git-plugin' " Git for NERDTree
-Plug 'chris-bacon/haskell-refactor'
 Plug 'junegunn/vader.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -33,6 +32,9 @@ Plug 'Shougo/vimproc.vim', {'do': 'make'} " required for ghcmod
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
+
+Plug 'chris-bacon/haskell-refactor'
+Plug 'chris-bacon/test-finder'
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
