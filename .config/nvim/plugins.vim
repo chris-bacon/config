@@ -32,6 +32,7 @@ Plug 'Shougo/vimproc.vim', {'do': 'make'} " required for ghcmod
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
+Plug 'tpope/vim-surround'
 
 Plug 'chris-bacon/haskell-refactor'
 Plug 'chris-bacon/test-finder'
