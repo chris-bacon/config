@@ -2,7 +2,6 @@ export TERM="xterm-256color"
 
 [[ $TMUX != "" ]] && export TERM="screen-256color" # If running tmux, then set TERM to screen
 $NVIM_TUI_ENABLE_TRUE_COLOR="true"
-#export COLORTERM=xterm-256color
 
 ZSH_THEME="af-magic"
 
