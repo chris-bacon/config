@@ -17,10 +17,6 @@ plugins=(
     zsh-syntax-highlighting
 )
 
-# Aliases
-source ~/_aliases.sh
-
-# Exports
 export EDITOR='nvim'
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.nvm/versions/node/v4.8.4/bin:$PATH
@@ -30,11 +26,10 @@ export ZSH=$HOME/.oh-my-zsh
 export PATH="$PATH:$HOME/.rvm/bin"
 export NVM_DIR="$HOME/.nvm"
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                    # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-source $HOME/.oh-my-zsh/oh-my-zsh.sh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+source ~/_aliases.sh
 source ~/_functions.sh
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
