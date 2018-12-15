@@ -4,10 +4,8 @@ export TERM="xterm-256color"
 $NVIM_TUI_ENABLE_TRUE_COLOR="true"
 #export COLORTERM=xterm-256color
 
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="af-magic"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -19,14 +17,8 @@ plugins=(
     zsh-syntax-highlighting
 )
 
-# User configuration
-
 # Aliases
-alias p="~/personal"
-alias ez="nvim ~/.zshrc"
-alias sz="source ~/.zshrc"
-alias v="nvim"
-alias gll="git log --graph --oneline --abbrev-commit --decorate --all"
+source ~/_aliases.sh
 
 # Exports
 export EDITOR='nvim'
