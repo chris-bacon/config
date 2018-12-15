@@ -1,0 +1,5 @@
+alias p="~/personal"
+alias ez="nvim ~/.zshrc"
+alias sz="source ~/.zshrc"
+alias v="nvim"
+alias gll="git log --graph --oneline --abbrev-commit --decorate --all"
