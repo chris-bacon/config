@@ -76,6 +76,13 @@ function install_programs() {
         done
 }
 
+function install_tmux() {
+    cd ~
+    git clone https://github.com/gpakosz/.tmux.git
+    ln -s -f .tmux/.tmux.conf
+    cp .tmux/.tmux.conf.local .
+}
+
 function exit_msg() {
     echo -e """
         .___                    
@@ -94,6 +101,7 @@ function main() {
     configure
     set_github_config
     create_dirs_if_not_exist
+    install_tmux
     exit_msg
 }
 
