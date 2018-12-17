@@ -31,6 +31,9 @@ set softtabstop                                   =0
 set shiftwidth                                    =4
 set scrolloff                                     =6
 set wildignore+=*/tmp/*,*/.tmp/*,*.so,*.swp,*.zip,*.gz,.bz2,*.tar,*.keep,*.DS_Store,*/.git/*
+set nowrap
+set nowrap sidescroll=1 listchars=extends:>,precedes:<
+set sidescrolloff=1
 
 "************
 "Highlighting
