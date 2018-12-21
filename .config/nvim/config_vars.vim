@@ -107,3 +107,8 @@ imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
  \ "\<Plug>(neosnippet_expand_or_jump)"
  \: "\<TAB>"
+
+set nowrap
+set nowrap sidescroll=1 listchars=extends:>,precedes:<
+set sidescrolloff=1
+
