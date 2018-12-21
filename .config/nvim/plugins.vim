@@ -33,6 +33,7 @@ Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'tpope/vim-surround'
+Plug 'skywind3000/asyncrun.vim'
 
 Plug 'chris-bacon/haskell-refactor'
 Plug 'chris-bacon/test-finder'

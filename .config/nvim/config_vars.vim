@@ -6,6 +6,9 @@ set background          =dark
 let g:one_allow_italics =1
 let g:airline_theme     ='simple'
 
+let g:asyncrun_status = ''
+let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
+
 "************
 "Necoghc
 "************
