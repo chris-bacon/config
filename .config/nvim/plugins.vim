@@ -1,7 +1,7 @@
 " Plugins directory: ~/.local/share/nvim/plugged; avoid standard Vim dirs like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'scrooloose/nerdtree'
-Plug 'neovimhaskell/haskell-vim' " Haskell-vim, self-explanatory really
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc' "Haskell completion
 Plug 'neomake/neomake'
 Plug 'godlygeek/tabular'
