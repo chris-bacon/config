@@ -49,5 +49,6 @@ Plug 'Badacadabra/vim-archery'
 Plug 'rakr/vim-one'
 Plug 'elmcast/elm-vim'
 Plug 'tikhomirov/vim-glsl'
+Plug 'morhetz/gruvbox'
 " Initialize plugin system; then Install with :PlugInstall
 call plug#end()
