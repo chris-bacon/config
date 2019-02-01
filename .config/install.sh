@@ -114,6 +114,7 @@ function main() {
     set_github_config
     create_dirs_if_not_exist
     install_tmux_config
+    install_polybar
     exit_msg
 }
 
