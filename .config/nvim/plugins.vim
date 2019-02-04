@@ -10,7 +10,6 @@ Plug 'Raimondi/delimitMate' "Matches brackets and parentheses
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes' "Airline theme
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'} " TypeScript
 Plug 'leafgarland/typescript-vim' " Syntax highlighter
 Plug 'neovim/node-host', { 'do': 'npm install' } " JS and Node
 Plug 'billyvg/tigris.nvim', { 'do': './install.sh' } " JS and Node
@@ -27,13 +26,17 @@ Plug 'kburdett/vim-nuuid'
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
-Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
 Plug 'Shougo/vimproc.vim', {'do': 'make'} " required for ghcmod
 Plug 'w0rp/ale'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'tpope/vim-surround'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'suan/vim-instant-markdown'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': './install.sh'
+    \ }
+Plug 'dan-t/vim-hsimport'
 
 Plug 'chris-bacon/haskell-refactor'
 Plug 'chris-bacon/test-finder'

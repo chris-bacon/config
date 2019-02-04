@@ -18,3 +18,9 @@ so ~/.config/nvim/autocommands.vim
 "************
 so ~/.config/nvim/mappings.vim
 
+function! InitHie()
+    let g:LanguageClient_serverCommands = {
+                \ 'haskell': ['hie-8.0.2', '--lsp', '-r', getcwd()],
+                \ }
+    LanguageClientStart
+endfunction

@@ -6,6 +6,7 @@ set background          =dark
 let g:one_allow_italics =1
 "let g:airline_theme     ='simple'
 
+let g:asyncrun_open  = 12
 let g:asyncrun_status = ''
 let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
 
@@ -49,6 +50,44 @@ hi PmenuSbar  ctermbg=black
 hi PmenuThumb ctermbg=yellow
 hi! link Visual Search
 
+hi! link haskellType GruvboxBlue
+hi! link haskellIdentifier GruvboxAqua
+hi! link haskellSeparator GruvboxFg4
+hi! link haskellDelimiter GruvboxOrange
+hi! link haskellOperators GruvboxPurple
+
+hi! link haskellBacktick GruvboxOrange
+hi! link haskellStatement GruvboxPurple
+hi! link haskellConditional GruvboxPurple
+
+hi! link haskellLet GruvboxRed
+hi! link haskellDefault GruvboxRed
+hi! link haskellWhere GruvboxRed
+hi! link haskellBottom GruvboxRedBold
+hi! link haskellImportKeywords GruvboxPurpleBold
+hi! link haskellDeclKeyword GruvboxOrange
+hi! link haskellDecl GruvboxOrange
+hi! link haskellDeriving GruvboxPurple
+hi! link haskellAssocType GruvboxAqua
+
+hi! link haskellNumber GruvboxAqua
+hi! link haskellPragma GruvboxRedBold
+ 
+hi! link haskellTH GruvboxAquaBold
+hi! link haskellForeignKeywords GruvboxGreen
+hi! link haskellKeyword GruvboxRed
+hi! link haskellFloat GruvboxAqua
+hi! link haskellInfix GruvboxPurple
+hi! link haskellQuote GruvboxGreenBold
+hi! link haskellShebang GruvboxYellowBold
+hi! link haskellLiquid GruvboxPurpleBold
+hi! link haskellQuasiQuoted GruvboxBlueBold
+hi! link haskellRecursiveDo GruvboxPurlpe
+hi! link haskellQuotedType GruvboxRed
+hi! link haskellPreProc GruvboxFg4
+hi! link haskellTypeRoles GruvboxRedBold
+hi! link haskellTypeForall GruvboxRed
+hi! link haskellPatternKeyword GruvboxBlue
 
 "************
 "NERDTree
@@ -112,3 +151,22 @@ set nowrap
 set nowrap sidescroll=1 listchars=extends:>,precedes:<
 set sidescrolloff=1
 
+set hidden
+set rtp+=~/.local/share/nvim/plugged/LanguageClient-neovim
+let g:LanguageClient_serverCommands = { 'haskell': ['hie-wrapper', '--lsp'] }
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+map <Leader>lk :call LanguageClient#textDocument_hover()<CR>
+map <Leader>lg :call LanguageClient#textDocument_definition()<CR>
+map <Leader>lr :call LanguageClient#textDocument_rename()<CR>
+map <Leader>lf :call LanguageClient#textDocument_formatting()<CR>
+map <Leader>lb :call LanguageClient#textDocument_references()<CR>
+map <Leader>la :call LanguageClient#textDocument_codeAction()<CR>
+map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
+
+hi link ALEError Error
+hi Warning term=underline cterm=underline ctermfg=Yellow gui=undercurl guisp=Gold
+hi link ALEWarning Warning
+hi link ALEInfo SpellCap
+
+let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
