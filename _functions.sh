@@ -41,3 +41,7 @@ swapFiles() {
         mv $1.tmp $2
     fi
 }
+
+i3help() {
+    less ~/.config/i3/config
+}
