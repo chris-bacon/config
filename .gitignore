@@ -1,11 +1,13 @@
 *
-!.config/
-!.config/*
-!.config/**/*
+!.config/i3/*
+!.config/nvim/*
+!.config/polybar/*
+!.config/ranger/*
+!.config/rofi/*
 !.Xresources
 !.zshrc
 !.gitignore
+!.ghci
 
-.config/discord
-.config/asciinema
-.config/ranger/*
+.config
+
