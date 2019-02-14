@@ -9,5 +9,5 @@
 !.gitignore
 !.ghci
 
-.config
+.config/*
 
