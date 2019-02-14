@@ -37,6 +37,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': './install.sh'
     \ }
 Plug 'dan-t/vim-hsimport'
+Plug 'mboughaba/i3config.vim'
 
 Plug 'chris-bacon/haskell-refactor'
 Plug 'chris-bacon/test-finder'
