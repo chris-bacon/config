@@ -149,11 +149,12 @@ for_window [class="^.*"] border pixel 3
 # Custom key bindings
 bindsym Mod1+o mode "$mode_launcher"
 
-set $mode_launcher Launch: [f]irefox [r]anger [s]lack
+set $mode_launcher Launch: [f]irefox [r]anger [s]lack [l]ock
 mode "$mode_launcher" {
     bindsym r exec ranger
     bindsym f exec firefox
     bindsym s exec slack
+    bindsym l exec i3lock
 
     bindsym Escape mode "default"
     bindsym Return mode "default"
@@ -167,8 +168,6 @@ bindsym Mod1+Shift+c reload
 bindsym Mod1+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-# Lock computer
-bindsym Mod1+Shift+ctrl+l exec i3lock
 
 exec_always compton
 exec_always feh --randomize --bg-fill ~/Pictures/wallpapers/*
