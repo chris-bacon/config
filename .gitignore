@@ -1,9 +1,9 @@
 *
-!.config/i3/*
-!.config/nvim/*
-!.config/polybar/*
-!.config/ranger/*
-!.config/rofi/*
+!.config/i3/**/*
+!.config/nvim/**/*
+!.config/polybar/**/*
+!.config/ranger/**/*
+!.config/rofi/**/*
 !.Xresources
 !.zshrc
 !.gitignore
