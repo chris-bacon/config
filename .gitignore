@@ -1,4 +1,6 @@
 *
+!.config/
+!.config/*
 !.config/i3/**/*
 !.config/nvim/**/*
 !.config/polybar/**/*
@@ -8,6 +10,3 @@
 !.zshrc
 !.gitignore
 !.ghci
-
-.config/*
-
