@@ -42,7 +42,7 @@ set sidescrolloff=1
 "************
 "Highlighting
 "************
-hi Search     ctermfg=red cterm=none
+hi Search     ctermfg=red ctermbg=yellow cterm=none
 hi LineNr     ctermfg=yellow
 hi Pmenu      ctermfg=yellow
 hi PmenuSel   ctermfg=black ctermbg=yellow
