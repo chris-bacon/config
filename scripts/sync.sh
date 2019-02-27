@@ -10,26 +10,26 @@ FUNCTIONS=~/_functions.sh
 
 /usr/bin/notify-send 'Syncing...!' 'Automated sync in progress' --icon=dialog-information
 
-git add $GITIGNORE
-git commit -m "Automated sync of $GITIGNORE"
+/usr/bin/git add $GITIGNORE
+/usr/bin/git commit -m "Automated sync of $GITIGNORE"
 
 cd $POLYBAR
-git add config
-git commit -m "Automated sync of $POLYBAR"
+/usr/bin/git add config
+/usr/bin/git commit -m "Automated sync of $POLYBAR"
 
 cd $SCRIPT
-git add sync.sh
-git commit -m "Automated sync of $SCRIPT"
+/usr/bin/git add sync.sh
+/usr/bin/git commit -m "Automated sync of $SCRIPT"
 
 cd $NVIM
-git add .
-git commit -m "Automated sync of $NVIM"
+/usr/bin/git add .
+/usr/bin/git commit -m "Automated sync of $NVIM"
 
-git add $ALIASES
-git commit -m "Automated sync of $ALIASES"
+/usr/bin/git add $ALIASES
+/usr/bin/git commit -m "Automated sync of $ALIASES"
 
-git add $FUNCTIONS
-git commit -m "Automated sync of $FUNCTIONS"
+/usr/bin/git add $FUNCTIONS
+/usr/bin/git commit -m "Automated sync of $FUNCTIONS"
 
-git push origin master
+/usr/bin/git push origin master
 
