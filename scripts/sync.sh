@@ -31,7 +31,5 @@ git commit -m "Automated sync of $ALIASES"
 git add $FUNCTIONS
 git commit -m "Automated sync of $FUNCTIONS"
 
-ssh-add ~/.ssh/github
-cd ~
-git push origin master
+HOME=/home/chrisbacon git push origin master
 
