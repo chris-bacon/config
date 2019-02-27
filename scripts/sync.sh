@@ -11,6 +11,7 @@ SCRIPT=~/scripts/sync.sh
 GITIGNORE=~/.gitignore
 ALIASES=~/_functions.sh
 FUNCTIONS=~/_functions.sh
+CRON=~/scripts/mycrontab
 
 commit() {
   git commit -m "Automated sync of $1"
@@ -29,6 +30,9 @@ commit $ALIASES
 
 git add $FUNCTIONS
 commit $FUNCTIONS
+
+git add $CRON
+commit $CRON
 
 cd $POLYBAR
 git add config
