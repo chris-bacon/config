@@ -33,7 +33,7 @@ cd $NVIM
 git add .
 git commit -m "Automated sync of $NVIM"
 
+eval "$(ssh-agent)"
 ssh-add ~/.ssh/github
-ssh -vvv git@github.com verify
 HOME=/home/chrisbacon git push origin master
 
