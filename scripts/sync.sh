@@ -1,7 +1,6 @@
 export DISPLAY=:0
 
 CONFIG=~/.config
-
 POLYBAR=$CONFIG/polybar
 SCRIPT=~/scripts
 
