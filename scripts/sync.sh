@@ -35,5 +35,5 @@ git commit -m "Automated sync of $NVIM"
 
 eval "$(ssh-agent)"
 ssh-add ~/.ssh/github
-HOME=/home/chrisbacon git push origin master
+git push origin master
 
