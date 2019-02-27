@@ -4,6 +4,7 @@ export DISPLAY=:0
 CONFIG=~/.config
 POLYBAR=$CONFIG/polybar
 NVIM=$CONFIG/nvim
+I3=$CONFIG/i3
 
 # FIlES
 SCRIPT=~/scripts/sync.sh
@@ -11,27 +12,35 @@ GITIGNORE=~/.gitignore
 ALIASES=~/_functions.sh
 FUNCTIONS=~/_functions.sh
 
+commit() {
+  git commit -m "Automated sync of $1"
+}
+
 /usr/bin/notify-send 'Syncing...!' 'Automated sync in progress' --icon=dialog-information
 
 git add $GITIGNORE
-git commit -m "Automated sync of $GITIGNORE"
+commit $GITIGNORE
 
 git add $SCRIPT
-git commit -m "Automated sync of $SCRIPT"
+commit $SCRIPT
 
 git add $ALIASES
-git commit -m "Automated sync of $ALIASES"
+commit $ALIASES
 
 git add $FUNCTIONS
-git commit -m "Automated sync of $FUNCTIONS"
+commit $FUNCTIONS
 
 cd $POLYBAR
 git add config
-git commit -m "Automated sync of $POLYBAR"
+commit $POLYBAR
 
 cd $NVIM
 git add .
-git commit -m "Automated sync of $NVIM"
+commit $NVIM
+
+cd $I3
+git add .
+commit $I3
 
 eval "$(ssh-agent)"
 ssh-add ~/.ssh/github
