@@ -3,6 +3,7 @@ export DISPLAY=:0
 CONFIG=~/.config
 POLYBAR=$CONFIG/polybar
 SCRIPT=~/scripts
+NVIM=$CONFIG/nvim
 
 /usr/bin/notify-send 'Syncing...!' 'Automated sync in progress' --icon=dialog-information
 
@@ -16,6 +17,10 @@ git commit -m "Automated sync of $POLYBAR"
 cd $SCRIPT
 git add sync.sh
 git commit -m "Automated sync of $SCRIPT"
+
+cd $NVIM
+git add .
+git commit -m "Automated sync of $NVIM"
 
 git push origin master
 
