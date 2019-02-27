@@ -6,6 +6,8 @@
 !.config/polybar/**/*
 !.config/ranger/**/*
 !.config/rofi/**/*
+!scripts/
+!scripts/*
 !.Xresources
 !.zshrc
 !.gitignore
