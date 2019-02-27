@@ -38,6 +38,8 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 Plug 'dan-t/vim-hsimport'
 Plug 'mboughaba/i3config.vim'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'chris-bacon/haskell-refactor'
 Plug 'chris-bacon/test-finder'

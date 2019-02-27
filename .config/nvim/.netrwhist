@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/chrisbacon/src/tracs-enterprise/master/test-data-generator'
 let g:netrw_dirhist_2='/home/chrisbacon/src/tracs-enterprise/master/test-data-generator/src'
 let g:netrw_dirhist_3='/home/chrisbacon/src/tracs-enterprise/master/test-data-generator/src/ResetService'
 let g:netrw_dirhist_4='/home/chrisbacon/src/tracs-enterprise/master/test-data-generator/src/ResetService/Datasets'
 let g:netrw_dirhist_5='/home/chrisbacon/.local/share/nvim/plugged/LanguageClient-neovim'
 let g:netrw_dirhist_6='/home/chrisbacon/src/tracs-enterprise/master/trent-model'
+let g:netrw_dirhist_7='/home/chrisbacon/.config/polybar/polybar-themes/polybar-1/dark'

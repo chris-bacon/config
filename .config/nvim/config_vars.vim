@@ -170,3 +170,10 @@ hi link ALEWarning Warning
 hi link ALEInfo SpellCap
 
 let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
+
+
+
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+
