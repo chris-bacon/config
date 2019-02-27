@@ -32,5 +32,6 @@ cd $NVIM
 /usr/bin/git commit -m "Automated sync of $FUNCTIONS"
 
 ssh-add ~/.ssh/github
+cd ~
 /usr/bin/git push origin master
 
