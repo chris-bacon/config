@@ -40,6 +40,8 @@ Plug 'dan-t/vim-hsimport'
 Plug 'mboughaba/i3config.vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+Plug 'guns/vim-sexp'
+Plug 'luochen1990/rainbow'
 
 Plug 'chris-bacon/haskell-refactor'
 Plug 'chris-bacon/test-finder'
