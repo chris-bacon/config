@@ -8,5 +8,6 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
 polybar bar1
+#polybar main -c /home/chrisbacon/.config/polybar/polybar-themes/polybar-1/dark/config.purple &
 
 echo "Bars launched..."
