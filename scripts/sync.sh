@@ -20,8 +20,9 @@ FUNCTIONS=~/_functions.sh
 CRON=~/scripts/mycrontab
 GHCI=~/.ghci
 README=~/README.md
+XRESOURCES=~/.Xresources
 
-FILES=($SCRIPT $GITIGNORE $ALIASES $FUNCTIONS $CRON $GHCI $README)
+FILES=($SCRIPT $GITIGNORE $ALIASES $FUNCTIONS $CRON $GHCI $README $XRESOURCES)
 
 autoCommit() {
   git commit -m "Automated sync of $1"
