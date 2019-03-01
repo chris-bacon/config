@@ -12,5 +12,7 @@
 !.zshrc
 !.gitignore
 !.ghci
+!.local/
+!.local/share
 !.local/share/fonts
 !.local/share/fonts/*
