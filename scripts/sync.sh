@@ -21,7 +21,7 @@ autoCommit() {
   git commit -m "Automated sync of $1"
 }
 
-/usr/bin/notify-send 'Syncing...!' 'Automated sync in progress' --icon=dialog-information
+/usr/bin/notify-send 'Syncing...!' 'Automated sync in progress' --icon=dialog-information --urgency=low
 
 for i in "${FILES[@]}"
 do
