@@ -1,3 +1,4 @@
+#!/bin/bash
 export DISPLAY=:0
 
 # DIRS
@@ -12,39 +13,33 @@ GITIGNORE=~/.gitignore
 ALIASES=~/_functions.sh
 FUNCTIONS=~/_functions.sh
 CRON=~/scripts/mycrontab
+GHCI=~/.ghci
 
-commit() {
+FILES=($SCRIPT $GITIGNORE $ALIASES $FUNCTIONS $CRON $GHCI)
+
+autoCommit() {
   git commit -m "Automated sync of $1"
 }
 
 /usr/bin/notify-send 'Syncing...!' 'Automated sync in progress' --icon=dialog-information
 
-git add $GITIGNORE
-commit $GITIGNORE
-
-git add $SCRIPT
-commit $SCRIPT
-
-git add $ALIASES
-commit $ALIASES
-
-git add $FUNCTIONS
-commit $FUNCTIONS
-
-git add $CRON
-commit $CRON
+for i in "${FILES[@]}"
+do
+    git add $i
+    autoCommit $i
+done
 
 cd $POLYBAR
 git add config
-commit $POLYBAR
+autoCommit $POLYBAR
 
 cd $NVIM
 git add .
-commit $NVIM
+autoCommit $NVIM
 
 cd $I3
 git add .
-commit $I3
+autoCommit $I3
 
 eval "$(ssh-agent)"
 ssh-add ~/.ssh/github
