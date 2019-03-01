@@ -1,12 +1,11 @@
 URxvt*termName: rxvt-unicode
 
-#URxvt.font: xft:monospace:size=12
-#urxvt.font: DejaVu Sans Mono for Powerline-10
+!URxvt.font: xft:monospace:size=12
+!urxvt.font: DejaVu Sans Mono for Powerline-10
 xterm*faceName: xft:DejaVu Sans Mono for Powerline:pixelsize=14:antialias=true
 URxvt*font: xft:DejaVu Sans Mono:bold:pixelsize=14:antialias=true,xft:DejaVu Sans Mono for Powerline:bold:pixelsize=14:antialias=true
 URxvt.scrollBar: false
 
-#151718
 URxvt*background: rgba:0000/0000/0200/c800
 URxvt*foreground: #d6d6d6
 URxvt*cursorColor: #d6d6d6
@@ -15,8 +14,6 @@ URxvt*depth: 32
 
 uxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-
-urxvt*font: xft:Terminus:pixelsize=12,xft:Inconsolata\ for\ Powerline:pixelsize=12
 
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
