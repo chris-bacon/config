@@ -1,6 +1,9 @@
 #!/bin/bash
 export DISPLAY=:0
 
+eval "$(ssh-agent)"
+ssh-add ~/.ssh/github
+
 # DIRS
 CONFIG=~/.config
 POLYBAR=$CONFIG/polybar
@@ -25,9 +28,6 @@ autoCommit() {
 }
 
 /usr/bin/notify-send 'Syncing...!' 'Automated sync in progress' --icon=dialog-information --urgency=low
-
-eval "$(ssh-agent)"
-ssh-add ~/.ssh/github
 
 for i in "${FILES[@]}"
 do
@@ -57,5 +57,6 @@ git push origin master
 cd $WALLPAPERS
 git add .
 autoCommit $WALLPAPERS
+
 git push origin master
 
