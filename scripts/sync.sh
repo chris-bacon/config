@@ -6,6 +6,8 @@ CONFIG=~/.config
 POLYBAR=$CONFIG/polybar
 NVIM=$CONFIG/nvim
 I3=$CONFIG/i3
+FONTS=~/.local/share/fonts
+WALLPAPERS=~/Pictures/wallpapers
 
 # FIlES
 SCRIPT=~/scripts/sync.sh
@@ -23,6 +25,9 @@ autoCommit() {
 }
 
 /usr/bin/notify-send 'Syncing...!' 'Automated sync in progress' --icon=dialog-information --urgency=low
+
+eval "$(ssh-agent)"
+ssh-add ~/.ssh/github
 
 for i in "${FILES[@]}"
 do
@@ -42,7 +47,15 @@ cd $I3
 git add .
 autoCommit $I3
 
-eval "$(ssh-agent)"
-ssh-add ~/.ssh/github
+cd $FONTS
+git add .
+autoCommit $FONTS
+
+git push origin master
+
+# Wallpapers is a different repo
+cd $WALLPAPERS
+git add .
+autoCommit $WALLPAPERS
 git push origin master
 
