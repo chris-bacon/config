@@ -11,9 +11,17 @@ URxvt*cursorColor: #d6d6d6
 
 URxvt*depth: 32
 
+URxvt.iso14755: false
+URxvt.iso14755_22: false
 uxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
+URxvt.perl-ext-common: selection-to-clipboard
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
+
+URxvt.keysym.Control-Up: \033[1;5A
+URxvt.keysym.Control-Down: \033[1;5B
+URxvt.keysym.Control-Left: \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
