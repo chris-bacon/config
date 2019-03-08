@@ -36,3 +36,5 @@ nnoremap <leader>d :%s///g
 vnoremap <C-c> "+y
 nnoremap <leader><cr> :ClearSearch<cr>
 
+
+g:himporterCreateMappings = 1

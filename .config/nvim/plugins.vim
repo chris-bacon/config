@@ -39,6 +39,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'guns/vim-sexp'
 Plug 'luochen1990/rainbow'
 Plug 'JonnyRa/vim-stackThoseErrorsOfHs', { 'do': './install' }
+Plug 'JonnyRa/vim-himposter'
 
 let g:stackThoseErrorsCreateMappings = 1 
 
