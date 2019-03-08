@@ -38,6 +38,9 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 Plug 'guns/vim-sexp'
 Plug 'luochen1990/rainbow'
+Plug 'JonnyRa/vim-stackThoseErrorsOfHs', { 'do': './install' }
+
+let g:stackThoseErrorsCreateMappings = 1 
 
 Plug 'chris-bacon/haskell-refactor'
 Plug 'chris-bacon/test-finder'
