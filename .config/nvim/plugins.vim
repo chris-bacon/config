@@ -31,7 +31,6 @@ Plug 'w0rp/ale'
 Plug 'Shougo/neosnippet.vim'
 Plug 'tpope/vim-surround'
 Plug 'skywind3000/asyncrun.vim'
-Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': './install.sh'}
 Plug 'dan-t/vim-hsimport'
 Plug 'mboughaba/i3config.vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
