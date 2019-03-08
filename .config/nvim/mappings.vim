@@ -34,4 +34,5 @@ vnoremap <leader>:   :AlignOnColon<cr>
 " Use with # or * in N-mode to change all occurances of a word
 nnoremap <leader>d :%s///g
 vnoremap <C-c> "+y
-nnoremap <cr> :ClearSearch<cr>
+nnoremap <leader><cr> :ClearSearch<cr>
+
