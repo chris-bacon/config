@@ -39,6 +39,7 @@ Plug 'guns/vim-sexp'
 Plug 'luochen1990/rainbow'
 Plug 'JonnyRa/vim-stackThoseErrorsOfHs', { 'do': './install' }
 Plug 'JonnyRa/vim-himposter'
+Plug 'jremmen/vim-ripgrep'
 
 let g:stackThoseErrorsCreateMappings = 1 
 
