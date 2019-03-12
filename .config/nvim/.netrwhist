@@ -1,3 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/home/chrisbacon/.config/nvim'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/chrisbacon/src/tracs-enterprise/master/haskell-service'
+let g:netrw_dirhist_2='/home/chrisbacon/src/tracs-enterprise/master/haskell-service/src'
+let g:netrw_dirhist_3='/home/chrisbacon/src/tracs-enterprise/master/haskell-service/src/Handler'
+let g:netrw_dirhist_4='/home/chrisbacon/src/tracs-enterprise/master/haskell-service/src/Handler/Uploader'
+let g:netrw_dirhist_5='/home/chrisbacon/src/tracs-enterprise/master'
