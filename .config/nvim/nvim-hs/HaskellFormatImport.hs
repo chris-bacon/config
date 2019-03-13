@@ -8,6 +8,7 @@ import HaskellFormatImport.Plugin (haskellFormatImport)
 plugin :: Neovim () NeovimPlugin
 plugin = wrapPlugin Plugin
     { environment = ()
-    , exports     = [ $(command' 'haskellFormatImport) "%" ]
+    , exports     = [ $(command' 'haskellFormatImport) ["%", "sync"] ]
     -- , exports     = [ $(function' 'haskellFormatImport) Sync ]
     }
+
