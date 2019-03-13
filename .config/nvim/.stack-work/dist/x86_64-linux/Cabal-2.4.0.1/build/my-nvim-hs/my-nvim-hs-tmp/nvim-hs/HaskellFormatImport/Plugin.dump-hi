@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-13 16:29:29.688816642 UTC
+2019-03-13 16:31:02.730131544 UTC
 
 interface main:HaskellFormatImport.Plugin 8064
-  interface hash: a753edf9eeb52eb311123329e8a9fdd9
+  interface hash: d3df9913f8481466e877b84aa7af9843
   ABI hash: 11308bb6227ed3b0a1263be6f70d1228
   export-list hash: 909df02aff884addf7edb56dd219a15c
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -104,11 +104,9 @@ family instance modules: base-4.12.0.0:Control.Applicative
                          vector-0.12.0.2:Data.Vector.Storable
                          vector-0.12.0.2:Data.Vector.Unboxed
                          vector-0.12.0.2:Data.Vector.Unboxed.Base
-import  -/  base-4.12.0.0:Control.Monad.IO.Class e96805f9d79f75be66a0d44eb83064c1
 import  -/  base-4.12.0.0:Data.Maybe 9b76a39e833465c3c5b3c078b431417f
 import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
 import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
-import  -/  base-4.12.0.0:System.IO dd4f3cfe73b94b7cae46a4ca98a3f09f
 import  -/  nvim-hs-2.0.0.0:Neovim 167669be48234d69ad1483fe71c0a30e
 import  -/  nvim-hs-2.0.0.0:Neovim.Context.Internal 18ef550ed059bc886ea89ec66dd281a9
 import  -/  nvim-hs-2.0.0.0:Neovim.Plugin.Classes 5f7806180d205a1bc6ed8262ba857416
