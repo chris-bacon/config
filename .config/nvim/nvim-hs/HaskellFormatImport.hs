@@ -7,5 +7,5 @@ import HaskellFormatImport.Plugin (haskellFormatImport)
 plugin :: Neovim () NeovimPlugin
 plugin = wrapPlugin Plugin
     { environment = ()
-    , exports     = [ $(command' 'haskellFormatImport) [CmdSync Sync, (CmdRange WholeFile), (CmdRange WholeFile)] ]
+    , exports     = [ $(command' 'haskellFormatImport) [CmdSync Sync, CmdRange WholeFile] ]
     }
