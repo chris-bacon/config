@@ -9,32 +9,34 @@ import Neovim
 import Neovim.API.String
 
 -- echo HaskellFormatImport(expand('%:p'))
-haskellFormatImport :: String -> Neovim env [String]
-haskellFormatImport n = do
-    fileContent <- liftIO $ T.readFile n
+haskellFormatImport :: String -> Neovim env [T.Text]
+haskellFormatImport path = do
+    fileContent <- liftIO $ T.readFile path
 
-    let splitIntoLInes = T.splitOn "\n" fileContent
-        imports = filter isImportStatement splitIntoLInes
-        hasQualified = any isQualified imports
-        paddedImports = padImports imports hasQualified
+    let splitIntoLInes = T.lines fileContent
+        imports        = filter isImportStatement splitIntoLInes
+        hasQualified   = any isQualified imports
+        paddedImports  = padImports imports hasQualified
     -- let res = formatImport <$> lines a
 
-    return imports
+    T.writeFile path $ T.unlines paddedImports
 
-isImportStatement :: Text -> Bool
+    return paddedImports
+
+isImportStatement :: T.Text -> Bool
 isImportStatement = T.isInfixOf "import"
 
-isQualified :: Text -> Bool
+isQualified :: T.Text -> Bool
 isQualified = T.isInfixOf "qualified"
 
-padImports :: [Text] -> Bool -> [Text]
+padImports :: [T.Text] -> Bool -> [T.Text]
 padImports i False = i
-padImports i True  = fmap addQualifiedIfMissing i
+padImports i True  = fmap padQualifiedIfMissing i
 
-addQualifiedIfMissing :: Text -> Text
-addQualifiedIfMissing s = if isQualified s
+padQualifiedIfMissing :: T.Text -> T.Text
+padQualifiedIfMissing s = if isQualified s
                              then s
-                             else T.replace "import" "import qualified" s
+                             else T.replace "import" "import          " s
 
 -- formatImport :: String -> String
 -- formatImport s = 
