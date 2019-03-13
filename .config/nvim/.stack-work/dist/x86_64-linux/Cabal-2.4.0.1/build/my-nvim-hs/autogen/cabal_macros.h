@@ -55,6 +55,17 @@
   (major1) == 1 && (major2) == 1 && (minor) <= 0)
 #endif /* MIN_VERSION_random */
 
+/* package text-1.2.3.1 */
+#ifndef VERSION_text
+#define VERSION_text "1.2.3.1"
+#endif /* VERSION_text */
+#ifndef MIN_VERSION_text
+#define MIN_VERSION_text(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  2 || \
+  (major1) == 1 && (major2) == 2 && (minor) <= 3)
+#endif /* MIN_VERSION_text */
+
 /* package unliftio-0.2.10 */
 #ifndef VERSION_unliftio
 #define VERSION_unliftio "0.2.10"
@@ -177,7 +188,7 @@
 #endif /* MIN_TOOL_VERSION_strip */
 
 #ifndef CURRENT_COMPONENT_ID
-#define CURRENT_COMPONENT_ID "my-nvim-hs-0.1.0.0-CoOkoRF01ksCiDu0tZQvpX-my-nvim-hs"
+#define CURRENT_COMPONENT_ID "my-nvim-hs-0.1.0.0-GhHWC9sUzV3bi85bnKCZW-my-nvim-hs"
 #endif /* CURRENT_COMPONENT_ID */
 #ifndef CURRENT_PACKAGE_VERSION
 #define CURRENT_PACKAGE_VERSION "0.1.0.0"
