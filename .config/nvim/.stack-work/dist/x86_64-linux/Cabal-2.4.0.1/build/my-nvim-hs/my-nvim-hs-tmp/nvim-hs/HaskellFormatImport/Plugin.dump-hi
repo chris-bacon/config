@@ -1,14 +1,14 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-13 16:57:01.572100721 UTC
+2019-03-13 17:02:27.955346788 UTC
 
 interface main:HaskellFormatImport.Plugin 8064
-  interface hash: fcb332143a63228a02ff5aac95373a9c
-  ABI hash: 1201fd9bf28a77e88d49c67e055ffaa6
+  interface hash: c8fd2d6091af0661eb953eede18a4473
+  ABI hash: e39fdcf3d51fed80fc7ebd093f7c51e3
   export-list hash: 909df02aff884addf7edb56dd219a15c
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: e5fd15702f15e2b7fd2f13ad10fcf15d
-  opt_hash: 6faf2de08de32d19db9870899d88e59a
+  opt_hash: d0a78e7b344f95c7406be35c9b75e196
   hpc_hash: 93b885adfe0da089cdf634904fd59f71
   plugin_hash: ad164012d6b1e14942349d58b1132007
   sig of: Nothing
@@ -104,109 +104,17 @@ family instance modules: base-4.12.0.0:Control.Applicative
                          vector-0.12.0.2:Data.Vector.Storable
                          vector-0.12.0.2:Data.Vector.Unboxed
                          vector-0.12.0.2:Data.Vector.Unboxed.Base
-import  -/  base-4.12.0.0:Control.Monad.IO.Class e96805f9d79f75be66a0d44eb83064c1
 import  -/  base-4.12.0.0:Data.Maybe 9b76a39e833465c3c5b3c078b431417f
 import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
 import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
-import  -/  base-4.12.0.0:System.IO dd4f3cfe73b94b7cae46a4ca98a3f09f
 import  -/  nvim-hs-2.0.0.0:Neovim 167669be48234d69ad1483fe71c0a30e
 import  -/  nvim-hs-2.0.0.0:Neovim.API.String 4474be69165bb942195ccd71d4889400
 import  -/  nvim-hs-2.0.0.0:Neovim.Context.Internal 18ef550ed059bc886ea89ec66dd281a9
-import  -/  nvim-hs-2.0.0.0:Neovim.Plugin.Classes 5f7806180d205a1bc6ed8262ba857416
-9f6e8e0935c6706526c4c0df05aeeec2
+49596a03322d35faba6bdbf5ea102882
   $trModule :: GHC.Types.Module
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.Module
-                   HaskellFormatImport.Plugin.$trModule3
-                   HaskellFormatImport.Plugin.$trModule1) -}
-51df5fa17329e20f4c56d6775ea93e9c
-  $trModule1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$trModule2) -}
-f46027bce452875ca89866e3631856a2
-  $trModule2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("HaskellFormatImport.Plugin"#) -}
-b2c11148c6bdef36ff18af5c9c3f279c
-  $trModule3 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$trModule4) -}
-4824184062f25fc178cbebd522ff61e6
-  $trModule4 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("main"#) -}
-b2914e7bd05a15ab29664f44ae66485a
-  $whaskellFormatImport ::
-    GHC.Maybe.Maybe (GHC.Types.Int, GHC.Types.Int)
-    -> Neovim.Context.Internal.Neovim env GHC.Types.Int
-  {- Arity: 1, Strictness: <L,U>, Inline: [2],
-     Unfolding: (\ @ env
-                   (ww :: GHC.Maybe.Maybe (GHC.Types.Int, GHC.Types.Int)) ->
-                 let {
-                   y :: GHC.Types.Int
-                   = case ww of wild {
-                       GHC.Maybe.Nothing
-                       -> HaskellFormatImport.Plugin.haskellFormatImport1
-                       GHC.Maybe.Just v -> case v of wild1 { (,) x y1 -> y1 } }
-                 } in
-                 let {
-                   eta :: GHC.Base.String
-                   = case ww of wild {
-                       GHC.Maybe.Nothing
-                       -> case GHC.Show.$wshowSignedInt
-                                 0#
-                                 0#
-                                 (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
-                          GHC.Types.: @ GHC.Types.Char ww5 ww6 }
-                       GHC.Maybe.Just v
-                       -> case v of wild1 { (,) x y1 ->
-                          case y1 of ww2 { GHC.Types.I# ww3 ->
-                          case GHC.Show.$wshowSignedInt
-                                 0#
-                                 ww3
-                                 (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
-                          GHC.Types.: @ GHC.Types.Char ww5 ww6 } } } }
-                 } in
-                 (\ (r :: GHC.IORef.IORef
-                            Control.Monad.Trans.Resource.Internal.ReleaseMap)
-                    (eta1 :: Neovim.Context.Internal.Config env)
-                    (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
-                  case (GHC.IO.Handle.Text.hPutStr'
-                          GHC.IO.Handle.FD.stdout
-                          eta
-                          GHC.Types.True)
-                         `cast`
-                       (GHC.Types.N:IO[0] <()>_R)
-                         eta2 of ds1 { (#,#) ipv ipv1 ->
-                  (# ipv, y #) })
-                   `cast`
-                 ((<GHC.IORef.IORef
-                      Control.Monad.Trans.Resource.Internal.ReleaseMap>_R
-                   ->_R (<Neovim.Context.Internal.Config env>_R
-                         ->_R Sym (GHC.Types.N:IO[0]
-                                       <GHC.Types.Int>_R)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
-                                                                      <Neovim.Context.Internal.Config
-                                                                         env>_R
-                                                                      <GHC.Types.IO>_R
-                                                                      <GHC.Types.Int>_N)) ; (Sym (Control.Monad.Trans.Resource.Internal.N:ResourceT[0]
-                                                                                                      <Control.Monad.Trans.Reader.ReaderT
-                                                                                                         (Neovim.Context.Internal.Config
-                                                                                                            env)
-                                                                                                         GHC.Types.IO>_R
-                                                                                                      <GHC.Types.Int>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
-                                                                                                                                    <env>_R) <GHC.Types.Int>_N))) -}
-ba329271d77addd5b7a97be7082a03e1
+0eb9264720e2f43c5058b8d4a204415b
   haskellFormatImport ::
-    Neovim.Plugin.Classes.CommandArguments
-    -> Neovim.Context.Internal.Neovim env GHC.Types.Int
-  {- Arity: 1, Strictness: <S,1*U(A,U,A,A)>, Inline: [2],
-     Unfolding: InlineRule (1, True, False)
-                (\ @ env (w :: Neovim.Plugin.Classes.CommandArguments) ->
-                 case w of ww { Neovim.Plugin.Classes.CommandArguments ww1 ww2 ww3 ww4 ->
-                 HaskellFormatImport.Plugin.$whaskellFormatImport @ env ww2 }) -}
-2bfc14bab5aa4424a0dfafb8e94bf355
-  haskellFormatImport1 :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+    GHC.Types.Int -> Neovim.Context.Internal.Neovim env GHC.Types.Int
 trusted: none
 require own pkg trusted: False
 module header:
