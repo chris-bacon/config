@@ -1,0 +1,15 @@
+Configuring prettyprinter-ansi-terminal-1.1.1.2...
+Preprocessing library for prettyprinter-ansi-terminal-1.1.1.2..
+Building library for prettyprinter-ansi-terminal-1.1.1.2..
+[1 of 2] Compiling Data.Text.Prettyprint.Doc.Render.Terminal.Internal ( src/Data/Text/Prettyprint/Doc/Render/Terminal/Internal.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Text/Prettyprint/Doc/Render/Terminal/Internal.o )
+
+src/Data/Text/Prettyprint/Doc/Render/Terminal/Internal.hs:16:1: warning: [-Wunused-imports]
+    The import of ‘Data.Semigroup’ is redundant
+      except perhaps to import instances from ‘Data.Semigroup’
+    To import instances alone, use: import Data.Semigroup()
+   |
+16 | import           Data.Semigroup
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2 of 2] Compiling Data.Text.Prettyprint.Doc.Render.Terminal ( src/Data/Text/Prettyprint/Doc/Render/Terminal.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Text/Prettyprint/Doc/Render/Terminal.o )
+Installing library in /home/chrisbacon/.stack/snapshots/x86_64-linux/nightly-2019-03-13/8.6.4/lib/x86_64-linux-ghc-8.6.4/prettyprinter-ansi-terminal-1.1.1.2-Hw1ab4l9OHxGA3l6A2SGN1
+Registering library for prettyprinter-ansi-terminal-1.1.1.2..

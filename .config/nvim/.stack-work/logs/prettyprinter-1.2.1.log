@@ -1,0 +1,43 @@
+Configuring prettyprinter-1.2.1...
+Preprocessing library for prettyprinter-1.2.1..
+Building library for prettyprinter-1.2.1..
+[ 1 of 14] Compiling Data.Text.Prettyprint.Doc.Render.Util.Panic ( src/Data/Text/Prettyprint/Doc/Render/Util/Panic.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Text/Prettyprint/Doc/Render/Util/Panic.o )
+[ 2 of 14] Compiling Data.Text.Prettyprint.Doc.Internal ( src/Data/Text/Prettyprint/Doc/Internal.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Text/Prettyprint/Doc/Internal.o )
+[ 3 of 14] Compiling Data.Text.Prettyprint.Doc.Render.String ( src/Data/Text/Prettyprint/Doc/Render/String.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Text/Prettyprint/Doc/Render/String.o )
+[ 4 of 14] Compiling Data.Text.Prettyprint.Doc.Render.ShowS ( src/Data/Text/Prettyprint/Doc/Render/ShowS.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Text/Prettyprint/Doc/Render/ShowS.o )
+[ 5 of 14] Compiling Data.Text.Prettyprint.Doc.Internal.Type ( src/Data/Text/Prettyprint/Doc/Internal/Type.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Text/Prettyprint/Doc/Internal/Type.o )
+[ 6 of 14] Compiling Data.Text.Prettyprint.Doc.Symbols.Ascii ( src/Data/Text/Prettyprint/Doc/Symbols/Ascii.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Text/Prettyprint/Doc/Symbols/Ascii.o )
+[ 7 of 14] Compiling Data.Text.Prettyprint.Doc ( src/Data/Text/Prettyprint/Doc.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Text/Prettyprint/Doc.o )
+
+src/Data/Text/Prettyprint/Doc.hs:290:1: warning: [-Wunused-imports]
+    The import of ‘Data.Semigroup’ is redundant
+      except perhaps to import instances from ‘Data.Semigroup’
+    To import instances alone, use: import Data.Semigroup()
+    |
+290 | import Data.Semigroup
+    | ^^^^^^^^^^^^^^^^^^^^^
+[ 8 of 14] Compiling Data.Text.Prettyprint.Doc.Render.Util.StackMachine ( src/Data/Text/Prettyprint/Doc/Render/Util/StackMachine.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Text/Prettyprint/Doc/Render/Util/StackMachine.o )
+
+src/Data/Text/Prettyprint/Doc/Render/Util/StackMachine.hs:37:1: warning: [-Wunused-imports]
+    The import of ‘Data.Monoid’ is redundant
+      except perhaps to import instances from ‘Data.Monoid’
+    To import instances alone, use: import Data.Monoid()
+   |
+37 | import           Data.Monoid
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[ 9 of 14] Compiling Data.Text.Prettyprint.Doc.Render.Util.SimpleDocTree ( src/Data/Text/Prettyprint/Doc/Render/Util/SimpleDocTree.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Text/Prettyprint/Doc/Render/Util/SimpleDocTree.o )
+[10 of 14] Compiling Data.Text.Prettyprint.Doc.Render.Tutorials.TreeRenderingTutorial ( src/Data/Text/Prettyprint/Doc/Render/Tutorials/TreeRenderingTutorial.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Text/Prettyprint/Doc/Render/Tutorials/TreeRenderingTutorial.o )
+
+src/Data/Text/Prettyprint/Doc/Render/Tutorials/TreeRenderingTutorial.hs:23:1: warning: [-Wunused-imports]
+    The import of ‘Data.Semigroup’ is redundant
+      except perhaps to import instances from ‘Data.Semigroup’
+    To import instances alone, use: import Data.Semigroup()
+   |
+23 | import           Data.Semigroup
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[11 of 14] Compiling Data.Text.Prettyprint.Doc.Render.Tutorials.StackMachineTutorial ( src/Data/Text/Prettyprint/Doc/Render/Tutorials/StackMachineTutorial.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Text/Prettyprint/Doc/Render/Tutorials/StackMachineTutorial.o )
+[12 of 14] Compiling Data.Text.Prettyprint.Doc.Render.Text ( src/Data/Text/Prettyprint/Doc/Render/Text.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Text/Prettyprint/Doc/Render/Text.o )
+[13 of 14] Compiling Data.Text.Prettyprint.Doc.Symbols.Unicode ( src/Data/Text/Prettyprint/Doc/Symbols/Unicode.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Text/Prettyprint/Doc/Symbols/Unicode.o )
+[14 of 14] Compiling Data.Text.Prettyprint.Doc.Util ( src/Data/Text/Prettyprint/Doc/Util.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Data/Text/Prettyprint/Doc/Util.o )
+Installing library in /home/chrisbacon/.stack/snapshots/x86_64-linux/nightly-2019-03-13/8.6.4/lib/x86_64-linux-ghc-8.6.4/prettyprinter-1.2.1-3kbdQi0XdcE7bob9XtSJeT
+Registering library for prettyprinter-1.2.1..

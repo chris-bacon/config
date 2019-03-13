@@ -1,0 +1,111 @@
+Configuring hslogger-1.2.12...
+Preprocessing library for hslogger-1.2.12..
+Building library for hslogger-1.2.12..
+[1 of 8] Compiling System.Log       ( src/System/Log.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/System/Log.o )
+[2 of 8] Compiling System.Log.Formatter ( src/System/Log/Formatter.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/System/Log/Formatter.o )
+[3 of 8] Compiling System.Log.Handler ( src/System/Log/Handler.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/System/Log/Handler.o )
+[4 of 8] Compiling System.Log.Handler.Growl ( src/System/Log/Handler/Growl.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/System/Log/Handler/Growl.o )
+
+src/System/Log/Handler/Growl.hs:21:1: warning: [-Wdeprecations]
+    Module ‘Network.BSD’ is deprecated:
+      This platform dependent module is no longer supported.
+   |
+21 | import Network.BSD
+   | ^^^^^^^^^^^^^^^^^^
+
+src/System/Log/Handler/Growl.hs:47:59: warning: [-Wdeprecations]
+    In the use of ‘sClose’ (imported from Network.Socket):
+    Deprecated: "use 'close'"
+   |
+47 |                in  mapM_ (sendNote s pkt) (targets gh) >> sClose s
+   |                                                           ^^^^^^
+
+src/System/Log/Handler/Growl.hs:50:21: warning: [-Wdeprecations]
+    In the use of ‘sendTo’ (imported from Network.Socket):
+    Deprecated: "Use sendTo defined in "Network.Socket.ByteString""
+   |
+50 | sendNote s pkt ha = sendTo s pkt (SockAddrInet 9887 ha)
+   |                     ^^^^^^
+
+src/System/Log/Handler/Growl.hs:106:30: warning: [-Wdeprecations]
+    In the use of ‘getHostByName’ (imported from Network.BSD):
+    Deprecated: "This platform dependent module is no longer supported."
+    |
+106 | addTarget hn gh = do { he <- getHostByName hn
+    |                              ^^^^^^^^^^^^^
+
+src/System/Log/Handler/Growl.hs:107:33: warning: [-Wdeprecations]
+    In the use of ‘hostAddress’ (imported from Network.BSD):
+    Deprecated: "This platform dependent module is no longer supported."
+    |
+107 |                      ; let ha = hostAddress he
+    |                                 ^^^^^^^^^^^
+
+src/System/Log/Handler/Growl.hs:109:32: warning: [-Wdeprecations]
+    In the use of ‘sendTo’ (imported from Network.Socket):
+    Deprecated: "Use sendTo defined in "Network.Socket.ByteString""
+    |
+109 |                        in do { sendTo (skt gh) (buildRegistration gh) sa
+    |                                ^^^^^^
+[5 of 8] Compiling System.Log.Handler.Simple ( src/System/Log/Handler/Simple.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/System/Log/Handler/Simple.o )
+[6 of 8] Compiling System.Log.Handler.Log4jXML ( src/System/Log/Handler/Log4jXML.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/System/Log/Handler/Log4jXML.o )
+[7 of 8] Compiling System.Log.Handler.Syslog ( src/System/Log/Handler/Syslog.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/System/Log/Handler/Syslog.o )
+
+src/System/Log/Handler/Syslog.hs:52:1: warning: [-Wdeprecations]
+    Module ‘Network.BSD’ is deprecated:
+      This platform dependent module is no longer supported.
+   |
+52 | import Network.BSD
+   | ^^^^^^^^^^^^^^^^^^
+
+src/System/Log/Handler/Syslog.hs:198:16: warning: [-Wdeprecations]
+    In the use of ‘sClose’ (imported from Network.Socket):
+    Deprecated: "use 'close'"
+    |
+198 |             do S.sClose s -- close Stream variant
+    |                ^^^^^^^^
+
+src/System/Log/Handler/Syslog.hs:214:11: warning: [-Wdeprecations]
+    In the use of ‘getHostByName’ (imported from Network.BSD):
+    Deprecated: "This platform dependent module is no longer supported."
+    |
+214 |     he <- getHostByName hostname
+    |           ^^^^^^^^^^^^^
+
+src/System/Log/Handler/Syslog.hs:216:41: warning: [-Wdeprecations]
+    In the use of ‘hostAddresses’ (imported from Network.BSD):
+    Deprecated: "This platform dependent module is no longer supported."
+    |
+216 |     let addr = SockAddrInet port (head (hostAddresses he))
+    |                                         ^^^^^^^^^^^^^
+
+src/System/Log/Handler/Syslog.hs:260:33: warning: [-Wdeprecations]
+    In the use of ‘sendTo’ (imported from Network.Socket):
+    Deprecated: "Use sendTo defined in "Network.Socket.ByteString""
+    |
+260 |                     Datagram -> sendTo (logsocket sh) omsg (address sh)
+    |                                 ^^^^^^
+
+src/System/Log/Handler/Syslog.hs:261:33: warning: [-Wdeprecations]
+    In the use of ‘send’ (imported from Network.Socket):
+    Deprecated: "Use send defined in "Network.Socket.ByteString""
+    |
+261 |                     Stream   -> send   (logsocket sh) omsg
+    |                                 ^^^^
+
+src/System/Log/Handler/Syslog.hs:278:16: warning: [-Wdeprecations]
+    In the use of ‘sClose’ (imported from Network.Socket):
+    Deprecated: "use 'close'"
+    |
+278 |     close sh = sClose (logsocket sh)
+    |                ^^^^^^
+[8 of 8] Compiling System.Log.Logger ( src/System/Log/Logger.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/System/Log/Logger.o )
+
+src/System/Log/Logger.hs:201:1: warning: [-Wdeprecations]
+    Module ‘Control.Monad.Error’ is deprecated:
+      Use "Control.Monad.Except" instead
+    |
+201 | import Control.Monad.Error
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Installing library in /home/chrisbacon/.stack/snapshots/x86_64-linux/nightly-2019-03-13/8.6.4/lib/x86_64-linux-ghc-8.6.4/hslogger-1.2.12-JqAhlxsKC9P6h5Ib94CA8V
+Registering library for hslogger-1.2.12..
