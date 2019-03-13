@@ -28,4 +28,5 @@ executable my-nvim-hs
                      -- The dependencies below are only needed for the example plugin
                      , random
                      , unliftio
+                     , bytestring
   default-language:    Haskell2010

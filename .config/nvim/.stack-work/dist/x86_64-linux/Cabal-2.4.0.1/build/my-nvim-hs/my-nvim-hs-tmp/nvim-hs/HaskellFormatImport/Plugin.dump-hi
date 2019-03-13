@@ -1,14 +1,14 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-13 09:20:25.668245842 UTC
+2019-03-13 15:42:30.491226216 UTC
 
 interface main:HaskellFormatImport.Plugin 8064
-  interface hash: 8ea9920c1f1a1147fb6e8606dc0ab146
-  ABI hash: 7dda7eca256e462136c8c7fac30b83c0
+  interface hash: 196c969a7f1dc509fa4c5ec966164e21
+  ABI hash: 75db90c8ccab847012c8481a19f73b12
   export-list hash: 909df02aff884addf7edb56dd219a15c
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
-  flag hash: ce42fda95c7149c77b28e8802464797c
-  opt_hash: 6faf2de08de32d19db9870899d88e59a
+  flag hash: e5fd15702f15e2b7fd2f13ad10fcf15d
+  opt_hash: d0a78e7b344f95c7406be35c9b75e196
   hpc_hash: 93b885adfe0da089cdf634904fd59f71
   plugin_hash: ad164012d6b1e14942349d58b1132007
   sig of: Nothing
@@ -40,21 +40,21 @@ package dependencies: ansi-terminal-0.9 ansi-wl-pprint-0.6.8.2
                       utf8-string-1.0.1.1 vector-0.12.0.2 vector-algorithms-0.8.0.1
 orphans: network-2.8.0.0:Network.Socket
          vector-0.12.0.2:Data.Vector.Unboxed
-         vector-0.12.0.2:Data.Vector.Fusion.Bundle
+         hashable-1.2.7.0:Data.Hashable.Generic colour-2.3.4:Data.Colour
          data-default-instances-containers-0.0.1:Data.Default.Instances.Containers
          data-default-instances-dlist-0.0.1:Data.Default.Instances.DList
          data-default-instances-old-locale-0.0.1:Data.Default.Instances.OldLocale
-         hashable-1.2.7.0:Data.Hashable.Generic
-         stm-2.5.0.0:Control.Monad.STM time-1.8.0.2:Data.Time.Format.Parse
+         time-1.8.0.2:Data.Time.Format.Parse
          time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
          time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
          time-1.8.0.2:Data.Time.Calendar.Gregorian
-         transformers-0.5.6.2:Control.Monad.Trans.Error
-         colour-2.3.4:Data.Colour text-1.2.3.1:Data.Text.Lazy
+         stm-2.5.0.0:Control.Monad.STM text-1.2.3.1:Data.Text.Lazy
          text-1.2.3.1:Data.Text binary-0.8.6.0:Data.Binary.Generic
          bytestring-0.10.8.2:Data.ByteString.Builder
-         text-1.2.3.1:Data.Text.Show base-4.12.0.0:GHC.Float
-         base-4.12.0.0:GHC.Base
+         text-1.2.3.1:Data.Text.Show
+         vector-0.12.0.2:Data.Vector.Fusion.Bundle
+         transformers-0.5.6.2:Control.Monad.Trans.Error
+         base-4.12.0.0:GHC.Float base-4.12.0.0:GHC.Base
 family instance modules: base-4.12.0.0:Control.Applicative
                          base-4.12.0.0:Data.Complex base-4.12.0.0:Data.Functor.Compose
                          base-4.12.0.0:Data.Functor.Const
@@ -104,76 +104,20 @@ family instance modules: base-4.12.0.0:Control.Applicative
                          vector-0.12.0.2:Data.Vector.Storable
                          vector-0.12.0.2:Data.Vector.Unboxed
                          vector-0.12.0.2:Data.Vector.Unboxed.Base
+import  -/  base-4.12.0.0:Control.Monad.IO.Class e96805f9d79f75be66a0d44eb83064c1
 import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
+import  -/  base-4.12.0.0:GHC.Show 838a5d039379d82d9626aae53dfce276
 import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
+import  -/  base-4.12.0.0:System.IO dd4f3cfe73b94b7cae46a4ca98a3f09f
+import  -/  bytestring-0.10.8.2:Data.ByteString.Internal 683aa411bdda2a5edf57420fb682b121
 import  -/  nvim-hs-2.0.0.0:Neovim 167669be48234d69ad1483fe71c0a30e
+import  -/  nvim-hs-2.0.0.0:Neovim.API.String 4474be69165bb942195ccd71d4889400
 import  -/  nvim-hs-2.0.0.0:Neovim.Context.Internal 18ef550ed059bc886ea89ec66dd281a9
-9f6e8e0935c6706526c4c0df05aeeec2
+49596a03322d35faba6bdbf5ea102882
   $trModule :: GHC.Types.Module
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.Module
-                   HaskellFormatImport.Plugin.$trModule3
-                   HaskellFormatImport.Plugin.$trModule1) -}
-51df5fa17329e20f4c56d6775ea93e9c
-  $trModule1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$trModule2) -}
-f46027bce452875ca89866e3631856a2
-  $trModule2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("HaskellFormatImport.Plugin"#) -}
-b2c11148c6bdef36ff18af5c9c3f279c
-  $trModule3 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$trModule4) -}
-4824184062f25fc178cbebd522ff61e6
-  $trModule4 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("main"#) -}
-343a89759ed0ca0c1944588b78ce3de3
+7f932a6c5cca76a8a0fb599a344ba27b
   haskellFormatImport ::
     Neovim.Context.Internal.Neovim env GHC.Base.String
-  {- Arity: 3, Strictness: <L,A><L,A><S,U>,
-     Unfolding: InlineRule (0, True, True)
-                HaskellFormatImport.Plugin.haskellFormatImport1
-                  `cast`
-                (forall (env :: <*>_N).
-                 (<GHC.IORef.IORef
-                     Control.Monad.Trans.Resource.Internal.ReleaseMap>_R
-                  ->_R (<Neovim.Context.Internal.Config env>_R
-                        ->_R Sym (GHC.Types.N:IO[0]
-                                      <[GHC.Types.Char]>_R)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
-                                                                        <Neovim.Context.Internal.Config
-                                                                           env>_R
-                                                                        <GHC.Types.IO>_R
-                                                                        <[GHC.Types.Char]>_N)) ; (Sym (Control.Monad.Trans.Resource.Internal.N:ResourceT[0]
-                                                                                                           <Control.Monad.Trans.Reader.ReaderT
-                                                                                                              (Neovim.Context.Internal.Config
-                                                                                                                 env)
-                                                                                                              GHC.Types.IO>_R
-                                                                                                           <[GHC.Types.Char]>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
-                                                                                                                                            <env>_R) <[GHC.Types.Char]>_N)) -}
-0017fc29ac0b7c644f2e0281f4084e24
-  haskellFormatImport1 ::
-    GHC.IORef.IORef Control.Monad.Trans.Resource.Internal.ReleaseMap
-    -> Neovim.Context.Internal.Config env
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, [GHC.Types.Char] #)
-  {- Arity: 3, Strictness: <L,A><L,A><S,U>,
-     Unfolding: InlineRule (3, True, True)
-                (\ @ env
-                   (eta1 :: GHC.IORef.IORef
-                              Control.Monad.Trans.Resource.Internal.ReleaseMap)
-                   (eta2 :: Neovim.Context.Internal.Config env)
-                   (eta3 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
-                 (# eta3, HaskellFormatImport.Plugin.haskellFormatImport_eta #)) -}
-6406e02e95e66f4c62d3e765c4438f53
-  haskellFormatImport2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("bob"#) -}
-f084754c25902d56baa64fe6c620376a
-  haskellFormatImport_eta :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   HaskellFormatImport.Plugin.haskellFormatImport2) -}
 trusted: none
 require own pkg trusted: False
 module header:
