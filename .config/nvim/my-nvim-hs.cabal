@@ -20,6 +20,9 @@ executable my-nvim-hs
   other-modules:       Neovim.Example.Plugin
                      , Neovim.Example.Plugin.Fibonacci
                      , Neovim.Example.Plugin.Random
+                     , HaskellFormatImport.Plugin
+                     , HaskellFormatImport.Plugin
+                     , HaskellFormatImport
   build-depends:       base >= 4.7 && < 5
                      , nvim-hs >= 2 && < 3
                      -- The dependencies below are only needed for the example plugin
