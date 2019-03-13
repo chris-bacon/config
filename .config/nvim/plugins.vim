@@ -42,6 +42,7 @@ Plug 'JonnyRa/vim-himposter'
 Plug 'neovimhaskell/nvim-hs.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'mhinz/vim-grepper'
+Plug 'Shougo/deoplete.nvim'
 
 let g:stackThoseErrorsCreateMappings = 1 
 
