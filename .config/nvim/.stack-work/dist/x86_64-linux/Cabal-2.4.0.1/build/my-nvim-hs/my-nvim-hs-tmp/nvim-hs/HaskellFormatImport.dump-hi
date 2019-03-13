@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-13 15:42:30.618681706 UTC
+2019-03-13 16:21:59.495174281 UTC
 
 interface main:HaskellFormatImport 8064
-  interface hash: ad5f7c9e68e0421014ea594d4e965ae1
+  interface hash: eebd00151fe4a44f9ba09e71037280f3
   ABI hash: a56781d3824403e2d392c37b1f7db930
   export-list hash: 033bf070dd086c3f5a8bd90fff28fe29
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -40,21 +40,21 @@ package dependencies: ansi-terminal-0.9 ansi-wl-pprint-0.6.8.2
                       utf8-string-1.0.1.1 vector-0.12.0.2 vector-algorithms-0.8.0.1
 orphans: network-2.8.0.0:Network.Socket
          vector-0.12.0.2:Data.Vector.Unboxed
-         hashable-1.2.7.0:Data.Hashable.Generic colour-2.3.4:Data.Colour
+         vector-0.12.0.2:Data.Vector.Fusion.Bundle
          data-default-instances-containers-0.0.1:Data.Default.Instances.Containers
          data-default-instances-dlist-0.0.1:Data.Default.Instances.DList
          data-default-instances-old-locale-0.0.1:Data.Default.Instances.OldLocale
-         time-1.8.0.2:Data.Time.Format.Parse
+         hashable-1.2.7.0:Data.Hashable.Generic
+         stm-2.5.0.0:Control.Monad.STM time-1.8.0.2:Data.Time.Format.Parse
          time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
          time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
          time-1.8.0.2:Data.Time.Calendar.Gregorian
-         stm-2.5.0.0:Control.Monad.STM text-1.2.3.1:Data.Text.Lazy
+         transformers-0.5.6.2:Control.Monad.Trans.Error
+         colour-2.3.4:Data.Colour text-1.2.3.1:Data.Text.Lazy
          text-1.2.3.1:Data.Text binary-0.8.6.0:Data.Binary.Generic
          bytestring-0.10.8.2:Data.ByteString.Builder
-         text-1.2.3.1:Data.Text.Show
-         vector-0.12.0.2:Data.Vector.Fusion.Bundle
-         transformers-0.5.6.2:Control.Monad.Trans.Error
-         base-4.12.0.0:GHC.Float base-4.12.0.0:GHC.Base
+         text-1.2.3.1:Data.Text.Show base-4.12.0.0:GHC.Float
+         base-4.12.0.0:GHC.Base
 family instance modules: base-4.12.0.0:Control.Applicative
                          base-4.12.0.0:Data.Complex base-4.12.0.0:Data.Functor.Compose
                          base-4.12.0.0:Data.Functor.Const
@@ -109,9 +109,9 @@ import  -/  base-4.12.0.0:Data.Functor 069b2025a03e32fd228e74a86a58a075
 import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
 import  -/  base-4.12.0.0:GHC.Exception 241d5c93d2929e130965d588cd89f59e
 import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
-import  -/  HaskellFormatImport.Plugin 75db90c8ccab847012c8481a19f73b12
+import  -/  HaskellFormatImport.Plugin b449fd5e9fe5038db4d0f7611c3b9067
   exports: 909df02aff884addf7edb56dd219a15c
-  haskellFormatImport 7f932a6c5cca76a8a0fb599a344ba27b
+  haskellFormatImport 488334a8919016ca3872dc5cf51b437a
 import  -/  nvim-hs-2.0.0.0:Neovim 167669be48234d69ad1483fe71c0a30e
 import  -/  nvim-hs-2.0.0.0:Neovim.API.TH 5c692f4e109dd3ed6c1c2dd0dd6d0789
 import  -/  nvim-hs-2.0.0.0:Neovim.Classes af89bdb97e589d25d0744c97548b2668
