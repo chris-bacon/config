@@ -7,7 +7,7 @@ import Neovim
 import Neovim.API.String
 
 -- echo HaskellFormatImport(expand('%:p'))
-haskellFormatImport :: String -> Neovim env String
+haskellFormatImport :: String -> Neovim env [String]
 haskellFormatImport n = do
     fileContent <- liftIO $ readFile n
 
@@ -16,7 +16,7 @@ haskellFormatImport n = do
 
     -- let res = formatImport <$> lines a
 
-    return res
+    return imports
 
 isImportStatement :: String -> Bool
 isImportStatement = isInfixOf "import"

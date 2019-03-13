@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-13 21:29:18.942664253 UTC
+2019-03-13 21:40:17.498209705 UTC
 
 interface main:HaskellFormatImport.Plugin 8064
-  interface hash: 68b3ff2ea668064745c3ce5f7fbb1e14
-  ABI hash: cdcb3f0adfe79e9d8d1fed4e40128989
+  interface hash: a000c3de34e7c911a3e63a617d64c571
+  ABI hash: 380a270065aa4de87b85dc6acee8560f
   export-list hash: 909df02aff884addf7edb56dd219a15c
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: e5fd15702f15e2b7fd2f13ad10fcf15d
@@ -105,8 +105,11 @@ family instance modules: base-4.12.0.0:Control.Applicative
                          vector-0.12.0.2:Data.Vector.Unboxed
                          vector-0.12.0.2:Data.Vector.Unboxed.Base
 import  -/  base-4.12.0.0:Control.Monad.IO.Class e96805f9d79f75be66a0d44eb83064c1
+import  -/  base-4.12.0.0:Data.List 17d0c71c557e42abe196f130788fd997
 import  -/  base-4.12.0.0:Data.Maybe 9b76a39e833465c3c5b3c078b431417f
+import  -/  base-4.12.0.0:Data.OldList e931cf456dc87f11ee6e6fb153bca23e
 import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
+import  -/  base-4.12.0.0:GHC.List 4014a3c8a3b7c31c8325f6bcf1feea4a
 import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
 import  -/  base-4.12.0.0:System.IO dd4f3cfe73b94b7cae46a4ca98a3f09f
 import  -/  nvim-hs-2.0.0.0:Neovim 167669be48234d69ad1483fe71c0a30e
@@ -134,10 +137,31 @@ b2c11148c6bdef36ff18af5c9c3f279c
 4824184062f25fc178cbebd522ff61e6
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-47129df806f20bc7e29c14f7fe9c25ef
+73a82e397b323f0e8d69a72d1b2f2f1e
+  $whaskellFormatImport ::
+    GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, [GHC.Base.String] #)
+  {- Arity: 2, Strictness: <L,U><S,U>, Inline: [2],
+     Unfolding: (\ @ env
+                   (w :: GHC.Base.String)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case GHC.IO.Handle.FD.openFile1
+                        w
+                        GHC.IO.IOMode.ReadMode
+                        w1 of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 (# ipv2,
+                    GHC.List.filter
+                      @ [GHC.Types.Char]
+                      HaskellFormatImport.Plugin.isImportStatement
+                      (Data.OldList.lines ipv3) #) } }) -}
+d1e7d530cc451512d7d5aee7f838f125
   haskellFormatImport ::
     GHC.Base.String
-    -> Neovim.Context.Internal.Neovim env GHC.Base.String
+    -> Neovim.Context.Internal.Neovim env [GHC.Base.String]
   {- Arity: 4, Strictness: <L,U><L,A><L,A><S,U>,
      Unfolding: InlineRule (0, True, True)
                 HaskellFormatImport.Plugin.haskellFormatImport1
@@ -148,33 +172,42 @@ b2c11148c6bdef36ff18af5c9c3f279c
                           Control.Monad.Trans.Resource.Internal.ReleaseMap>_R
                        ->_R (<Neovim.Context.Internal.Config env>_R
                              ->_R Sym (GHC.Types.N:IO[0]
-                                           <GHC.Base.String>_R)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
-                                                                            <Neovim.Context.Internal.Config
-                                                                               env>_R
-                                                                            <GHC.Types.IO>_R
-                                                                            <GHC.Base.String>_N)) ; (Sym (Control.Monad.Trans.Resource.Internal.N:ResourceT[0]
-                                                                                                              <Control.Monad.Trans.Reader.ReaderT
-                                                                                                                 (Neovim.Context.Internal.Config
-                                                                                                                    env)
-                                                                                                                 GHC.Types.IO>_R
-                                                                                                              <GHC.Base.String>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
-                                                                                                                                              <env>_R) <GHC.Base.String>_N)) -}
-21e8dfd45afebcada233d016ca31e786
+                                           <[GHC.Base.String]>_R)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                              <Neovim.Context.Internal.Config
+                                                                                 env>_R
+                                                                              <GHC.Types.IO>_R
+                                                                              <[GHC.Base.String]>_N)) ; (Sym (Control.Monad.Trans.Resource.Internal.N:ResourceT[0]
+                                                                                                                  <Control.Monad.Trans.Reader.ReaderT
+                                                                                                                     (Neovim.Context.Internal.Config
+                                                                                                                        env)
+                                                                                                                     GHC.Types.IO>_R
+                                                                                                                  <[GHC.Base.String]>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
+                                                                                                                                                    <env>_R) <[GHC.Base.String]>_N)) -}
+20ab403b65a40a8de1686a5d1a09e19e
   haskellFormatImport1 ::
     GHC.Base.String
     -> GHC.IORef.IORef Control.Monad.Trans.Resource.Internal.ReleaseMap
     -> Neovim.Context.Internal.Config env
     -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Base.String #)
-  {- Arity: 4, Strictness: <L,U><L,A><L,A><S,U>,
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, [GHC.Base.String] #)
+  {- Arity: 4, Strictness: <L,U><L,A><L,A><S,U>, Inline: [2],
      Unfolding: InlineRule (4, True, True)
                 (\ @ env
-                   (n :: GHC.Base.String)
-                   (eta :: GHC.IORef.IORef
-                             Control.Monad.Trans.Resource.Internal.ReleaseMap)
-                   (eta1 :: Neovim.Context.Internal.Config env)
-                   (eta2 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
-                 System.IO.readFile1 n eta2) -}
+                   (w :: GHC.Base.String)
+                   (w1 :: GHC.IORef.IORef
+                            Control.Monad.Trans.Resource.Internal.ReleaseMap)
+                   (w2 :: Neovim.Context.Internal.Config env)
+                   (w3 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 HaskellFormatImport.Plugin.$whaskellFormatImport @ env w w3) -}
+a6390e1eab4d21b557fe906c13dba21f
+  haskellFormatImport_tailsGo :: [GHC.Types.Char] -> GHC.Types.Bool
+  {- Arity: 1, Strictness: <L,U> -}
+e2a8e9220ac7f4a38ba5f353e0a38bc5
+  isImportStatement :: GHC.Base.String -> GHC.Types.Bool
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, True)
+                (\ (haystack :: [GHC.Types.Char]) ->
+                 HaskellFormatImport.Plugin.haskellFormatImport_tailsGo haystack) -}
 trusted: none
 require own pkg trusted: False
 module header:
