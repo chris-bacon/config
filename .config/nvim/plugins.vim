@@ -41,6 +41,7 @@ Plug 'JonnyRa/vim-stackThoseErrorsOfHs', { 'do': './install' }
 Plug 'JonnyRa/vim-himposter'
 Plug 'neovimhaskell/nvim-hs.vim'
 Plug 'jremmen/vim-ripgrep'
+Plug 'mhinz/vim-grepper'
 
 let g:stackThoseErrorsCreateMappings = 1 
 

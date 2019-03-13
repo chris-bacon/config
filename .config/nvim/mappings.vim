@@ -32,9 +32,11 @@ vnoremap <leader>-   :AlignOnDash<cr>
 vnoremap <leader>:   :AlignOnColon<cr>
 " Copy vscode's CMD-D
 " Use with # or * in N-mode to change all occurances of a word
-nnoremap <leader>d :%s///g
+nnoremap <leader>d 
+  \ :%s///g
+  \ <Left><Left><Left>
 vnoremap <C-c> "+y
 nnoremap <leader><cr> :ClearSearch<cr>
 
 
-g:himporterCreateMappings = 1
+"g:himporterCreateMappings = 1
