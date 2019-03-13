@@ -38,5 +38,19 @@ nnoremap <leader>d
 vnoremap <C-c> "+y
 nnoremap <leader><cr> :ClearSearch<cr>
 
+let g:grepper = {}
+let g:grepper.tools = ["rg"]
+xmap gr <plug>(GrepperOperator)
+
+nnoremap <leader>S
+  \ :let @s='\<'.expand('<cword>').'\>'<CR>
+  \ :Grepper -cword -noprompt<CR>
+  \ :cfdo %s/<C-r>s// \| update
+  \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
+xmap \S
+  \ "sy
+  \ gvgr
+  \ :cfdo %s/<C-r>s// \| update
+  \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
 "g:himporterCreateMappings = 1
