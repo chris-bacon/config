@@ -1,14 +1,14 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-13 21:29:19.149468778 UTC
+2019-03-13 21:40:03.62597165 UTC
 
 interface main:Neovim.Example.Plugin.Fibonacci 8064
-  interface hash: 12b2847d5c06ca95625121973c303943
-  ABI hash: f857f5c5ada6bde4e5552db641c4d2e3
+  interface hash: e872dddff2494ab3f2ac59cfa8813dc8
+  ABI hash: cd8657b2e6c1f8441c36904f50ba72a4
   export-list hash: ca0d989949c1e7e8c5cea49f2be31181
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: eb16302ca811f2f2cd1c13d445c0cd8c
-  opt_hash: 6faf2de08de32d19db9870899d88e59a
+  opt_hash: d0a78e7b344f95c7406be35c9b75e196
   hpc_hash: 93b885adfe0da089cdf634904fd59f71
   plugin_hash: ad164012d6b1e14942349d58b1132007
   sig of: Nothing
@@ -112,95 +112,11 @@ import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
 import  -/  integer-gmp-1.0.2.0:GHC.Integer.Type 6d87087aea24143d2650f78480d954a3
 import  -/  nvim-hs-2.0.0.0:Neovim 167669be48234d69ad1483fe71c0a30e
 import  -/  nvim-hs-2.0.0.0:Neovim.Context.Internal 18ef550ed059bc886ea89ec66dd281a9
-d8a7f51d5f7f39dc448d2e0ac1ec94ce
+243d2ad9c9a19688efd10397635a538b
   $trModule :: GHC.Types.Module
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.Module
-                   Neovim.Example.Plugin.Fibonacci.$trModule3
-                   Neovim.Example.Plugin.Fibonacci.$trModule1) -}
-6381d8a066bc9cee8d5f48bf15e6f167
-  $trModule1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   Neovim.Example.Plugin.Fibonacci.$trModule2) -}
-1026f032b16e917bef8a662e0663e5d8
-  $trModule2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("Neovim.Example.Plugin.Fibonacci"#) -}
-572b35be745dbbaaad3d4eb63f2356d8
-  $trModule3 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   Neovim.Example.Plugin.Fibonacci.$trModule4) -}
-54bd7f29e40a84e81b769f8d46ec5e55
-  $trModule4 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("main"#) -}
-ea25ee720dc1f174ed692685367ede50
+43e879557dc168420c17cbacaaade52d
   fibonacci ::
     GHC.Types.Int -> Neovim.Context.Internal.Neovim env GHC.Base.String
-  {- Arity: 1, Strictness: <L,1*U(U)>,
-     Unfolding: (\ @ env (n :: GHC.Types.Int) ->
-                 let {
-                   eta :: GHC.Base.String
-                   = case n of ww { GHC.Types.I# ww1 ->
-                     case GHC.Show.$w$cshowsPrec4
-                            0#
-                            (GHC.List.$w!!
-                               @ GHC.Integer.Type.Integer
-                               Neovim.Example.Plugin.Fibonacci.fibonacciNumbers
-                               ww1)
-                            (GHC.Types.[] @ GHC.Types.Char) of ww2 { (#,#) ww3 ww4 ->
-                     GHC.Types.: @ GHC.Types.Char ww3 ww4 } }
-                 } in
-                 (\ (eta1 :: GHC.IORef.IORef
-                               Control.Monad.Trans.Resource.Internal.ReleaseMap)
-                    (eta2 :: Neovim.Context.Internal.Config env)
-                    (eta3 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
-                  (# eta3, eta #))
-                   `cast`
-                 ((<GHC.IORef.IORef
-                      Control.Monad.Trans.Resource.Internal.ReleaseMap>_R
-                   ->_R (<Neovim.Context.Internal.Config env>_R
-                         ->_R Sym (GHC.Types.N:IO[0]
-                                       <GHC.Base.String>_R)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
-                                                                        <Neovim.Context.Internal.Config
-                                                                           env>_R
-                                                                        <GHC.Types.IO>_R
-                                                                        <GHC.Base.String>_N)) ; (Sym (Control.Monad.Trans.Resource.Internal.N:ResourceT[0]
-                                                                                                          <Control.Monad.Trans.Reader.ReaderT
-                                                                                                             (Neovim.Context.Internal.Config
-                                                                                                                env)
-                                                                                                             GHC.Types.IO>_R
-                                                                                                          <GHC.Base.String>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
-                                                                                                                                          <env>_R) <GHC.Base.String>_N))) -}
-3c6c15ea5688ef41a5dc9800b12e2266
-  fibonacci1 :: [GHC.Integer.Type.Integer]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ GHC.Integer.Type.Integer
-                   Neovim.Example.Plugin.Fibonacci.fibonacci3
-                   Neovim.Example.Plugin.Fibonacci.fibonacci2) -}
-526abf463ac8f82560326bfc6ca2e6cf
-  fibonacci2 :: [GHC.Integer.Type.Integer]
-2396688e897d0a8410099d44ffd77b02
-  fibonacci3 :: GHC.Integer.Type.Integer
-  {- HasNoCafRefs, Unfolding: (1) -}
-4a87b294a80a07a5d74c311f7b55766b
-  fibonacci4 :: GHC.Integer.Type.Integer
-  {- HasNoCafRefs, Unfolding: (0) -}
-70ebcd86f41a6a47530118b6e7fb8c5a
-  fibonacciNumbers :: [GHC.Integer.Type.Integer]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ GHC.Integer.Type.Integer
-                   Neovim.Example.Plugin.Fibonacci.fibonacci4
-                   Neovim.Example.Plugin.Fibonacci.fibonacci_fibs) -}
-6ad28f894060504b62f89c56906574d8
-  fibonacci_fibs :: [GHC.Integer.Type.Integer]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ GHC.Integer.Type.Integer
-                   Neovim.Example.Plugin.Fibonacci.fibonacci3
-                   Neovim.Example.Plugin.Fibonacci.fibonacci1) -}
 trusted: none
 require own pkg trusted: False
 module header:
