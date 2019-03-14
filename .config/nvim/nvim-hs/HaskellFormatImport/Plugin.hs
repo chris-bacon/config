@@ -8,6 +8,9 @@ import Data.Maybe
 import Neovim
 import Neovim.API.String
 
+qualifiedPadLength :: Int
+qualifiedPadLength = 9
+
 -- echo HaskellFormatImport(expand('%:p'))
 haskellFormatImport :: String -> Neovim env [T.Text]
 haskellFormatImport path = do
@@ -19,7 +22,7 @@ haskellFormatImport path = do
         paddedImports  = padImports imports hasQualified
     -- let res = formatImport <$> lines a
 
-    T.writeFile path $ T.unlines paddedImports
+    liftIO $ T.writeFile path $ T.unlines paddedImports
 
     return paddedImports
 
@@ -34,9 +37,11 @@ padImports i False = i
 padImports i True  = fmap padQualifiedIfMissing i
 
 padQualifiedIfMissing :: T.Text -> T.Text
-padQualifiedIfMissing s = if isQualified s
+padQualifiedIfMissing s = if isQualified s || alreadyPadded s
                              then s
                              else T.replace "import" "import          " s
+
+alreadyPadded = T.isInfixOf $ T.replicate qualifiedPadLength " "
 
 -- formatImport :: String -> String
 -- formatImport s = 
