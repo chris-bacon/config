@@ -11,6 +11,7 @@ import Neovim.API.String
 qualifiedPadLength :: Int
 qualifiedPadLength = 9
 
+-- | Invokes the substitute command with given parameters
 substitute :: (Int, Int) -> String -> String -> [String] -> Neovim env ()
 substitute (start,end) ptn replacement flags = vim_command 
   $  show start
