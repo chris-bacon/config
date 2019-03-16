@@ -13,19 +13,19 @@ qualifiedPadLength = 9
 
 substitute :: (Int, Int) -> String -> String -> [String] -> Neovim env ()
 substitute (start,end) ptn replacement flags = vim_command 
-  $  (show start :: String) 
-  +: ("," :: String)
-  +: (show end :: String)
-  +: ("substitute/" :: String)
-  +: (ptn ++ "/" :: String)
-  +: (replacement ++ "/" :: String)
-  +: ((mconcat flags) :: String)
-
+  $  show start
+  ++ ","
+  ++ show end
+  ++ "substitute/"
+  ++ ptn ++ "/"
+  ++ replacement ++ "/"
+  ++ mconcat flags
 
 haskellFormatImport :: CommandArguments -> Neovim env ()
 haskellFormatImport (CommandArguments _ range _ _) = do
   let (a, b) = fromMaybe (0,0) range
-  vim_command $ show a ++ "," ++ show b ++ "substitute/vim/vimzzz/g"
+  substitute (a, b) "vim" "vimzzz" ["g"]
+
 -- echo HaskellFormatImport(expand('%:p'))
 -- haskellFormatImport :: String -> Neovim env [T.Text]
 -- haskellFormatImport path = do
