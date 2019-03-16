@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-13 22:04:07.162887563 UTC
+2019-03-16 09:51:31.986697467 UTC
 
 interface main:Main 8064
-  interface hash: fa32681511ea91ffef93e0d5c88124ae
-  ABI hash: bdd3e555ab3a778aebea7ffbd2ef765a
+  interface hash: c1341f093f18d88195a22947f9317a1d
+  ABI hash: 28664b580146d6bfdf7d090c9ff63661
   export-list hash: 612c08cf4ac7114c0c3f6195877b38f2
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: baef6ab4adda9a28d1b7cfe0c5110608
@@ -109,9 +109,9 @@ family instance modules: base-4.12.0.0:Control.Applicative
 import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
 import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
 import  -/  ghc-prim-0.5.3:GHC.Types 57064c9f957b09bc2e360061ad5cae0b
-import  -/  HaskellFormatImport 2c33ea8e03c4d3099827b06ae4e91004
+import  -/  HaskellFormatImport 992b9fa2177e9c3a93196e5b71be8ba6
   exports: 033bf070dd086c3f5a8bd90fff28fe29
-  plugin 2966d265d0274436c915a2b037af23c7
+  plugin 3a9487c59b98f5b31ed9203f72508938
 import  -/  Neovim.Example.Plugin 1c16ba4d3f895d2752d7f8370f75f4b9
   exports: 9eb854ef4dbe7d68097be0b0a36c45b8
   plugin 01218e76119d660d58f59866b2df08fd
@@ -136,12 +136,12 @@ e5875966b74dad2d29772660b8a75e33
 d026be77cb9ced20e35a61514e0458aa
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-a6be103cdb753007607c799ac797f745
+d40addd9e887e9d32c7db8eadb68f1ed
   main :: GHC.Types.IO ()
   {- Arity: 1,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-8742c6b71a09cbd33385ca16a7fdeafe
+e7533e8852df8b93f8e0d48318740564
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -154,13 +154,13 @@ a6be103cdb753007607c799ac797f745
                     ->_R <Neovim.Context.Internal.Config Neovim.RPC.Common.RPCConfig>_R
                     ->_R Sym (GHC.Types.N:IO[0] <()>_R))
                    Main.main2) -}
-9c3feb40c15500b3f0b37f51f943e841
+2871d5e52367e5fabbc9fc03c5eca9ba
   main2 :: Neovim.Config.NeovimConfig
   {- Strictness: m,
      Unfolding: (Neovim.Config.Config
                    Main.main3
                    (GHC.Maybe.Nothing @ (GHC.IO.FilePath, System.Log.Priority))) -}
-36dab7768afd5e586a306b80f568cf6e
+16589f98658d337df04db93d7eabdf16
   main3 ::
     [Neovim.Context.Internal.Neovim
        () Neovim.Plugin.Internal.NeovimPlugin]
@@ -186,7 +186,7 @@ a6be103cdb753007607c799ac797f745
                                                                                                                                                     <Neovim.Plugin.Internal.NeovimPlugin>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
                                                                                                                                                                                                         <()>_R) <Neovim.Plugin.Internal.NeovimPlugin>_N))
                    Main.main4) -}
-fd1b32e275ed76c4f6e09f16527c3c47
+319743c47fa9e4ec6c6ae73413899fc2
   main4 ::
     [Neovim.Context.Internal.Neovim
        () Neovim.Plugin.Internal.NeovimPlugin]
@@ -214,7 +214,7 @@ fd1b32e275ed76c4f6e09f16527c3c47
                    (GHC.Types.[]
                       @ (Neovim.Context.Internal.Neovim
                            () Neovim.Plugin.Internal.NeovimPlugin))) -}
-23784be51c045b9eaa5fa58ced21a039
+985dd18e5ac51077f85f2bb19426326e
   main5 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)

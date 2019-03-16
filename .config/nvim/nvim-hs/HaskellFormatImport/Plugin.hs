@@ -11,20 +11,24 @@ import Neovim.API.String
 qualifiedPadLength :: Int
 qualifiedPadLength = 9
 
+haskellFormatImport :: CommandArguments -> Neovim env ()
+haskellFormatImport (CommandArguments _ range _ _) = do
+  let (a, b) = fromMaybe (0,0) range
+  vim_command $ show a ++ "," ++ show b ++ "substitute/vim/vimzzz/g"
 -- echo HaskellFormatImport(expand('%:p'))
-haskellFormatImport :: String -> Neovim env [T.Text]
-haskellFormatImport path = do
-    fileContent <- liftIO $ T.readFile path
+-- haskellFormatImport :: String -> Neovim env [T.Text]
+-- haskellFormatImport path = do
+--     fileContent <- liftIO $ T.readFile path
 
-    let splitIntoLInes = T.lines fileContent
-        imports        = filter isImportStatement splitIntoLInes
-        hasQualified   = any isQualified imports
-        paddedImports  = padImports imports hasQualified
-    -- let res = formatImport <$> lines a
+--     let splitIntoLInes = T.lines fileContent
+--         imports        = filter isImportStatement splitIntoLInes
+--         hasQualified   = any isQualified imports
+--         paddedImports  = padImports imports hasQualified
+--     -- let res = formatImport <$> lines a
 
-    liftIO $ T.writeFile path $ T.unlines paddedImports
+--     liftIO $ T.writeFile path $ T.unlines paddedImports
 
-    return paddedImports
+--     return paddedImports
 
 isImportStatement :: T.Text -> Bool
 isImportStatement = T.isInfixOf "import"
