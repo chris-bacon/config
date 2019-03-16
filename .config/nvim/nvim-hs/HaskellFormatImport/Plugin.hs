@@ -11,6 +11,17 @@ import Neovim.API.String
 qualifiedPadLength :: Int
 qualifiedPadLength = 9
 
+substitute :: (Int, Int) -> String -> String -> [String] -> Neovim env ()
+substitute (start,end) ptn replacement flags = vim_command 
+  $  (show start :: String) 
+  +: ("," :: String)
+  +: (show end :: String)
+  +: ("substitute/" :: String)
+  +: (ptn ++ "/" :: String)
+  +: (replacement ++ "/" :: String)
+  +: ((mconcat flags) :: String)
+
+
 haskellFormatImport :: CommandArguments -> Neovim env ()
 haskellFormatImport (CommandArguments _ range _ _) = do
   let (a, b) = fromMaybe (0,0) range
