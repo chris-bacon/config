@@ -28,6 +28,8 @@ haskellFormatImport (CommandArguments _ range _ _) = do
   let (a, b) = fromMaybe (0,0) range
   buff <- vim_get_current_buffer
   allLines <- nvim_buf_get_lines buff (intToInt64 a) (intToInt64 b) False
+  let allImportLines = filter isImportStatement allLines
+      isQualified    = any $ filter isQualified allImportLines
   nvim_buf_set_lines buff 0 5 False ["bob", "yo"]
 
   -- nvim_buf_get_lines
@@ -50,22 +52,22 @@ haskellFormatImport (CommandArguments _ range _ _) = do
 
 --     return paddedImports
 
-isImportStatement :: T.Text -> Bool
-isImportStatement = T.isInfixOf "import"
+isImportStatement :: String -> Bool
+isImportStatement = isInfixOf "import "
 
-isQualified :: T.Text -> Bool
-isQualified = T.isInfixOf "qualified"
+isQualified :: String -> Bool
+isQualified = isInfixOf "qualified "
 
-padImports :: [T.Text] -> Bool -> [T.Text]
-padImports i False = i
-padImports i True  = fmap padQualifiedIfMissing i
+-- padImports :: [T.Text] -> Bool -> [T.Text]
+-- padImports i False = i
+-- padImports i True  = fmap padQualifiedIfMissing i
 
-padQualifiedIfMissing :: T.Text -> T.Text
-padQualifiedIfMissing s = if isQualified s || alreadyPadded s
-                             then s
-                             else T.replace "import" "import          " s
+-- padQualifiedIfMissing :: T.Text -> T.Text
+-- padQualifiedIfMissing s = if isQualified s || alreadyPadded s
+--                              then s
+--                              else T.replace "import" "import          " s
 
-alreadyPadded = T.isInfixOf $ T.replicate qualifiedPadLength " "
+-- alreadyPadded = T.isInfixOf $ T.replicate qualifiedPadLength " "
 
 -- formatImport :: String -> String
 -- formatImport s = 
