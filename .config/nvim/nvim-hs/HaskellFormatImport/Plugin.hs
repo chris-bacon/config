@@ -25,7 +25,9 @@ substitute (start,end) ptn replacement flags = vim_command
 haskellFormatImport :: CommandArguments -> Neovim env ()
 haskellFormatImport (CommandArguments _ range _ _) = do
   let (a, b) = fromMaybe (0,0) range
-  substitute (a, b) "vim" "vimzzz" ["g"]
+  buff <- vim_get_current_buffer
+  nvim_buf_set_lines buff 0 10 False "bob"
+  -- substitute (a, b) "vim" "vimzzz" ["g"]
 
 -- echo HaskellFormatImport(expand('%:p'))
 -- haskellFormatImport :: String -> Neovim env [T.Text]
