@@ -22,6 +22,17 @@
   (major1) == 4 && (major2) == 12 && (minor) <= 0)
 #endif /* MIN_VERSION_base */
 
+/* package basement-0.0.10 */
+#ifndef VERSION_basement
+#define VERSION_basement "0.0.10"
+#endif /* VERSION_basement */
+#ifndef MIN_VERSION_basement
+#define MIN_VERSION_basement(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  0 || \
+  (major1) == 0 && (major2) == 0 && (minor) <= 10)
+#endif /* MIN_VERSION_basement */
+
 /* package bytestring-0.10.8.2 */
 #ifndef VERSION_bytestring
 #define VERSION_bytestring "0.10.8.2"
@@ -188,7 +199,7 @@
 #endif /* MIN_TOOL_VERSION_strip */
 
 #ifndef CURRENT_COMPONENT_ID
-#define CURRENT_COMPONENT_ID "my-nvim-hs-0.1.0.0-GhHWC9sUzV3bi85bnKCZW-my-nvim-hs"
+#define CURRENT_COMPONENT_ID "my-nvim-hs-0.1.0.0-Je1zBe2dPrLLS3mtxTgwNL-my-nvim-hs"
 #endif /* CURRENT_COMPONENT_ID */
 #ifndef CURRENT_PACKAGE_VERSION
 #define CURRENT_PACKAGE_VERSION "0.1.0.0"

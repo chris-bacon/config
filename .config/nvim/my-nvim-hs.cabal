@@ -30,4 +30,5 @@ executable my-nvim-hs
                      , unliftio
                      , bytestring
                      , text
+                     , basement
   default-language:    Haskell2010

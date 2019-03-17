@@ -7,6 +7,7 @@ import qualified Data.Text.IO as T
 import Data.Maybe
 import Neovim
 import Neovim.API.String
+import Basement.IntegralConv (intToInt64)
 
 qualifiedPadLength :: Int
 qualifiedPadLength = 9
@@ -26,6 +27,7 @@ haskellFormatImport :: CommandArguments -> Neovim env ()
 haskellFormatImport (CommandArguments _ range _ _) = do
   let (a, b) = fromMaybe (0,0) range
   buff <- vim_get_current_buffer
+  allLines <- nvim_buf_get_lines buff (intToInt64 a) (intToInt64 b) False
   nvim_buf_set_lines buff 0 5 False ["bob", "yo"]
 
   -- nvim_buf_get_lines

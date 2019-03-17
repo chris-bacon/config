@@ -30,7 +30,7 @@ version = Version [0,1,0,0] []
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/home/chrisbacon/.config/nvim/.stack-work/install/x86_64-linux/nightly-2019-03-13/8.6.4/bin"
-libdir     = "/home/chrisbacon/.config/nvim/.stack-work/install/x86_64-linux/nightly-2019-03-13/8.6.4/lib/x86_64-linux-ghc-8.6.4/my-nvim-hs-0.1.0.0-GhHWC9sUzV3bi85bnKCZW-my-nvim-hs"
+libdir     = "/home/chrisbacon/.config/nvim/.stack-work/install/x86_64-linux/nightly-2019-03-13/8.6.4/lib/x86_64-linux-ghc-8.6.4/my-nvim-hs-0.1.0.0-Je1zBe2dPrLLS3mtxTgwNL-my-nvim-hs"
 dynlibdir  = "/home/chrisbacon/.config/nvim/.stack-work/install/x86_64-linux/nightly-2019-03-13/8.6.4/lib/x86_64-linux-ghc-8.6.4"
 datadir    = "/home/chrisbacon/.config/nvim/.stack-work/install/x86_64-linux/nightly-2019-03-13/8.6.4/share/x86_64-linux-ghc-8.6.4/my-nvim-hs-0.1.0.0"
 libexecdir = "/home/chrisbacon/.config/nvim/.stack-work/install/x86_64-linux/nightly-2019-03-13/8.6.4/libexec/x86_64-linux-ghc-8.6.4/my-nvim-hs-0.1.0.0"
