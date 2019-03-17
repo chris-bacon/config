@@ -31,13 +31,12 @@ haskellFormatImport (CommandArguments _ range _ _) = do
   let allImportLines       = filter isImportStatement allLines
       anyImportIsQualified = not . null $ filter isQualified allImportLines
       maxLength            = max $ fmap length allImportLines
-  -- nvim_buf_set_lines buff 0 5 False ["bob", "yo"]
+  nvim_buf_set_lines buff 0 0 False allImportLines
 
   -- nvim_buf_get_lines
   -- buffer_set_line
 
-  let ffmap = flip fmap
-  let a = ffmap allImportLines $ \line -> substitute (a, b) line (line ++ "bob") ["g"]
+  -- mapM_ (\line -> substitute (0, 10) line (line ++ "bob") ["g"]) allImportLines
   return ()
 
 
