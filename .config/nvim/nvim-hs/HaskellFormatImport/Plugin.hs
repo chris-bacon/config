@@ -23,7 +23,7 @@ substitute (start,end) ptn replacement flags = vim_command
   ++ replacement ++ "/"
   ++ mconcat flags
 
-haskellFormatImport :: CommandArguments -> [Neovim env ()]
+haskellFormatImport :: CommandArguments -> Neovim env ()
 haskellFormatImport (CommandArguments _ range _ _) = do
   let (a, b) = fromMaybe (0,0) range
   buff <- vim_get_current_buffer
@@ -37,9 +37,9 @@ haskellFormatImport (CommandArguments _ range _ _) = do
   -- buffer_set_line
 
   let ffmap = flip fmap
-  ffmap allImportLines $ \line -> do
-    substitute (a, b) line (line ++ "bob") ["g"]
-  
+  let a = ffmap allImportLines $ \line -> substitute (a, b) line (line ++ "bob") ["g"]
+  return ()
+
 
 
 -- echo HaskellFormatImport(expand('%:p'))
