@@ -26,7 +26,11 @@ haskellFormatImport :: CommandArguments -> Neovim env ()
 haskellFormatImport (CommandArguments _ range _ _) = do
   let (a, b) = fromMaybe (0,0) range
   buff <- vim_get_current_buffer
-  nvim_buf_set_lines buff 0 0 False ["bob", "yo"]
+  nvim_buf_set_lines buff 0 5 False ["bob", "yo"]
+
+  -- nvim_buf_get_lines
+  -- buffer_set_line
+
   -- substitute (a, b) "vim" "vimzzz" ["g"]
 
 -- echo HaskellFormatImport(expand('%:p'))
