@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-18 15:43:31.169692935 UTC
+2019-03-18 16:44:54.873492719 UTC
 
 interface main:HaskellFormatImport.Plugin 8064
-  interface hash: b6ea2dd772878edb5ca8923ec2487c60
-  ABI hash: dd55bab15d59d2c336578c66e10496f5
-  export-list hash: 0178bf0346a499fdc6c066ef6e42103a
+  interface hash: b1d316dac27ee23b6e899b6c34df71fb
+  ABI hash: 3f79b66d4fcbc9aacfede1cda149ea17
+  export-list hash: c27d7044e521c125cd142499fea23d93
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: e5fd15702f15e2b7fd2f13ad10fcf15d
   opt_hash: d0a78e7b344f95c7406be35c9b75e196
@@ -16,7 +16,6 @@ interface main:HaskellFormatImport.Plugin 8064
   where
 exports:
   HaskellFormatImport.Plugin.haskellFormatImport
-  HaskellFormatImport.Plugin.mysort
 module dependencies:
 package dependencies: ansi-terminal-0.9 ansi-wl-pprint-0.6.8.2
                       array-0.5.3.0 async-2.2.1 base-4.12.0.0 basement-0.0.10
@@ -117,7 +116,6 @@ import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
 import  -/  basement-0.0.10:Basement.IntegralConv b564bac3f10442314e727edb382f972a
 import  -/  basement-0.0.10:Basement.Numerical.Conversion a6f6ce9081650ab9260863398fa46308
 import  -/  ghc-prim-0.5.3:GHC.Classes 0f6fd7d7db53fc48f6e1f01803cc6c9d
-import  -/  ghc-prim-0.5.3:GHC.Types 57064c9f957b09bc2e360061ad5cae0b
 import  -/  nvim-hs-2.0.0.0:Neovim 167669be48234d69ad1483fe71c0a30e
 import  -/  nvim-hs-2.0.0.0:Neovim.API.String 4474be69165bb942195ccd71d4889400
 import  -/  nvim-hs-2.0.0.0:Neovim.Context.Internal 18ef550ed059bc886ea89ec66dd281a9
@@ -132,8 +130,6 @@ import  -/  text-1.2.3.1:Data.Text.IO 04a90de6b55e7446693a989e9de89740
   haskellFormatImport ::
     Neovim.Plugin.Classes.CommandArguments
     -> Neovim.Context.Internal.Neovim env ()
-a865149fb9196b4adf1285f1cd3fb3f5
-  mysort :: GHC.Classes.Ord b => [(a, b)] -> [(a, b)]
 trusted: none
 require own pkg trusted: False
 module header:

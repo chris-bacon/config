@@ -1,5 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
-module HaskellFormatImport.Plugin (haskellFormatImport,mysort) where
+module HaskellFormatImport.Plugin (haskellFormatImport) where
 
 import Data.List
 import qualified Data.Text as T
@@ -34,7 +34,7 @@ haskellFormatImport (CommandArguments _ range _ _) = do
   buff <- vim_get_current_buffer
   allLines <- nvim_buf_get_lines buff (intToInt64 a) (intToInt64 b) False
   let allImportLinesUnsorted = filter isImportStatement (zip [1..b] allLines)
-      allImportLines         = sortBy (\(_,a)(_,b) -> compare a b) allImportLinesUnsorted
+      allImportLines         = sortImports allImportLinesUnsorted
       anyImportIsQualified   = not . null $ filter isQualified allImportLines
       maxLength              = foldr max 0 $ fmap (\(_,s) -> length s) allImportLines
   -- nvim_buf_set_lines buff 0 0 False allImportLines
@@ -54,16 +54,10 @@ padContent content True longestImport = do
      then content
      else concat $ "import          " : splitOn "import" content
 
-
-mysort (pivot:y:xs) = do
-  if compare (snd pivot) (snd y) == GT then (fst pivot, snd y) : (fst y, snd pivot) : xs else pivot : y : xs
-  -- let larger  = [y | y >= pivot]
-  --     smaller = [y | y < pivot]
-  -- mysort smaller ++ pivot ++ mysort larger
-
--- Pick an element, called a pivot, from the array.
--- Partitioning: reorder the array so that all elements with values less than the pivot come before the pivot, while all elements with values greater than the pivot come after it (equal values can go either way). After this partitioning, the pivot is in its final position. This is called the partition operation.
--- Recursively apply the above steps to the sub-array of elements with smaller values and separately to the sub-array of elements with greater values.
+sortImports xs =
+  let lineNos = fmap fst xs
+      lineContent = fmap snd xs
+   in zip lineNos $ sort lineContent
 
 -- haskellFormatImport :: String -> Neovim env [T.Text]
 -- haskellFormatImport path = do
