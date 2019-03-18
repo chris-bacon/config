@@ -1,5 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
-module HaskellFormatImport.Plugin (haskellFormatImport) where
+module HaskellFormatImport.Plugin ( haskellFormatImport ) where
 
 import Data.Char
 import Data.List
@@ -15,23 +15,13 @@ data Qualification = Present | NotPresent
 
 newtype MaxLineLength = MaxLineLength Int
 
+type LineNumber = Int
+
 qualifiedPadLength :: Int
-qualifiedPadLength = 9
+qualifiedPadLength = 10
 
 padMissingQualified :: String
 padMissingQualified = take qualifiedPadLength $ repeat ' '
-
--- | Invokes the substitute command with given parameters
-substitute :: (Int, Int) -> String -> String -> [String] -> Neovim env ()
-substitute (start,end) ptn replacement flags = vim_command 
-  $  show start
-  ++ ","
-  ++ show end
-  ++ "substitute/"
-  ++ ptn ++ "/"
-  ++ replacement ++ "/"
-  ++ mconcat flags
-
 
 -- TODO: as
 
@@ -48,11 +38,11 @@ haskellFormatImport (CommandArguments _ range _ _) = do
 
   return ()
 
-formatImportLine :: Buffer -> Qualification -> MaxLineLength -> (Int, String) -> Neovim env ()
+formatImportLine :: Buffer -> Qualification -> MaxLineLength -> (LineNumber, String) -> Neovim env ()
 formatImportLine buff qualifiedImports (MaxLineLength longestImport) (lineNo, lineContent) 
   = buffer_set_line buff (intToInt64 lineNo) $ padContent lineContent qualifiedImports longestImport
 
-getQualification :: [(Int, String)] -> Qualification
+getQualification :: [(LineNumber, String)] -> Qualification
 getQualification xs = go $ filter isQualified xs
   where
     go [] = NotPresent
@@ -65,12 +55,12 @@ padContent content Present longestImport =
      then content
      else concat $ ("import" ++ padMissingQualified) : splitOn "import" content
 
-sortImports :: [(Int, String)] -> [(Int, String)]
-sortImports xs = zip (fmap fst xs) $ sortBy (\a b -> compare (toLower a) (toLower b)) (fmap snd xs)
+sortImports :: [(LineNumber, String)] -> [(LineNumber, String)]
+sortImports xs = zip (fmap fst xs) $ sortBy (\a b -> compare (toLower <$> a) (toLower <$> b)) (fmap snd xs)
 
-isImportStatement :: (Int, String) -> Bool
+isImportStatement :: (LineNumber, String) -> Bool
 isImportStatement (_, s) = isInfixOf "import " s
 
-isQualified :: (Int, String) -> Bool
+isQualified :: (LineNumber, String) -> Bool
 isQualified (_, s) = isInfixOf "qualified " s
 
