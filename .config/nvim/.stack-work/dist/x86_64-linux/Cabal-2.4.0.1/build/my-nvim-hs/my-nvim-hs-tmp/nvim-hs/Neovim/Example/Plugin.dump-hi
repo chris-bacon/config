@@ -1,14 +1,14 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-18 18:03:34.990566139 UTC
+2019-03-18 18:09:57.890948106 UTC
 
 interface main:Neovim.Example.Plugin 8064
-  interface hash: 060b6dcae8d31aed786afbf57df4fe10
-  ABI hash: 17d832ea93d9f8929c3c0e11a3a21848
+  interface hash: 4f389bd41dfc5b2362559ca00b01ee35
+  ABI hash: 1c16ba4d3f895d2752d7f8370f75f4b9
   export-list hash: 9eb854ef4dbe7d68097be0b0a36c45b8
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 8cd57799500b03ee3e2ef39c7cc8552a
-  opt_hash: d0a78e7b344f95c7406be35c9b75e196
+  opt_hash: 6faf2de08de32d19db9870899d88e59a
   hpc_hash: 93b885adfe0da089cdf634904fd59f71
   plugin_hash: ad164012d6b1e14942349d58b1132007
   sig of: Nothing
@@ -110,14 +110,14 @@ import  -/  base-4.12.0.0:Data.Functor 069b2025a03e32fd228e74a86a58a075
 import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
 import  -/  base-4.12.0.0:GHC.Exception 241d5c93d2929e130965d588cd89f59e
 import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
-import  -/  Neovim.Example.Plugin.Fibonacci cd8657b2e6c1f8441c36904f50ba72a4
+import  -/  Neovim.Example.Plugin.Fibonacci f857f5c5ada6bde4e5552db641c4d2e3
   exports: ca0d989949c1e7e8c5cea49f2be31181
-  fibonacci 43e879557dc168420c17cbacaaade52d
-import  -/  Neovim.Example.Plugin.Random 8412ed7f7cbe752bdd959503a20115ce
+  fibonacci ea25ee720dc1f174ed692685367ede50
+import  -/  Neovim.Example.Plugin.Random 13491cce86333edff50fa3e7ef42f93c
   exports: bb01e6cbca242cbcd2222ef9afeb3492
-  nextRandom 850c7211f4fbb6e50aa886068db31e86
-  randomNumbers 1770a7cc6e20a45b2161a66e806b449c
-  setNextRandom e82dd415bcb48d1dc0240c29c1a643a5
+  nextRandom 537f8a2113be6befae575f46b1e48495
+  randomNumbers 23566a763945150836d714300ecd120b
+  setNextRandom 79ff8f1061f1d7a4441bf75851f8bd7d
 import  -/  nvim-hs-2.0.0.0:Neovim 167669be48234d69ad1483fe71c0a30e
 import  -/  nvim-hs-2.0.0.0:Neovim.API.TH 5c692f4e109dd3ed6c1c2dd0dd6d0789
 import  -/  nvim-hs-2.0.0.0:Neovim.Classes af89bdb97e589d25d0744c97548b2668
@@ -129,12 +129,424 @@ import  -/  nvim-hs-2.0.0.0:Neovim.Plugin.Internal 00410a85c606261f395f5d2b5d6ee
 import  -/  prettyprinter-1.2.1:Data.Text.Prettyprint.Doc.Internal 4b53c6eed7145944e9bd73c7468bb048
 import  -/  prettyprinter-ansi-terminal-1.1.1.2:Data.Text.Prettyprint.Doc.Render.Terminal.Internal 0cdd13f068aeb2852b7dc0a6c5e759bb
 import  -/  utf8-string-1.0.1.1:Data.ByteString.UTF8 55cfc5163ea7ac112ba8a971498f63b1
-3a9556e4c8a402dd15ebbedf53bed58e
+115f9de76c526c6afd53940340bbe9e3
   $trModule :: GHC.Types.Module
-07e6b0290594c41433c0cc4f17514b1f
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Neovim.Example.Plugin.$trModule3
+                   Neovim.Example.Plugin.$trModule1) -}
+4597831d6d7c41a4841eb836cfd1a685
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Neovim.Example.Plugin.$trModule2) -}
+52293e5930407794614cdee24d104014
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Neovim.Example.Plugin"#) -}
+74781bd4fb9b938a59b74850e0384e25
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Neovim.Example.Plugin.$trModule4) -}
+ae962ce6f5d5b237a758440f54bd6c1f
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("main"#) -}
+6b6da9c8ca36fb6f960703c729535412
+  $wlvl ::
+    [Data.MessagePack.Object]
+    -> GHC.Prim.TVar# GHC.Prim.RealWorld [GHC.Int.Int16]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.MessagePack.Object #)
+  {- Arity: 3, Strictness: <S,1*U><S,U><S,U>, Inline: [2],
+     Unfolding: (\ (w :: [Data.MessagePack.Object])
+                   (ww :: GHC.Prim.TVar# GHC.Prim.RealWorld [GHC.Int.Int16])
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case w of wild {
+                   []
+                   -> case GHC.Prim.atomically#
+                             @ GHC.Int.Int16
+                             (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                              case GHC.Prim.readTVar#
+                                     @ GHC.Prim.RealWorld
+                                     @ [GHC.Int.Int16]
+                                     ww
+                                     s of ds { (#,#) ipv ipv1 ->
+                              case GHC.Prim.readTVar#
+                                     @ GHC.Prim.RealWorld
+                                     @ [GHC.Int.Int16]
+                                     ww
+                                     ipv of ds1 { (#,#) ipv2 ipv3 ->
+                              case GHC.Prim.writeTVar#
+                                     @ GHC.Prim.RealWorld
+                                     @ [GHC.Int.Int16]
+                                     ww
+                                     (GHC.List.tail @ GHC.Int.Int16 ipv3)
+                                     ipv2 of s2# { DEFAULT ->
+                              (# s2#, GHC.List.head @ GHC.Int.Int16 ipv1 #) } } })
+                             w1 of ds1 { (#,#) ipv ipv1 ->
+                      (# ipv, Neovim.Classes.$fNvimObjectInt16_$ctoObject ipv1 #) }
+                   : ipv ipv1
+                   -> case Neovim.Example.Plugin.plugin13
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                Data.MessagePack.Object #)
+                      of {} }) -}
+01218e76119d660d58f59866b2df08fd
   plugin ::
     Neovim.Context.Internal.Neovim
       () Neovim.Plugin.Internal.NeovimPlugin
+  {- Arity: 3, Strictness: <L,A><L,A><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Neovim.Example.Plugin.plugin1
+                  `cast`
+                ((<GHC.IORef.IORef
+                     Control.Monad.Trans.Resource.Internal.ReleaseMap>_R
+                  ->_R (<Neovim.Context.Internal.Config ()>_R
+                        ->_R Sym (GHC.Types.N:IO[0]
+                                      <Neovim.Plugin.Internal.NeovimPlugin>_R)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                           <Neovim.Context.Internal.Config
+                                                                                              ()>_R
+                                                                                           <GHC.Types.IO>_R
+                                                                                           <Neovim.Plugin.Internal.NeovimPlugin>_N)) ; (Sym (Control.Monad.Trans.Resource.Internal.N:ResourceT[0]
+                                                                                                                                                 <Control.Monad.Trans.Reader.ReaderT
+                                                                                                                                                    (Neovim.Context.Internal.Config
+                                                                                                                                                       ())
+                                                                                                                                                    GHC.Types.IO>_R
+                                                                                                                                                 <Neovim.Plugin.Internal.NeovimPlugin>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
+                                                                                                                                                                                                     <()>_R) <Neovim.Plugin.Internal.NeovimPlugin>_N)) -}
+fa9a3964d2b8734ec75305d94162efbf
+  plugin1 ::
+    GHC.IORef.IORef Control.Monad.Trans.Resource.Internal.ReleaseMap
+    -> Neovim.Context.Internal.Config ()
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Neovim.Plugin.Internal.NeovimPlugin #)
+  {- Arity: 3, Strictness: <L,A><L,A><S,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (r :: GHC.IORef.IORef
+                           Control.Monad.Trans.Resource.Internal.ReleaseMap)
+                   (eta :: Neovim.Context.Internal.Config ())
+                   (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case System.Random.theStdGen
+                        `cast`
+                      (GHC.IORef.N:IORef[0] <System.Random.StdGen>_N) of wild { GHC.STRef.STRef r# ->
+                 case GHC.Prim.atomicModifyMutVar#
+                        @ GHC.Prim.RealWorld
+                        @ System.Random.StdGen
+                        @ (System.Random.StdGen, System.Random.StdGen)
+                        @ System.Random.StdGen
+                        r#
+                        System.Random.newStdGen2
+                        eta1 of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of b1 { System.Random.StdGen ipv2 ipv3 ->
+                 case GHC.Prim.newTVar#
+                        @ [GHC.Int.Int16]
+                        @ GHC.Prim.RealWorld
+                        (Neovim.Example.Plugin.Random.randomNumbers_go b1)
+                        ipv of ds { (#,#) ipv4 ipv5 ->
+                 (# ipv4,
+                    Neovim.Plugin.Internal.NeovimPlugin
+                      @ (GHC.Conc.Sync.TVar [GHC.Int.Int16])
+                      (Neovim.Plugin.Internal.Plugin
+                         @ (GHC.Conc.Sync.TVar [GHC.Int.Int16])
+                         (GHC.Conc.Sync.TVar @ [GHC.Int.Int16] ipv5)
+                         Neovim.Example.Plugin.plugin2) #) } } } }) -}
+b6bc264d12117bf1b7ca325f44a654f6
+  plugin10 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("SetNextRandom"#) -}
+bc6d2c7bf6715b8486adb2306202e209
+  plugin11 ::
+    (Neovim.Plugin.Classes.FunctionalityDescription,
+     [Data.MessagePack.Object]
+     -> Neovim.Context.Internal.Neovim
+          (GHC.Conc.Sync.TVar [GHC.Int.Int16]) Data.MessagePack.Object)
+  {- Strictness: m,
+     Unfolding: ((Neovim.Example.Plugin.plugin14,
+                  Neovim.Example.Plugin.plugin12
+                    `cast`
+                  (<[Data.MessagePack.Object]>_R
+                   ->_R (<GHC.IORef.IORef
+                            Control.Monad.Trans.Resource.Internal.ReleaseMap>_R
+                         ->_R (<Neovim.Context.Internal.Config
+                                  (GHC.Conc.Sync.TVar [GHC.Int.Int16])>_R
+                               ->_R Sym (GHC.Types.N:IO[0]
+                                             <Data.MessagePack.Object>_R)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                      <Neovim.Context.Internal.Config
+                                                                                         (GHC.Conc.Sync.TVar
+                                                                                            [GHC.Int.Int16])>_R
+                                                                                      <GHC.Types.IO>_R
+                                                                                      <Data.MessagePack.Object>_N)) ; (Sym (Control.Monad.Trans.Resource.Internal.N:ResourceT[0]
+                                                                                                                                <Control.Monad.Trans.Reader.ReaderT
+                                                                                                                                   (Neovim.Context.Internal.Config
+                                                                                                                                      (GHC.Conc.Sync.TVar
+                                                                                                                                         [GHC.Int.Int16]))
+                                                                                                                                   GHC.Types.IO>_R
+                                                                                                                                <Data.MessagePack.Object>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
+                                                                                                                                                                        <GHC.Conc.Sync.TVar
+                                                                                                                                                                           [GHC.Int.Int16]>_R) <Data.MessagePack.Object>_N)))) -}
+95cf2809dd351fcec64c7fdca9ac64b1
+  plugin12 ::
+    [Data.MessagePack.Object]
+    -> GHC.IORef.IORef Control.Monad.Trans.Resource.Internal.ReleaseMap
+    -> Neovim.Context.Internal.Config
+         (GHC.Conc.Sync.TVar [GHC.Int.Int16])
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Data.MessagePack.Object #)
+  {- Arity: 4,
+     Strictness: <S,1*U><L,A><S(LLLLLLS(S)),1*U(A,A,A,A,A,A,1*U(U))><S,U>,
+     Inline: [2],
+     Unfolding: InlineRule (4, True, False)
+                (\ (w :: [Data.MessagePack.Object])
+                   (w1 :: GHC.IORef.IORef
+                            Control.Monad.Trans.Resource.Internal.ReleaseMap)
+                   (w2 :: Neovim.Context.Internal.Config
+                            (GHC.Conc.Sync.TVar [GHC.Int.Int16]))
+                   (w3 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case w2 of ww { Neovim.Context.Internal.Config ww1 ww2 ww3 ww4 ww5 ww6 ww7 ->
+                 case ww7 of ww8 { GHC.Conc.Sync.TVar ww9 ->
+                 Neovim.Example.Plugin.$wlvl w ww9 w3 } }) -}
+ce46d237e142b8ec46cf5eab90497331
+  plugin13 ::
+    Neovim.Context.Internal.Neovim
+      (GHC.Conc.Sync.TVar [GHC.Int.Int16]) Data.MessagePack.Object
+  {- Strictness: x -}
+cab0ad8db727aedb98ac38e51f385f93
+  plugin14 :: Neovim.Plugin.Classes.FunctionalityDescription
+  {- Strictness: m1,
+     Unfolding: (Neovim.Plugin.Classes.Function
+                   Neovim.Example.Plugin.plugin15
+                     `cast`
+                   (Sym (Neovim.Plugin.Classes.N:FunctionName[0]))
+                   Neovim.Plugin.Classes.Sync) -}
+f126b34f89df2ab5dba355d445e7dad3
+  plugin15 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (Data.ByteString.UTF8.fromString
+                   (GHC.CString.unpackCString# Neovim.Example.Plugin.plugin16)) -}
+153f58958df012b97d89ee893f2c359c
+  plugin16 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("NextRandom"#) -}
+19cbd6c1d12122228ddfc34331284dd9
+  plugin17 ::
+    (Neovim.Plugin.Classes.FunctionalityDescription,
+     [Data.MessagePack.Object]
+     -> Neovim.Context.Internal.Neovim
+          (GHC.Conc.Sync.TVar [GHC.Int.Int16]) Data.MessagePack.Object)
+  {- Strictness: m,
+     Unfolding: ((Neovim.Example.Plugin.plugin20,
+                  Neovim.Example.Plugin.plugin18)) -}
+66923c13640e7dfff6000f1cdf26ddb3
+  plugin18 ::
+    [Data.MessagePack.Object]
+    -> Neovim.Context.Internal.Neovim
+         (GHC.Conc.Sync.TVar [GHC.Int.Int16]) Data.MessagePack.Object
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (args :: [Data.MessagePack.Object]) ->
+                 case args of wild {
+                   [] -> Neovim.Example.Plugin.plugin19
+                   : x ds
+                   -> case ds of wild1 {
+                        []
+                        -> case Neovim.Classes.$fNvimObjectInt_$cfromObject x of wild2 {
+                             Data.Either.Left x1
+                             -> Neovim.Context.err
+                                  @ (GHC.Conc.Sync.TVar [GHC.Int.Int16])
+                                  @ Data.MessagePack.Object
+                                  x1
+                             Data.Either.Right y
+                             -> let {
+                                  lvl12 :: Data.ByteString.Internal.ByteString
+                                  = case y of ww { GHC.Types.I# ww1 ->
+                                    case GHC.Show.$w$cshowsPrec4
+                                           0#
+                                           (GHC.List.$w!!
+                                              @ GHC.Integer.Type.Integer
+                                              Neovim.Example.Plugin.Fibonacci.fibonacciNumbers
+                                              ww1)
+                                           (GHC.Types.[] @ GHC.Types.Char) of ww2 { (#,#) ww3 ww4 ->
+                                    Data.ByteString.UTF8.fromString
+                                      (GHC.Types.: @ GHC.Types.Char ww3 ww4) } }
+                                } in
+                                let {
+                                  lvl13 :: Data.MessagePack.Object
+                                  = Data.MessagePack.ObjectBinary lvl12
+                                } in
+                                (\ (r :: GHC.IORef.IORef
+                                           Control.Monad.Trans.Resource.Internal.ReleaseMap)
+                                   (eta :: Neovim.Context.Internal.Config
+                                             (GHC.Conc.Sync.TVar [GHC.Int.Int16]))
+                                   (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                                 (# eta1, lvl13 #))
+                                  `cast`
+                                ((<GHC.IORef.IORef
+                                     Control.Monad.Trans.Resource.Internal.ReleaseMap>_R
+                                  ->_R (<Neovim.Context.Internal.Config
+                                           (GHC.Conc.Sync.TVar [GHC.Int.Int16])>_R
+                                        ->_R Sym (GHC.Types.N:IO[0]
+                                                      <Data.MessagePack.Object>_R)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                               <Neovim.Context.Internal.Config
+                                                                                                  (GHC.Conc.Sync.TVar
+                                                                                                     [GHC.Int.Int16])>_R
+                                                                                               <GHC.Types.IO>_R
+                                                                                               <Data.MessagePack.Object>_N)) ; (Sym (Control.Monad.Trans.Resource.Internal.N:ResourceT[0]
+                                                                                                                                         <Control.Monad.Trans.Reader.ReaderT
+                                                                                                                                            (Neovim.Context.Internal.Config
+                                                                                                                                               (GHC.Conc.Sync.TVar
+                                                                                                                                                  [GHC.Int.Int16]))
+                                                                                                                                            GHC.Types.IO>_R
+                                                                                                                                         <Data.MessagePack.Object>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
+                                                                                                                                                                                 <GHC.Conc.Sync.TVar
+                                                                                                                                                                                    [GHC.Int.Int16]>_R) <Data.MessagePack.Object>_N)) }
+                        : ipv ipv1 -> Neovim.Example.Plugin.plugin19 } }) -}
+fbeac9538618fc3cde566d0db4bb09a6
+  plugin19 ::
+    Neovim.Context.Internal.Neovim
+      (GHC.Conc.Sync.TVar [GHC.Int.Int16]) Data.MessagePack.Object
+  {- Strictness: x -}
+e5e9a56c8768de75c99f5efbee90b7b0
+  plugin2 ::
+    [Neovim.Plugin.Internal.ExportedFunctionality
+       (GHC.Conc.Sync.TVar [GHC.Int.Int16])]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (Neovim.Plugin.Internal.ExportedFunctionality
+                        (GHC.Conc.Sync.TVar [GHC.Int.Int16]))
+                   Neovim.Example.Plugin.plugin17
+                     `cast`
+                   (Sym (Neovim.Plugin.Internal.N:ExportedFunctionality[0]
+                             <GHC.Conc.Sync.TVar [GHC.Int.Int16]>_R))
+                   Neovim.Example.Plugin.plugin3) -}
+c420f0eb2642d3e4b36168d0e379467b
+  plugin20 :: Neovim.Plugin.Classes.FunctionalityDescription
+  {- Strictness: m1,
+     Unfolding: (Neovim.Plugin.Classes.Function
+                   Neovim.Example.Plugin.plugin21
+                     `cast`
+                   (Sym (Neovim.Plugin.Classes.N:FunctionName[0]))
+                   Neovim.Plugin.Classes.Sync) -}
+7a3bb3f66215212d702110e446de6fe2
+  plugin21 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (Data.ByteString.UTF8.fromString
+                   (GHC.CString.unpackCString# Neovim.Example.Plugin.plugin22)) -}
+33ddcf71efc50f866e48abe08189071a
+  plugin22 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Fibonacci"#) -}
+7ea1df1e2ce9be5a118bb83045815555
+  plugin3 ::
+    [Neovim.Plugin.Internal.ExportedFunctionality
+       (GHC.Conc.Sync.TVar [GHC.Int.Int16])]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (Neovim.Plugin.Internal.ExportedFunctionality
+                        (GHC.Conc.Sync.TVar [GHC.Int.Int16]))
+                   Neovim.Example.Plugin.plugin11
+                     `cast`
+                   (Sym (Neovim.Plugin.Internal.N:ExportedFunctionality[0]
+                             <GHC.Conc.Sync.TVar [GHC.Int.Int16]>_R))
+                   Neovim.Example.Plugin.plugin4) -}
+0c50b424481bf6c6c8e8a4d9c7508111
+  plugin4 ::
+    [Neovim.Plugin.Internal.ExportedFunctionality
+       (GHC.Conc.Sync.TVar [GHC.Int.Int16])]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (Neovim.Plugin.Internal.ExportedFunctionality
+                        (GHC.Conc.Sync.TVar [GHC.Int.Int16]))
+                   Neovim.Example.Plugin.plugin5
+                     `cast`
+                   (Sym (Neovim.Plugin.Internal.N:ExportedFunctionality[0]
+                             <GHC.Conc.Sync.TVar [GHC.Int.Int16]>_R))
+                   (GHC.Types.[]
+                      @ (Neovim.Plugin.Internal.ExportedFunctionality
+                           (GHC.Conc.Sync.TVar [GHC.Int.Int16])))) -}
+28442932fb8072d194e191fc3f876d39
+  plugin5 ::
+    (Neovim.Plugin.Classes.FunctionalityDescription,
+     [Data.MessagePack.Object]
+     -> Neovim.Context.Internal.Neovim
+          (GHC.Conc.Sync.TVar [GHC.Int.Int16]) Data.MessagePack.Object)
+  {- Strictness: m,
+     Unfolding: ((Neovim.Example.Plugin.plugin8,
+                  Neovim.Example.Plugin.plugin6)) -}
+43effc1ddf00f00e75ee439286b319b0
+  plugin6 ::
+    [Data.MessagePack.Object]
+    -> Neovim.Context.Internal.Neovim
+         (GHC.Conc.Sync.TVar [GHC.Int.Int16]) Data.MessagePack.Object
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (args :: [Data.MessagePack.Object]) ->
+                 case args of wild {
+                   [] -> Neovim.Example.Plugin.plugin7
+                   : x ds
+                   -> case ds of wild1 {
+                        []
+                        -> case Neovim.Classes.$fNvimObjectInt16_$cfromObject x of wild2 {
+                             Data.Either.Left x1
+                             -> Neovim.Context.err
+                                  @ (GHC.Conc.Sync.TVar [GHC.Int.Int16])
+                                  @ Data.MessagePack.Object
+                                  x1
+                             Data.Either.Right y
+                             -> (\ (r :: GHC.IORef.IORef
+                                           Control.Monad.Trans.Resource.Internal.ReleaseMap)
+                                   (eta :: Neovim.Context.Internal.Config
+                                             (GHC.Conc.Sync.TVar [GHC.Int.Int16]))
+                                   (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                                 case GHC.Prim.atomically#
+                                        @ ()
+                                        (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                                         case eta of wild3 { Neovim.Context.Internal.Config ds1 ds2 ds3 ds4 ds5 ds6 ds7 ->
+                                         case ds7 of wild4 { GHC.Conc.Sync.TVar tvar# ->
+                                         case GHC.Prim.readTVar#
+                                                @ GHC.Prim.RealWorld
+                                                @ [GHC.Int.Int16]
+                                                tvar#
+                                                s of ds8 { (#,#) ipv ipv1 ->
+                                         case GHC.Prim.writeTVar#
+                                                @ GHC.Prim.RealWorld
+                                                @ [GHC.Int.Int16]
+                                                tvar#
+                                                (GHC.Types.: @ GHC.Int.Int16 y ipv1)
+                                                ipv of s2# { DEFAULT ->
+                                         (# s2#, GHC.Tuple.() #) } } } })
+                                        eta1 of ds1 { (#,#) ipv ipv1 ->
+                                 (# ipv, Data.MessagePack.ObjectNil #) })
+                                  `cast`
+                                ((<GHC.IORef.IORef
+                                     Control.Monad.Trans.Resource.Internal.ReleaseMap>_R
+                                  ->_R (<Neovim.Context.Internal.Config
+                                           (GHC.Conc.Sync.TVar [GHC.Int.Int16])>_R
+                                        ->_R Sym (GHC.Types.N:IO[0]
+                                                      <Data.MessagePack.Object>_R)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                               <Neovim.Context.Internal.Config
+                                                                                                  (GHC.Conc.Sync.TVar
+                                                                                                     [GHC.Int.Int16])>_R
+                                                                                               <GHC.Types.IO>_R
+                                                                                               <Data.MessagePack.Object>_N)) ; (Sym (Control.Monad.Trans.Resource.Internal.N:ResourceT[0]
+                                                                                                                                         <Control.Monad.Trans.Reader.ReaderT
+                                                                                                                                            (Neovim.Context.Internal.Config
+                                                                                                                                               (GHC.Conc.Sync.TVar
+                                                                                                                                                  [GHC.Int.Int16]))
+                                                                                                                                            GHC.Types.IO>_R
+                                                                                                                                         <Data.MessagePack.Object>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
+                                                                                                                                                                                 <GHC.Conc.Sync.TVar
+                                                                                                                                                                                    [GHC.Int.Int16]>_R) <Data.MessagePack.Object>_N)) }
+                        : ipv ipv1 -> Neovim.Example.Plugin.plugin7 } }) -}
+0c509667496acff906302649e583f72f
+  plugin7 ::
+    Neovim.Context.Internal.Neovim
+      (GHC.Conc.Sync.TVar [GHC.Int.Int16]) Data.MessagePack.Object
+  {- Strictness: x -}
+4c9f776c207aa93651091e22dbf9be97
+  plugin8 :: Neovim.Plugin.Classes.FunctionalityDescription
+  {- Strictness: m1,
+     Unfolding: (Neovim.Plugin.Classes.Function
+                   Neovim.Example.Plugin.plugin9
+                     `cast`
+                   (Sym (Neovim.Plugin.Classes.N:FunctionName[0]))
+                   Neovim.Plugin.Classes.Async) -}
+b5229e2c27bc04c24fb9739672060b2e
+  plugin9 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (Data.ByteString.UTF8.fromString
+                   (GHC.CString.unpackCString# Neovim.Example.Plugin.plugin10)) -}
 trusted: none
 require own pkg trusted: False
 module header:
