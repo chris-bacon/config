@@ -30,18 +30,19 @@ haskellFormatImport (CommandArguments _ range _ _) = do
   allLines <- nvim_buf_get_lines buff (intToInt64 a) (intToInt64 b) False
   let allImportLines       = filter isImportStatement (zip [1..b] allLines)
       anyImportIsQualified = not . null $ filter isQualified allImportLines
-      maxLength            = max $ fmap length allImportLines
+      maxLength            = max $ fmap (\(_,s) -> length s) allImportLines
   -- nvim_buf_set_lines buff 0 0 False allImportLines
 
   -- nvim_buf_get_lines
-  mapM_ formatImportLine allImportLines
+  mapM_ (formatImportLine buff anyImportIsQualified maxLength) allImportLines
 
   -- mapM_ (\line -> substitute (0, 10) line (line ++ "bob") ["g"]) allImportLines
   return ()
 
+formatImportLine buff qualifiedImports longestImport (lineNo, lineContent) = buffer_set_line buff (intToInt64 lineNo) $ padContent lineContent qualifiedImports longestImport
 
-formatImportLine (lineNo, lineContent) = buffer_set_line buff (intToInt64 lineNo) (lineContent ++ "whoevenamI")
--- echo HaskellFormatImport(expand('%:p'))
+padContent content False longestImport = content ++ (take longestImport $ repeat ' ')
+
 -- haskellFormatImport :: String -> Neovim env [T.Text]
 -- haskellFormatImport path = do
 --     fileContent <- liftIO $ T.readFile path
