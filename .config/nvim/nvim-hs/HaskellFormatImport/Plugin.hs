@@ -8,6 +8,7 @@ import Data.Maybe
 import Neovim
 import Neovim.API.String
 import Basement.IntegralConv (intToInt64)
+import Data.List.Split
 
 qualifiedPadLength :: Int
 qualifiedPadLength = 9
@@ -30,7 +31,7 @@ haskellFormatImport (CommandArguments _ range _ _) = do
   allLines <- nvim_buf_get_lines buff (intToInt64 a) (intToInt64 b) False
   let allImportLines       = filter isImportStatement (zip [1..b] allLines)
       anyImportIsQualified = not . null $ filter isQualified allImportLines
-      maxLength            = max $ fmap (\(_,s) -> length s) allImportLines
+      maxLength            = foldr max 0 $ fmap (\(_,s) -> length s) allImportLines
   -- nvim_buf_set_lines buff 0 0 False allImportLines
 
   -- nvim_buf_get_lines
@@ -42,6 +43,10 @@ haskellFormatImport (CommandArguments _ range _ _) = do
 formatImportLine buff qualifiedImports longestImport (lineNo, lineContent) = buffer_set_line buff (intToInt64 lineNo) $ padContent lineContent qualifiedImports longestImport
 
 padContent content False longestImport = content ++ (take longestImport $ repeat ' ')
+padContent content True longestImport = do
+  if "qualified" `isInfixOf` content
+     then content
+     else concat $ "import qualified" : splitOn "import" content
 
 -- haskellFormatImport :: String -> Neovim env [T.Text]
 -- haskellFormatImport path = do
