@@ -19,6 +19,9 @@ newtype MaxLineLength = MaxLineLength Int
 qualifiedPadLength :: Int
 qualifiedPadLength = 9
 
+padMissingQualified :: String
+padMissingQualified = take qualifiedPadLength $ repeat ' '
+
 -- | Invokes the substitute command with given parameters
 substitute :: (Int, Int) -> String -> String -> [String] -> Neovim env ()
 substitute (start,end) ptn replacement flags = vim_command 
@@ -59,9 +62,9 @@ getQualification xs = go $ filter isQualified xs
 padContent :: String -> Qualification -> Int -> String
 padContent content NotPresent longestImport = content
 padContent content Present longestImport =
-  if "qualified" `isInfixOf` content || "import         " `isInfixOf` content
+  if "qualified" `isInfixOf` content || ("import" ++ padMissingQualified) `isInfixOf` content
      then content
-     else concat $ "import          " : splitOn "import" content
+     else concat $ ("import" ++ padMissingQualified) : splitOn "import" content
 
 sortImports :: [(Int, String)] -> [(Int, String)]
 sortImports xs = zip (fmap fst xs) $ sort (fmap snd xs)
