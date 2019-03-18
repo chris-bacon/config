@@ -30,7 +30,8 @@ haskellFormatImport (CommandArguments _ range _ _) = do
   let (startOfRange, endOfRange) = fromMaybe (0,0) range
   buff     <- vim_get_current_buffer
   allLines <- nvim_buf_get_lines buff (intToInt64 startOfRange) (intToInt64 endOfRange) False
-  let allImportLines       = sortImports $ filter isImportStatement (zip [1..endOfRange] allLines)
+
+  let allImportLines       = sortImports . filter isImportStatement $ zip [1..endOfRange] allLines
       anyImportIsQualified = getQualification allImportLines
       maxLineLength        = MaxLineLength $ foldr max 0 $ fmap (\(_,s) -> length s) allImportLines
       longestModuleName    = getLongestModuleName allImportLines
@@ -39,7 +40,8 @@ haskellFormatImport (CommandArguments _ range _ _) = do
 
   return ()
 
-getLongestModuleName xs = fmap (\(_,x) -> drop (length ("import" :: String) + qualifiedPadLength) x) xs
+getLongestModuleName :: [(LineNumber, String)] -> Int
+getLongestModuleName xs = 1
 
 formatImportLine :: Buffer -> Qualification -> MaxLineLength -> (LineNumber, String) -> Neovim env ()
 formatImportLine buff qualifiedImports (MaxLineLength longestImport) (lineNo, lineContent) 
