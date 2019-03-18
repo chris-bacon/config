@@ -1,5 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
-module HaskellFormatImport.Plugin ( haskellFormatImport ) where
+module HaskellFormatImport.Plugin ( haskellFormatImport , getLongestModuleName) where
 
 import Data.Char
 import Data.List
@@ -33,12 +33,13 @@ haskellFormatImport (CommandArguments _ range _ _) = do
   let allImportLines       = sortImports $ filter isImportStatement (zip [1..endOfRange] allLines)
       anyImportIsQualified = getQualification allImportLines
       maxLineLength        = MaxLineLength $ foldr max 0 $ fmap (\(_,s) -> length s) allImportLines
-
-      longestModuleName     = fmap (\(_,x) -> splitOn "qualified" $ x) allImportLines 
+      longestModuleName    = getLongestModuleName allImportLines
 
   mapM_ (formatImportLine buff anyImportIsQualified maxLineLength) allImportLines
 
   return ()
+
+getLongestModuleName xs = fmap (\(_,x) -> splitOn "qualified" $ x) xs
 
 formatImportLine :: Buffer -> Qualification -> MaxLineLength -> (LineNumber, String) -> Neovim env ()
 formatImportLine buff qualifiedImports (MaxLineLength longestImport) (lineNo, lineContent) 
