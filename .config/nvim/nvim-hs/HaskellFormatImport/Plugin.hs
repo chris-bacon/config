@@ -1,9 +1,8 @@
 {-# LANGUAGE OverloadedStrings #-}
 module HaskellFormatImport.Plugin (haskellFormatImport) where
 
+import Data.Char
 import Data.List
-import qualified Data.Text as T
-import qualified Data.Text.IO as T
 import Data.Maybe
 import Neovim
 import Neovim.API.String
@@ -67,7 +66,7 @@ padContent content Present longestImport =
      else concat $ ("import" ++ padMissingQualified) : splitOn "import" content
 
 sortImports :: [(Int, String)] -> [(Int, String)]
-sortImports xs = zip (fmap fst xs) $ sort (fmap snd xs)
+sortImports xs = zip (fmap fst xs) $ sortBy (\a b -> compare (toLower a) (toLower b)) (fmap snd xs)
 
 isImportStatement :: (Int, String) -> Bool
 isImportStatement (_, s) = isInfixOf "import " s
