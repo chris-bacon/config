@@ -42,11 +42,11 @@ haskellFormatImport (CommandArguments _ range _ _) = do
 
 formatImportLine buff qualifiedImports longestImport (lineNo, lineContent) = buffer_set_line buff (intToInt64 lineNo) $ padContent lineContent qualifiedImports longestImport
 
-padContent content False longestImport = content ++ (take longestImport $ repeat ' ')
+padContent content False longestImport = content
 padContent content True longestImport = do
-  if "qualified" `isInfixOf` content
+  if "qualified" `isInfixOf` content || "import         " `isInfixOf` content
      then content
-     else concat $ "import qualified" : splitOn "import" content
+     else concat $ "import          " : splitOn "import" content
 
 -- haskellFormatImport :: String -> Neovim env [T.Text]
 -- haskellFormatImport path = do
