@@ -10,6 +10,8 @@ import Neovim.API.String
 import Basement.IntegralConv (intToInt64)
 import Data.List.Split
 
+-- | Qualification in this context means that one of the imports is a qualified import
+-- It is a property that applies to the whole buffer, however.
 data Qualification = Present | NotPresent
 
 newtype MaxLineLength = MaxLineLength Int
@@ -34,13 +36,11 @@ substitute (start,end) ptn replacement flags = vim_command
 haskellFormatImport :: CommandArguments -> Neovim env ()
 haskellFormatImport (CommandArguments _ range _ _) = do
   let (startOfRange, endOfRange) = fromMaybe (0,0) range
-  buff <- vim_get_current_buffer
+  buff     <- vim_get_current_buffer
   allLines <- nvim_buf_get_lines buff (intToInt64 startOfRange) (intToInt64 endOfRange) False
   let allImportLines       = sortImports $ filter isImportStatement (zip [1..endOfRange] allLines)
       anyImportIsQualified = getQualification allImportLines
       maxLineLength        = MaxLineLength $ foldr max 0 $ fmap (\(_,s) -> length s) allImportLines
-  -- nvim_buf_set_lines buff 0 0 False allImportLines
-  -- nvim_buf_get_lines
 
   mapM_ (formatImportLine buff anyImportIsQualified maxLineLength) allImportLines
 
