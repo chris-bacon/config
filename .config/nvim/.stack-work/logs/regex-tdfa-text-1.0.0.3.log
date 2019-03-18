@@ -1,0 +1,7 @@
+Configuring regex-tdfa-text-1.0.0.3...
+Preprocessing library for regex-tdfa-text-1.0.0.3..
+Building library for regex-tdfa-text-1.0.0.3..
+[1 of 2] Compiling Text.Regex.TDFA.Text ( Text/Regex/TDFA/Text.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Text/Regex/TDFA/Text.o )
+[2 of 2] Compiling Text.Regex.TDFA.Text.Lazy ( Text/Regex/TDFA/Text/Lazy.hs, .stack-work/dist/x86_64-linux/Cabal-2.4.0.1/build/Text/Regex/TDFA/Text/Lazy.o )
+Installing library in /home/chrisbacon/.stack/snapshots/x86_64-linux/nightly-2019-03-13/8.6.4/lib/x86_64-linux-ghc-8.6.4/regex-tdfa-text-1.0.0.3-Jn8wOqywgrhFzH0ykYcJS3
+Registering library for regex-tdfa-text-1.0.0.3..

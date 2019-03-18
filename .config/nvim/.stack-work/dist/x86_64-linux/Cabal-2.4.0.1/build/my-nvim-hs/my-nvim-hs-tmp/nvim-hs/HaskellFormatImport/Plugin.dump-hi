@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-18 18:15:28.185375748 UTC
+2019-03-18 18:37:49.414600639 UTC
 
 interface main:HaskellFormatImport.Plugin 8064
-  interface hash: 446181028e72186d9137db3d73eeddef
-  ABI hash: c0eef09b14bc4d54a8d44cc495437c97
-  export-list hash: 4c1bb7a63fde568b694159c21de658d7
+  interface hash: b34d4d2d860ef0b649b8e38fcc4bb615
+  ABI hash: 246f753742c870ceadfab9cf91d21a25
+  export-list hash: 0820384269046ab0a2955f873040b70a
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: e5fd15702f15e2b7fd2f13ad10fcf15d
   opt_hash: d0a78e7b344f95c7406be35c9b75e196
@@ -33,14 +33,19 @@ package dependencies: ansi-terminal-0.9 ansi-wl-pprint-0.6.8.2
                       old-locale-1.0.0.7 optparse-applicative-0.14.3.0
                       parser-combinators-1.0.1 pretty-1.1.3.6 prettyprinter-1.2.1
                       prettyprinter-ansi-terminal-1.1.1.2 primitive-0.6.4.0
-                      process-1.6.5.0 random-1.1 resourcet-1.2.2 split-0.2.3.3
-                      stm-2.5.0.0 streaming-commons-0.2.1.0 template-haskell-2.14.0.0
-                      text-1.2.3.1 time-1.8.0.2 time-locale-compat-0.1.1.5
-                      transformers-0.5.6.2 typed-process-0.2.4.0 unix-2.7.2.2
-                      unliftio-0.2.10 unliftio-core-0.1.2.0 unordered-containers-0.2.10.0
+                      process-1.6.5.0 random-1.1 regex-base-0.93.2 regex-compat-0.95.1
+                      regex-posix-0.95.2 resourcet-1.2.2 split-0.2.3.3 stm-2.5.0.0
+                      streaming-commons-0.2.1.0 template-haskell-2.14.0.0 text-1.2.3.1
+                      time-1.8.0.2 time-locale-compat-0.1.1.5 transformers-0.5.6.2
+                      typed-process-0.2.4.0 unix-2.7.2.2 unliftio-0.2.10
+                      unliftio-core-0.1.2.0 unordered-containers-0.2.10.0
                       utf8-string-1.0.1.1 vector-0.12.0.2 vector-algorithms-0.8.0.1
-orphans: network-2.8.0.0:Network.Socket
-         vector-0.12.0.2:Data.Vector.Unboxed
+orphans: regex-posix-0.95.2:Text.Regex.Posix.String
+         regex-posix-0.95.2:Text.Regex.Posix.Sequence
+         regex-posix-0.95.2:Text.Regex.Posix.ByteString.Lazy
+         regex-posix-0.95.2:Text.Regex.Posix.ByteString
+         regex-base-0.93.2:Text.Regex.Base.Context
+         network-2.8.0.0:Network.Socket vector-0.12.0.2:Data.Vector.Unboxed
          hashable-1.2.7.0:Data.Hashable.Generic colour-2.3.4:Data.Colour
          data-default-instances-containers-0.0.1:Data.Default.Instances.Containers
          data-default-instances-dlist-0.0.1:Data.Default.Instances.DList
@@ -123,6 +128,7 @@ import  -/  nvim-hs-2.0.0.0:Neovim 167669be48234d69ad1483fe71c0a30e
 import  -/  nvim-hs-2.0.0.0:Neovim.API.String 4474be69165bb942195ccd71d4889400
 import  -/  nvim-hs-2.0.0.0:Neovim.Context.Internal 18ef550ed059bc886ea89ec66dd281a9
 import  -/  nvim-hs-2.0.0.0:Neovim.Plugin.Classes 5f7806180d205a1bc6ed8262ba857416
+import  -/  regex-compat-0.95.1:Text.Regex 389154f2af9016e3bae20075e1794a17
 import  -/  split-0.2.3.3:Data.List.Split 3518b4851dc357bd81ca9eb7a13694f0
 import  -/  split-0.2.3.3:Data.List.Split.Internals b4ab8dde94aedb7514b1f8d89c369cbe
 a7c6c43aed276993e87f7f4997131d5b
@@ -143,10 +149,9 @@ a0c8646adf2a4988f400021c4ef639e1
   newtype MaxLineLength = MaxLineLength GHC.Types.Int
 3710fd1e207da4844dc4f9038e089e08
   data Qualification = Present | NotPresent
-bca3399756e77a3d1cad0d2cd4987061
+951c9709689cb80b638c6db3d6cef1d3
   getLongestModuleName ::
-    [(HaskellFormatImport.Plugin.LineNumber, GHC.Base.String)]
-    -> GHC.Types.Int
+    [(a, GHC.Base.String)] -> GHC.Maybe.Maybe [GHC.Base.String]
 48405580d87c6c451858245c7f988dc5
   haskellFormatImport ::
     Neovim.Plugin.Classes.CommandArguments

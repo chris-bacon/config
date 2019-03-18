@@ -66,6 +66,17 @@
   (major1) == 1 && (major2) == 1 && (minor) <= 0)
 #endif /* MIN_VERSION_random */
 
+/* package regex-compat-0.95.1 */
+#ifndef VERSION_regex_compat
+#define VERSION_regex_compat "0.95.1"
+#endif /* VERSION_regex_compat */
+#ifndef MIN_VERSION_regex_compat
+#define MIN_VERSION_regex_compat(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  95 || \
+  (major1) == 0 && (major2) == 95 && (minor) <= 1)
+#endif /* MIN_VERSION_regex_compat */
+
 /* package split-0.2.3.3 */
 #ifndef VERSION_split
 #define VERSION_split "0.2.3.3"
@@ -210,7 +221,7 @@
 #endif /* MIN_TOOL_VERSION_strip */
 
 #ifndef CURRENT_COMPONENT_ID
-#define CURRENT_COMPONENT_ID "my-nvim-hs-0.1.0.0-6tFCzxq3GD4KY7cBNUACwJ-my-nvim-hs"
+#define CURRENT_COMPONENT_ID "my-nvim-hs-0.1.0.0-S9MLumFOo6GFs1oUTOkqx-my-nvim-hs"
 #endif /* CURRENT_COMPONENT_ID */
 #ifndef CURRENT_PACKAGE_VERSION
 #define CURRENT_PACKAGE_VERSION "0.1.0.0"

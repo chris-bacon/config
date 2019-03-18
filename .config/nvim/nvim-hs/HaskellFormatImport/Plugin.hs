@@ -4,6 +4,7 @@ module HaskellFormatImport.Plugin ( haskellFormatImport , getLongestModuleName) 
 import Data.Char
 import Data.List
 import Data.Maybe
+import Text.Regex
 import Neovim
 import Neovim.API.String
 import Basement.IntegralConv (intToInt64)
@@ -19,9 +20,6 @@ type LineNumber = Int
 
 qualifiedPadLength :: Int
 qualifiedPadLength = 10
-
-padMissingQualified :: String
-padMissingQualified = take qualifiedPadLength $ repeat ' '
 
 -- TODO: as
 
@@ -39,8 +37,13 @@ haskellFormatImport (CommandArguments _ range _ _) = do
   mapM_ (formatImportLine buff anyImportIsQualified maxLineLength) allImportLines >> return ()
 
 
+padMissingQualified :: String
+padMissingQualified = take qualifiedPadLength $ repeat ' '
+
 getLongestModuleName :: [(LineNumber, String)] -> Int
-getLongestModuleName xs = 1
+getLongestModuleName xs =
+  let moduleNameRegex = mkRegex "^[import]+\\s[qualified]*\\s*(\\w+\\.*\\w*)"
+   in max $ fmap (length . matchRegex moduleNameRegex . snd) xs
 
 formatImportLine :: Buffer -> Qualification -> MaxLineLength -> (LineNumber, String) -> Neovim env ()
 formatImportLine buff qualifiedImports (MaxLineLength longestImport) (lineNo, lineContent) 
