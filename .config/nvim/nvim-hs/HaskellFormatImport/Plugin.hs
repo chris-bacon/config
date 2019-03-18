@@ -1,5 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
-module HaskellFormatImport.Plugin (haskellFormatImport) where
+module HaskellFormatImport.Plugin (haskellFormatImport,mysort) where
 
 import Data.List
 import qualified Data.Text as T
@@ -55,10 +55,11 @@ padContent content True longestImport = do
      else concat $ "import          " : splitOn "import" content
 
 
-mysort (pivot:xs) = do
-  larger = [y | y >= pivot]
-  smaller = [y | y < pivot]
-  mysort smaller ++ pivot ++ mysort larger
+mysort (pivot:y:xs) = do
+  if compare (snd pivot) (snd y) == GT then (fst pivot, snd y) : (fst y, snd pivot) : xs else pivot : y : xs
+  -- let larger  = [y | y >= pivot]
+  --     smaller = [y | y < pivot]
+  -- mysort smaller ++ pivot ++ mysort larger
 
 -- Pick an element, called a pivot, from the array.
 -- Partitioning: reorder the array so that all elements with values less than the pivot come before the pivot, while all elements with values greater than the pivot come after it (equal values can go either way). After this partitioning, the pivot is in its final position. This is called the partition operation.
