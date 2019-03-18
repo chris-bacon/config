@@ -46,32 +46,20 @@ haskellFormatImport (CommandArguments _ range _ _) = do
   return ()
 
 
+formatImportLine :: Buffer -> Qualified -> Int -> (Int, String) -> Neovim env ()
 formatImportLine buff qualifiedImports longestImport (lineNo, lineContent) = buffer_set_line buff (intToInt64 lineNo) $ padContent lineContent qualifiedImports longestImport
 
-padContent content False longestImport = content
-padContent content True longestImport = do
+data Qualified = ImportIsQualified | ImportIsNotQualified
+
+padContent :: String -> Qualified -> Int -> String
+padContent content ImportIsNotQualified longestImport = content
+padContent content ImportIsQualified longestImport =
   if "qualified" `isInfixOf` content || "import         " `isInfixOf` content
      then content
      else concat $ "import          " : splitOn "import" content
 
-sortImports xs =
-  let lineNos = fmap fst xs
-      lineContent = fmap snd xs
-   in zip lineNos $ sort lineContent
-
--- haskellFormatImport :: String -> Neovim env [T.Text]
--- haskellFormatImport path = do
---     fileContent <- liftIO $ T.readFile path
-
---     let splitIntoLInes = T.lines fileContent
---         imports        = filter isImportStatement splitIntoLInes
---         hasQualified   = any isQualified imports
---         paddedImports  = padImports imports hasQualified
---     -- let res = formatImport <$> lines a
-
---     liftIO $ T.writeFile path $ T.unlines paddedImports
-
---     return paddedImports
+sortImports :: [String] -> [String]
+sortImports xs = zip (fmap fst xs) $ sort (fmap snd xs)
 
 isImportStatement :: (Int, String) -> Bool
 isImportStatement (_, s) = isInfixOf "import " s
