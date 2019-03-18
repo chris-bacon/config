@@ -56,7 +56,9 @@ padContent content Present longestImport =
      else concat $ ("import" ++ padMissingQualified) : splitOn "import" content
 
 sortImports :: [(LineNumber, String)] -> [(LineNumber, String)]
-sortImports xs = zip (fmap fst xs) $ sortBy (\a b -> compare (toLower <$> a) (toLower <$> b)) (fmap snd xs)
+sortImports xs = zip (fmap fst xs) $ sortBy (\a b -> compare (toLower <$> ignoreQualified a) (toLower <$> ignoreQualified b)) (fmap snd xs)
+  where
+    ignoreQualified = concat . splitOn "qualified"
 
 isImportStatement :: (LineNumber, String) -> Bool
 isImportStatement (_, s) = isInfixOf "import " s
