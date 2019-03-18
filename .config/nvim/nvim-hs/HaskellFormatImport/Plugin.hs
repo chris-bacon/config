@@ -28,13 +28,13 @@ haskellFormatImport (CommandArguments _ range _ _) = do
   let (a, b) = fromMaybe (0,0) range
   buff <- vim_get_current_buffer
   allLines <- nvim_buf_get_lines buff (intToInt64 a) (intToInt64 b) False
-  let allImportLines       = filter isImportStatement allLines
+  let allImportLines       = filter isImportStatement (zip [0..b] allLines)
       anyImportIsQualified = not . null $ filter isQualified allImportLines
       maxLength            = max $ fmap length allImportLines
   nvim_buf_set_lines buff 0 0 False allImportLines
 
   -- nvim_buf_get_lines
-  -- buffer_set_line
+  -- buffer_set_line buff int64 string
 
   -- mapM_ (\line -> substitute (0, 10) line (line ++ "bob") ["g"]) allImportLines
   return ()
@@ -56,11 +56,11 @@ haskellFormatImport (CommandArguments _ range _ _) = do
 
 --     return paddedImports
 
-isImportStatement :: String -> Bool
-isImportStatement = isInfixOf "import "
+isImportStatement :: (Int, String) -> Bool
+isImportStatement (_, s) = isInfixOf "import " s
 
-isQualified :: String -> Bool
-isQualified = isInfixOf "qualified "
+isQualified :: (Int, String) -> Bool
+isQualified (_, s) = isInfixOf "qualified " s
 
 -- padImports :: [T.Text] -> Bool -> [T.Text]
 -- padImports i False = i
