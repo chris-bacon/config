@@ -24,14 +24,19 @@ substitute (start,end) ptn replacement flags = vim_command
   ++ replacement ++ "/"
   ++ mconcat flags
 
+
+-- TODO: as
+-- TODO: alphabetical
+
 haskellFormatImport :: CommandArguments -> Neovim env ()
 haskellFormatImport (CommandArguments _ range _ _) = do
   let (a, b) = fromMaybe (0,0) range
   buff <- vim_get_current_buffer
   allLines <- nvim_buf_get_lines buff (intToInt64 a) (intToInt64 b) False
-  let allImportLines       = filter isImportStatement (zip [1..b] allLines)
-      anyImportIsQualified = not . null $ filter isQualified allImportLines
-      maxLength            = foldr max 0 $ fmap (\(_,s) -> length s) allImportLines
+  let allImportLinesUnsorted = filter isImportStatement (zip [1..b] allLines)
+      allImportLines         = sortBy (\(_,a)(_,b) -> compare a b) allImportLinesUnsorted
+      anyImportIsQualified   = not . null $ filter isQualified allImportLines
+      maxLength              = foldr max 0 $ fmap (\(_,s) -> length s) allImportLines
   -- nvim_buf_set_lines buff 0 0 False allImportLines
 
   -- nvim_buf_get_lines
@@ -39,6 +44,7 @@ haskellFormatImport (CommandArguments _ range _ _) = do
 
   -- mapM_ (\line -> substitute (0, 10) line (line ++ "bob") ["g"]) allImportLines
   return ()
+
 
 formatImportLine buff qualifiedImports longestImport (lineNo, lineContent) = buffer_set_line buff (intToInt64 lineNo) $ padContent lineContent qualifiedImports longestImport
 
