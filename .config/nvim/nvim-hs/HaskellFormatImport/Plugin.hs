@@ -45,7 +45,8 @@ moduleNameRegex :: Regex
 moduleNameRegex = mkRegex "^[import]+\\s[qualified]*\\s*(\\w+\\.*\\w*)"
 
 getLongestModuleName :: [(LineNumber, String)] -> Int
-getLongestModuleName xs = maximum $ length . concat . fromJust <$> fmap (matchRegex moduleNameRegex . snd) xs
+getLongestModuleName xs 
+  = maximum $ length . concat . fromJust <$> fmap (matchRegex moduleNameRegex . snd) xs
 
 formatImportLine :: Buffer -> Qualification -> MaxLineLength -> Int -> Int -> (LineNumber, String) -> Neovim env ()
 formatImportLine buff qualifiedImports (MaxLineLength longestImport) longestModuleName (lineNo, lineContent) 
