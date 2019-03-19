@@ -1,9 +1,8 @@
 {-# LANGUAGE OverloadedStrings #-}
-module HaskellFormatImport.Plugin ( haskellFormatImport , getLongestModuleName) where
+module HaskellFormatImport.Plugin ( haskellFormatImport ) where
 
 import Data.Char
 import Data.List
-import Data.Maybe
 import Data.Maybe
 import Text.Regex
 import Neovim
@@ -34,7 +33,6 @@ haskellFormatImport (CommandArguments _ range _ _) = do
       longestModuleName    = getLongestModuleName allImportLines
 
   mapM_ (formatImportLine buff anyImportIsQualified maxLineLength longestModuleName) allImportLines >> return ()
-
 
 padMissingQualified :: String
 padMissingQualified = take qualifiedPadLength $ repeat ' '
@@ -71,7 +69,6 @@ padAs n s =
     let lenModName = getLengthOfModuleName s
         padDiff    = n - lenModName 
      in mconcat . intersperse (take padDiff (repeat ' ') ++ "as") $ splitOn "as" s
-
 
 sortImports :: [(LineNumber, String)] -> [(LineNumber, String)]
 sortImports xs = zip (fmap fst xs) $ sortBy (\a b -> compare (toLower <$> ignoreQualified a) (toLower <$> ignoreQualified b)) (fmap snd xs)
