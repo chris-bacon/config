@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-18 18:51:46.804068648 UTC
+2019-03-19 18:33:43.251138466 UTC
 
 interface main:HaskellFormatImport.Plugin 8064
-  interface hash: 14e098a44baaca4e80b605e9e2cd986c
+  interface hash: 407f27d28c7cb345407947efc7c38182
   ABI hash: 4361260aab66fab8a1f89526d6dbef3f
   export-list hash: 0820384269046ab0a2955f873040b70a
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -129,6 +129,7 @@ import  -/  nvim-hs-2.0.0.0:Neovim.API.String 4474be69165bb942195ccd71d4889400
 import  -/  nvim-hs-2.0.0.0:Neovim.Context.Internal 18ef550ed059bc886ea89ec66dd281a9
 import  -/  nvim-hs-2.0.0.0:Neovim.Plugin.Classes 5f7806180d205a1bc6ed8262ba857416
 import  -/  regex-compat-0.95.1:Text.Regex 389154f2af9016e3bae20075e1794a17
+import  -/  regex-posix-0.95.2:Text.Regex.Posix.Wrap db34d4dabcdc5931ba5ba49688d21cb1
 import  -/  split-0.2.3.3:Data.List.Split 3518b4851dc357bd81ca9eb7a13694f0
 import  -/  split-0.2.3.3:Data.List.Split.Internals b4ab8dde94aedb7514b1f8d89c369cbe
 a7c6c43aed276993e87f7f4997131d5b

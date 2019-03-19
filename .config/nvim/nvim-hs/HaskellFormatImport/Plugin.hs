@@ -48,7 +48,7 @@ getLongestModuleName :: [(LineNumber, String)] -> Int
 getLongestModuleName xs 
   = maximum $ length . concat . fromJust <$> fmap (matchRegex moduleNameRegex . snd) xs
 
-formatImportLine :: Buffer -> Qualification -> MaxLineLength -> Int -> Int -> (LineNumber, String) -> Neovim env ()
+formatImportLine :: Buffer -> Qualification -> MaxLineLength -> Int -> (LineNumber, String) -> Neovim env ()
 formatImportLine buff qualifiedImports (MaxLineLength longestImport) longestModuleName (lineNo, lineContent) 
   = buffer_set_line buff (intToInt64 lineNo) $ padContent lineContent qualifiedImports longestImport longestModuleName
 
