@@ -35,20 +35,21 @@ haskellFormatImport (CommandArguments _ range _ _) = do
       maxLineLength        = MaxLineLength $ foldr max 0 $ fmap (\(_,s) -> length s) allImportLines
       longestModuleName    = getLongestModuleName allImportLines
 
-  mapM_ (formatImportLine buff anyImportIsQualified maxLineLength) allImportLines >> return ()
+  mapM_ (formatImportLine buff anyImportIsQualified maxLineLength longestModuleName) allImportLines >> return ()
 
 
 padMissingQualified :: String
 padMissingQualified = take qualifiedPadLength $ repeat ' '
 
-getLongestModuleName :: [(LineNumber, String)] -> Int
-getLongestModuleName xs =
-  let moduleNameRegex = mkRegex "^[import]+\\s[qualified]*\\s*(\\w+\\.*\\w*)"
-   in maximum $ length . concat . fromJust <$> fmap (matchRegex moduleNameRegex . snd) xs
+moduleNameRegex :: Regex
+moduleNameRegex = mkRegex "^[import]+\\s[qualified]*\\s*(\\w+\\.*\\w*)"
 
-formatImportLine :: Buffer -> Qualification -> MaxLineLength -> (LineNumber, String) -> Neovim env ()
-formatImportLine buff qualifiedImports (MaxLineLength longestImport) (lineNo, lineContent) 
-  = buffer_set_line buff (intToInt64 lineNo) $ padContent lineContent qualifiedImports longestImport
+getLongestModuleName :: [(LineNumber, String)] -> Int
+getLongestModuleName xs = maximum $ length . concat . fromJust <$> fmap (matchRegex moduleNameRegex . snd) xs
+
+formatImportLine :: Buffer -> Qualification -> MaxLineLength -> Int -> Int -> (LineNumber, String) -> Neovim env ()
+formatImportLine buff qualifiedImports (MaxLineLength longestImport) longestModuleName (lineNo, lineContent) 
+  = buffer_set_line buff (intToInt64 lineNo) $ padContent lineContent qualifiedImports longestImport longestModuleName
 
 getQualification :: [(LineNumber, String)] -> Qualification
 getQualification xs = go $ filter isQualified xs
@@ -56,9 +57,9 @@ getQualification xs = go $ filter isQualified xs
     go [] = NotPresent
     go _  = Present
 
-padContent :: String -> Qualification -> Int -> String
-padContent content NotPresent longestImport = content
-padContent content Present longestImport =
+padContent :: String -> Qualification -> Int -> Int -> String
+padContent content NotPresent longestImport longestModuleName = content
+padContent content Present longestImport longestModuleName =
   if "qualified" `isInfixOf` content || ("import" ++ padMissingQualified) `isInfixOf` content
      then content
      else concat $ ("import" ++ padMissingQualified) : splitOn "import" content
