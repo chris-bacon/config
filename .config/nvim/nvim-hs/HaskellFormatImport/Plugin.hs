@@ -22,8 +22,6 @@ type LineNumber = Int
 qualifiedPadLength :: Int
 qualifiedPadLength = 10
 
--- TODO: as
-
 haskellFormatImport :: CommandArguments -> Neovim env ()
 haskellFormatImport (CommandArguments _ range _ _) = do
   let (startOfRange, endOfRange) = fromMaybe (0,0) range
@@ -69,7 +67,7 @@ getLengthOfModuleName :: String -> Int
 getLengthOfModuleName = length . concat . fromJust . matchRegex moduleNameRegex
 
 padAs :: Int -> String -> String
-padAs n s = 
+padAs n s =
     let lenModName = getLengthOfModuleName s
         padDiff    = n - lenModName 
      in mconcat . intersperse (take padDiff (repeat ' ') ++ "as") $ splitOn "as" s
