@@ -65,6 +65,14 @@ padContent content Present longestImport longestModuleName =
      then content
      else concat $ ("import" ++ padMissingQualified) : splitOn "import" content
 
+getLengthOfModuleName s = length . concat . fromJust . matchRegex moduleNameRegex . snd $ s
+
+f n (_,s) = 
+    let lenModName = getLengthOfModuleName s
+        padDiff    = n - lenModName 
+     in mconcat . intersperse (take padDiff (repeat ' ') ++ "as") $ splitOn "as" s
+
+
 sortImports :: [(LineNumber, String)] -> [(LineNumber, String)]
 sortImports xs = zip (fmap fst xs) $ sortBy (\a b -> compare (toLower <$> ignoreQualified a) (toLower <$> ignoreQualified b)) (fmap snd xs)
   where
