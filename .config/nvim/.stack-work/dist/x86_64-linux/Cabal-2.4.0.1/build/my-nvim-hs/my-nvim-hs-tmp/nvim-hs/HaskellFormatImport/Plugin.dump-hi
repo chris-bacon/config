@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-20 14:34:01.763776703 UTC
+2019-03-20 23:43:33.334194288 UTC
 
 interface main:HaskellFormatImport.Plugin 8064
-  interface hash: f749acd8d0689bf9d9c14e7079918000
-  ABI hash: 59928121212146f0715cb63e284b0196
+  interface hash: e8757f7c4ff5a018f824c0fc47c19270
+  ABI hash: 85dae9d22ea1f394a28fae7ba4c57038
   export-list hash: 70e89af5e08ab6e6c2f4cb7d53dadf96
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: e5fd15702f15e2b7fd2f13ad10fcf15d
@@ -117,6 +117,7 @@ import  -/  base-4.12.0.0:Data.Maybe 9b76a39e833465c3c5b3c078b431417f
 import  -/  base-4.12.0.0:Data.OldList e931cf456dc87f11ee6e6fb153bca23e
 import  -/  base-4.12.0.0:Data.Tuple c719fc29608fe81c10bee9a1bf1e05ff
 import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
+import  -/  base-4.12.0.0:GHC.Enum 87204abed08db8735fc0be5ab48689aa
 import  -/  base-4.12.0.0:GHC.Err ea5e313ef4146b40b5d8b27aa168e736
 import  -/  base-4.12.0.0:GHC.List 4014a3c8a3b7c31c8325f6bcf1feea4a
 import  -/  base-4.12.0.0:GHC.Num c2039f03637c68f47b0bbff4c18ec616
@@ -133,20 +134,28 @@ import  -/  regex-compat-0.95.1:Text.Regex 389154f2af9016e3bae20075e1794a17
 import  -/  regex-posix-0.95.2:Text.Regex.Posix.Wrap db34d4dabcdc5931ba5ba49688d21cb1
 import  -/  split-0.2.3.3:Data.List.Split 3518b4851dc357bd81ca9eb7a13694f0
 import  -/  split-0.2.3.3:Data.List.Split.Internals b4ab8dde94aedb7514b1f8d89c369cbe
+2a569f114bb500d8228594bfa7c916d4
+  $fEnumLineNumber ::
+    GHC.Enum.Enum HaskellFormatImport.Plugin.LineNumber
+  DFunId
+e25274392627b8860ea6e17d1c8965f0
+  $tc'LineNumber :: GHC.Types.TyCon
 a7c6c43aed276993e87f7f4997131d5b
   $tc'MaxLineLength :: GHC.Types.TyCon
 86d3a7e806be4722ddade26098a94bb8
   $tc'NotPresent :: GHC.Types.TyCon
 9113807016d3a240d67d003b1852f32a
   $tc'Present :: GHC.Types.TyCon
+d6b2c1ca3bc4ba972845fa5daf879b1d
+  $tcLineNumber :: GHC.Types.TyCon
 e08483b6f9f325a973fb0a504ea9dfb4
   $tcMaxLineLength :: GHC.Types.TyCon
 955a1cf93464b7c303efbd094b73e8d6
   $tcQualification :: GHC.Types.TyCon
 49596a03322d35faba6bdbf5ea102882
   $trModule :: GHC.Types.Module
-fbd38b499113ea89effd4088a5f51ccb
-  type LineNumber = GHC.Types.Int
+2a569f114bb500d8228594bfa7c916d4
+  newtype LineNumber = LineNumber GHC.Types.Int
 a0c8646adf2a4988f400021c4ef639e1
   newtype MaxLineLength = MaxLineLength GHC.Types.Int
 3710fd1e207da4844dc4f9038e089e08
@@ -155,6 +164,8 @@ a0c8646adf2a4988f400021c4ef639e1
   haskellFormatImport ::
     Neovim.Plugin.Classes.CommandArguments
     -> Neovim.Context.Internal.Neovim env ()
+instance GHC.Enum.Enum [HaskellFormatImport.Plugin.LineNumber]
+  = HaskellFormatImport.Plugin.$fEnumLineNumber
 trusted: none
 require own pkg trusted: False
 module header:
