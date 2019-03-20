@@ -1,14 +1,14 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-20 10:36:22.061980396 UTC
+2019-03-20 13:06:03.73258717 UTC
 
 interface main:HaskellFormatImport.Plugin 8064
-  interface hash: 247b72da686a3b97662f51bdd2cfe8bb
-  ABI hash: 19d8b2633b5089b1c25289b482c43303
+  interface hash: f749acd8d0689bf9d9c14e7079918000
+  ABI hash: 59928121212146f0715cb63e284b0196
   export-list hash: 70e89af5e08ab6e6c2f4cb7d53dadf96
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: e5fd15702f15e2b7fd2f13ad10fcf15d
-  opt_hash: 6faf2de08de32d19db9870899d88e59a
+  opt_hash: d0a78e7b344f95c7406be35c9b75e196
   hpc_hash: 93b885adfe0da089cdf634904fd59f71
   plugin_hash: ad164012d6b1e14942349d58b1132007
   sig of: Nothing
@@ -117,6 +117,7 @@ import  -/  base-4.12.0.0:Data.Maybe 9b76a39e833465c3c5b3c078b431417f
 import  -/  base-4.12.0.0:Data.OldList e931cf456dc87f11ee6e6fb153bca23e
 import  -/  base-4.12.0.0:Data.Tuple c719fc29608fe81c10bee9a1bf1e05ff
 import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
+import  -/  base-4.12.0.0:GHC.Err ea5e313ef4146b40b5d8b27aa168e736
 import  -/  base-4.12.0.0:GHC.List 4014a3c8a3b7c31c8325f6bcf1feea4a
 import  -/  base-4.12.0.0:GHC.Num c2039f03637c68f47b0bbff4c18ec616
 import  -/  base-4.12.0.0:GHC.Unicode 87726eb81a3f9c9b22160a0afd5dc56a
@@ -132,189 +133,28 @@ import  -/  regex-compat-0.95.1:Text.Regex 389154f2af9016e3bae20075e1794a17
 import  -/  regex-posix-0.95.2:Text.Regex.Posix.Wrap db34d4dabcdc5931ba5ba49688d21cb1
 import  -/  split-0.2.3.3:Data.List.Split 3518b4851dc357bd81ca9eb7a13694f0
 import  -/  split-0.2.3.3:Data.List.Split.Internals b4ab8dde94aedb7514b1f8d89c369cbe
-13acdb2de1f948cd056495d8b8bc0bcc
+a7c6c43aed276993e87f7f4997131d5b
   $tc'MaxLineLength :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   1437403775776392793##
-                   17713137762250654515##
-                   HaskellFormatImport.Plugin.$trModule
-                   HaskellFormatImport.Plugin.$tc'MaxLineLength2
-                   0#
-                   HaskellFormatImport.Plugin.$tc'MaxLineLength1) -}
-2630e372104b9a264449fc787c8383fd
-  $tc'MaxLineLength1 :: GHC.Types.KindRep
-  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
-c706168235563618553f95230abb63ff
-  $tc'MaxLineLength2 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$tc'MaxLineLength3) -}
-d208e64bcc9ca4b82a3c8a4e732d84bb
-  $tc'MaxLineLength3 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("'MaxLineLength"#) -}
-8a1c47f71ef9a63d1c99129eb51f796a
+86d3a7e806be4722ddade26098a94bb8
   $tc'NotPresent :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   6398596795769330405##
-                   1685323597910378342##
-                   HaskellFormatImport.Plugin.$trModule
-                   HaskellFormatImport.Plugin.$tc'NotPresent2
-                   0#
-                   HaskellFormatImport.Plugin.$tc'NotPresent1) -}
-41aebd1cf68031940b9c700402fbeaa5
-  $tc'NotPresent1 :: GHC.Types.KindRep
-  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
-de31e931e6e182c2807bb4d106cd7b21
-  $tc'NotPresent2 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$tc'NotPresent3) -}
-20a520ce2a44447adb84c3bfa5c553f3
-  $tc'NotPresent3 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("'NotPresent"#) -}
-2f0ca17743423e018cf41403cf3a6835
+9113807016d3a240d67d003b1852f32a
   $tc'Present :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   10162273747649629537##
-                   7512005193652623360##
-                   HaskellFormatImport.Plugin.$trModule
-                   HaskellFormatImport.Plugin.$tc'Present1
-                   0#
-                   HaskellFormatImport.Plugin.$tc'NotPresent1) -}
-3d95163173a5b39e140b37b58ea861cc
-  $tc'Present1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$tc'Present2) -}
-51f3535c2566357a4713fdd65797dca3
-  $tc'Present2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("'Present"#) -}
-91472d3a0bb55d97b64aa447c901f287
+e08483b6f9f325a973fb0a504ea9dfb4
   $tcMaxLineLength :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   3379975722046161287##
-                   1959201225197349504##
-                   HaskellFormatImport.Plugin.$trModule
-                   HaskellFormatImport.Plugin.$tcMaxLineLength1
-                   0#
-                   GHC.Types.krep$*) -}
-053b0a6a7cc2f4cc42c2dcf81e78bf06
-  $tcMaxLineLength1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$tcMaxLineLength2) -}
-c012bbedd7be7b8075c61d64cd0a38a0
-  $tcMaxLineLength2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("MaxLineLength"#) -}
-b657e7a975d4a9b0423cadb5940872a2
+955a1cf93464b7c303efbd094b73e8d6
   $tcQualification :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   7683273457973417401##
-                   8391711923123319523##
-                   HaskellFormatImport.Plugin.$trModule
-                   HaskellFormatImport.Plugin.$tcQualification1
-                   0#
-                   GHC.Types.krep$*) -}
-dca07f07c1ce1ddccb5bb11eac163a8b
-  $tcQualification1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$tcQualification2) -}
-874b2a1df5f112f9254a41be3983b7c8
-  $tcQualification2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("Qualification"#) -}
-9f6e8e0935c6706526c4c0df05aeeec2
+49596a03322d35faba6bdbf5ea102882
   $trModule :: GHC.Types.Module
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.Module
-                   HaskellFormatImport.Plugin.$trModule3
-                   HaskellFormatImport.Plugin.$trModule1) -}
-51df5fa17329e20f4c56d6775ea93e9c
-  $trModule1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$trModule2) -}
-f46027bce452875ca89866e3631856a2
-  $trModule2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("HaskellFormatImport.Plugin"#) -}
-b2c11148c6bdef36ff18af5c9c3f279c
-  $trModule3 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$trModule4) -}
-4824184062f25fc178cbebd522ff61e6
-  $trModule4 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("main"#) -}
-24ba2088a60dbdf14c0b19aab1684a36
-  $whaskellFormatImport ::
-    GHC.Maybe.Maybe (GHC.Types.Int, GHC.Types.Int)
-    -> GHC.IORef.IORef Control.Monad.Trans.Resource.Internal.ReleaseMap
-    -> Neovim.Context.Internal.Config env
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 4, Strictness: <L,U><L,U><L,U(U(U,U),U,U,U,U,U,U)><S,U>,
-     Inline: [2] -}
 fbd38b499113ea89effd4088a5f51ccb
   type LineNumber = GHC.Types.Int
 a0c8646adf2a4988f400021c4ef639e1
   newtype MaxLineLength = MaxLineLength GHC.Types.Int
 3710fd1e207da4844dc4f9038e089e08
   data Qualification = Present | NotPresent
-33f2832d587e361b18a822ab2a6f178d
+48405580d87c6c451858245c7f988dc5
   haskellFormatImport ::
     Neovim.Plugin.Classes.CommandArguments
     -> Neovim.Context.Internal.Neovim env ()
-  {- Arity: 4,
-     Strictness: <S,1*U(A,U,A,A)><L,U><L,U(U(U,U),U,U,U,U,U,U)><S,U>,
-     Unfolding: InlineRule (0, True, True)
-                HaskellFormatImport.Plugin.haskellFormatImport1
-                  `cast`
-                (forall (env :: <*>_N).
-                 <Neovim.Plugin.Classes.CommandArguments>_R
-                 ->_R (<GHC.IORef.IORef
-                          Control.Monad.Trans.Resource.Internal.ReleaseMap>_R
-                       ->_R (<Neovim.Context.Internal.Config env>_R
-                             ->_R Sym (GHC.Types.N:IO[0]
-                                           <()>_R)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
-                                                               <Neovim.Context.Internal.Config
-                                                                  env>_R
-                                                               <GHC.Types.IO>_R
-                                                               <()>_N)) ; (Sym (Control.Monad.Trans.Resource.Internal.N:ResourceT[0]
-                                                                                    <Control.Monad.Trans.Reader.ReaderT
-                                                                                       (Neovim.Context.Internal.Config
-                                                                                          env)
-                                                                                       GHC.Types.IO>_R
-                                                                                    <()>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
-                                                                                                       <env>_R) <()>_N)) -}
-6531f11105e6da1f037da4e8056f42eb
-  haskellFormatImport1 ::
-    Neovim.Plugin.Classes.CommandArguments
-    -> GHC.IORef.IORef Control.Monad.Trans.Resource.Internal.ReleaseMap
-    -> Neovim.Context.Internal.Config env
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 4,
-     Strictness: <S,1*U(A,U,A,A)><L,U><L,U(U(U,U),U,U,U,U,U,U)><S,U>,
-     Inline: [2],
-     Unfolding: InlineRule (4, True, False)
-                (\ @ env
-                   (w :: Neovim.Plugin.Classes.CommandArguments)
-                   (w1 :: GHC.IORef.IORef
-                            Control.Monad.Trans.Resource.Internal.ReleaseMap)
-                   (w2 :: Neovim.Context.Internal.Config env)
-                   (w3 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
-                 case w of ww { Neovim.Plugin.Classes.CommandArguments ww1 ww2 ww3 ww4 ->
-                 HaskellFormatImport.Plugin.$whaskellFormatImport
-                   @ env
-                   ww2
-                   w1
-                   w2
-                   w3 }) -}
 trusted: none
 require own pkg trusted: False
 module header:
