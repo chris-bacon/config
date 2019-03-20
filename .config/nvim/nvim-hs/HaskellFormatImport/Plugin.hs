@@ -68,7 +68,7 @@ padAs :: Int -> String -> String
 padAs n s =
     let lenModName = getLengthOfModuleName s
         padDiff    = n - lenModName 
-     in mconcat . intersperse (take padDiff (repeat ' ') ++ "as") $ splitOn "as" s
+     in mconcat . intersperse (take padDiff (repeat ' ') ++ " as ") $ splitOn " as " s
 
 sortImports :: [(LineNumber, String)] -> [(LineNumber, String)]
 sortImports xs = zip (fmap fst xs) $ sortBy (\a b -> compare (toLower <$> ignoreQualified a) (toLower <$> ignoreQualified b)) (fmap snd xs)
