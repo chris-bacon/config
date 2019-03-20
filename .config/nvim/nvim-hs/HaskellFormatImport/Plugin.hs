@@ -42,7 +42,7 @@ moduleNameRegex = mkRegex "^[import]+\\s[qualified]*\\s*([\\w\\.]+)"
 
 getLongestModuleName :: [(LineNumber, String)] -> Int
 getLongestModuleName xs 
-  = maximum $ fmap (getLengthOfModuleName . snd) xs
+  = maximum $ fmap (liftIO . getLengthOfModuleName . snd) xs
 
 formatImportLine :: Buffer -> Qualification -> MaxLineLength -> Int -> (LineNumber, String) -> Neovim env ()
 formatImportLine buff qualifiedImports (MaxLineLength longestImport) longestModuleName (lineNo, lineContent) 
@@ -61,12 +61,16 @@ padContent content Present longestImport longestModuleName =
      then padAs longestModuleName content
      else padAs longestModuleName $ concat $ ("import" ++ padMissingQualified) : splitOn "import" content
 
-getLengthOfModuleName :: String -> Int
-getLengthOfModuleName = length . concat . fromJust . matchRegex moduleNameRegex
+getLengthOfModuleName :: String -> IO Int
+getLengthOfModuleName s = do
+    let match = matchRegex moduleNameRegex s
+    case match of
+      Just m -> return $ length m
+      Nothing -> error $ s ++ "does not match the import regex!"
 
 padAs :: Int -> String -> String
 padAs n s =
-    let lenModName = getLengthOfModuleName s
+    let lenModName = liftIO $ getLengthOfModuleName s
         padDiff    = n - lenModName 
      in mconcat . intersperse (take padDiff (repeat ' ') ++ " as ") $ splitOn " as " s
 
