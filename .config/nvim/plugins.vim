@@ -28,7 +28,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'Shougo/vimproc.vim', {'do': 'make'} " required for ghcmod
 Plug 'w0rp/ale'
-Plug 'Shougo/neosnippet.vim'
 Plug 'tpope/vim-surround'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'dan-t/vim-hsimport'
@@ -43,6 +42,9 @@ Plug 'neovimhaskell/nvim-hs.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'mhinz/vim-grepper'
 Plug 'Shougo/deoplete.nvim'
+
+"Plug 'Shougo/neosnippet.vim'
+Plug 'SirVer/ultisnips'
 
 let g:stackThoseErrorsCreateMappings = 1 
 
