@@ -16,10 +16,10 @@ data Qualification = Present | NotPresent
 
 newtype MaxLineLength = MaxLineLength Int
 
-newtype LineNumber = LineNumber Int
+newtype LineNumber    = LineNumber Int
 
 instance Enum LineNumber where
-  toEnum a                = LineNumber a
+  toEnum                  = LineNumber
   fromEnum (LineNumber a) = fromEnum a
 
 qualifiedPadLength :: Int
