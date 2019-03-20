@@ -16,7 +16,7 @@ data Qualification = Present | NotPresent
 
 newtype MaxLineLength = MaxLineLength Int
 
-type LineNumber = Int
+newtype LineNumber = LineNumber Int
 
 qualifiedPadLength :: Int
 qualifiedPadLength = 10
@@ -45,7 +45,7 @@ getLongestModuleName xs
   = maximum $ fmap (fromMaybe 0 . getLengthOfModuleName . snd) xs
 
 formatImportLine :: Buffer -> Qualification -> MaxLineLength -> Int -> (LineNumber, String) -> Neovim env ()
-formatImportLine buff qualifiedImports (MaxLineLength longestImport) longestModuleName (lineNo, lineContent) 
+formatImportLine buff qualifiedImports (MaxLineLength longestImport) longestModuleName (LineNumber lineNo, lineContent) 
   = buffer_set_line buff (intToInt64 lineNo) $ padContent lineContent qualifiedImports longestImport longestModuleName
 
 getQualification :: [(LineNumber, String)] -> Qualification
