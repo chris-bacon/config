@@ -38,11 +38,11 @@ padMissingQualified :: String
 padMissingQualified = take qualifiedPadLength $ repeat ' '
 
 moduleNameRegex :: Regex
-moduleNameRegex = mkRegex "^[import]+\\s*[qualified]*\\s+([\\w\\.]+)"
+moduleNameRegex = mkRegex "^import\s*(?:qualified)*\s+([\w\.]+)"
 
 getLongestModuleName :: [(LineNumber, String)] -> Int
 getLongestModuleName xs 
-  = maximum $ fmap ((fromMaybe 0) . getLengthOfModuleName . snd) xs
+  = maximum $ fmap (fromMaybe 0 . getLengthOfModuleName . snd) xs
 
 formatImportLine :: Buffer -> Qualification -> MaxLineLength -> Int -> (LineNumber, String) -> Neovim env ()
 formatImportLine buff qualifiedImports (MaxLineLength longestImport) longestModuleName (lineNo, lineContent) 
@@ -66,7 +66,9 @@ getLengthOfModuleName s = do
     let match = matchRegex moduleNameRegex s
     case match of
       Just m -> return $ length m
-      Nothing -> error $ s ++ "does not match the import regex!"
+      Nothing -> error $ s ++ " does not match the import regex!"
+                           ++ " Please raise an issue on the github page"
+                           ++ " quoting what statement it failed on"
 
 padAs :: Int -> String -> String
 padAs n s =
