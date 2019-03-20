@@ -38,7 +38,7 @@ padMissingQualified :: String
 padMissingQualified = take qualifiedPadLength $ repeat ' '
 
 moduleNameRegex :: Regex
-moduleNameRegex = mkRegex "^[import]+\\s[qualified]*\\s*(\\w+\\.*\\w*)"
+moduleNameRegex = mkRegex "^[import]+\\s[qualified]*\\s*([\\w\\.]+)"
 
 getLongestModuleName :: [(LineNumber, String)] -> Int
 getLongestModuleName xs 
