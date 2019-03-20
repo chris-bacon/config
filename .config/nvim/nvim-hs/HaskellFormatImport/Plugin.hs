@@ -38,7 +38,7 @@ padMissingQualified :: String
 padMissingQualified = take qualifiedPadLength $ repeat ' '
 
 moduleNameRegex :: Regex
-moduleNameRegex = mkRegex "^import\\s[qualified]*\\s*(\\w+\\.*\\w*)" --"([\\w\\.]+)"
+moduleNameRegex = mkRegex "^import\\s[qualified]*\\s*([\\w\\.]+)"
 
 getLongestModuleName :: [(LineNumber, String)] -> Int
 getLongestModuleName xs 
@@ -65,7 +65,7 @@ getLengthOfModuleName :: String -> Maybe Int
 getLengthOfModuleName s = do
     let match = matchRegex moduleNameRegex s
     case match of
-      Just m -> return $ length m
+      Just m  -> return $ length m
       Nothing -> error $ s ++ " does not match the import regex!"
                            ++ " Please raise an issue on the github page"
                            ++ " quoting what statement it failed on"
