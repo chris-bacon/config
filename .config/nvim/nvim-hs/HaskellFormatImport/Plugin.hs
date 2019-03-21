@@ -19,7 +19,7 @@ newtype MaxLineLength = MaxLineLength Int
 
 newtype LineNumber = LineNumber Int
 
-newtype ImportStatement = ImportStatement { unImportStatement :: String }
+newtype ImportStatement = ImportStatement { unImportStatement :: String } deriving (Eq, Ord)
 
 instance Enum LineNumber where
   toEnum                  = LineNumber
@@ -42,7 +42,13 @@ haskellFormatImport (CommandArguments _ range _ _) = do
   buff     <- vim_get_current_buffer
   allLines <- nvim_buf_get_lines buff (intToInt64 startOfRange) (intToInt64 endOfRange) False
 
-  let allImportLines       = sortImports . fmap (\(l,s) -> (l,ImportStatement s)) . filter isImportStatement . zip [LineNumber 1..LineNumber endOfRange] $ allLines
+  let allImportLines       
+        = sortImports 
+        . fmap (\(l,s) -> (l,ImportStatement s)) 
+        . filter isImportStatement 
+        . zip [LineNumber 1..LineNumber endOfRange] 
+        $ allLines
+
       anyImportIsQualified = getQualification allImportLines
       maxLineLength        = MaxLineLength $ foldr max 0 $ fmap (\(_,s) -> length s) allImportLines
       longestModuleName    = getLongestModuleName allImportLines
@@ -60,7 +66,7 @@ formatImportLine :: Buffer -> Qualification -> MaxLineLength -> Int -> (LineNumb
 formatImportLine buff qualifiedImports (MaxLineLength longestImport) longestModuleName (LineNumber lineNo, lineContent) 
   = buffer_set_line buff (intToInt64 lineNo) $ padContent lineContent qualifiedImports longestImport longestModuleName
 
-getQualification :: [(LineNumber, String)] -> Qualification
+getQualification :: [(LineNumber, ImportStatement)] -> Qualification
 getQualification xs = go $ filter isQualified xs where
   go [] = NotPresent
   go _  = Present
@@ -86,13 +92,13 @@ padAs n s =
      in mconcat . intersperse (take padDiff (repeat ' ') ++ " as ") $ splitOn " as " s
 
 sortImports :: [(LineNumber, ImportStatement)] -> [(LineNumber, ImportStatement)]
-sortImports xs = zip (fmap (unImportStatement . fst) xs) $ sortBy (\a b -> compare (toLower <$> ignoreQualified a) (toLower <$> ignoreQualified b)) (fmap snd xs)
+sortImports xs = zip (fmap fst xs) $ sortBy (\a b -> compare (toLower <$> ignoreQualified a) (toLower <$> ignoreQualified b)) (fmap snd xs)
   where
     ignoreQualified = concat . splitOn "qualified"
 
 isImportStatement :: (LineNumber, String) -> Bool
-isImportStatement (_, s) = maybe False (const True) $ matchRegex importRegex s  
+isImportStatement (_, s) = maybe False (const True) $ matchRegex importRegex s
 
-isQualified :: (LineNumber, String) -> Bool
-isQualified (_, s) = maybe False (const True) $ matchRegex qualifiedRegex s --isInfixOf "qualified " s
+isQualified :: (LineNumber, ImportStatement) -> Bool
+isQualified (_, s) = maybe False (const True) $ matchRegex qualifiedRegex (unImportStatement s)
 
