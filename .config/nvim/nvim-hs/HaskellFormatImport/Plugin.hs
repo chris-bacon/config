@@ -19,6 +19,8 @@ newtype MaxLineLength = MaxLineLength Int
 
 newtype LineNumber = LineNumber Int
 
+newtype ImportStatement = ImportStatement { unImportStatement :: String }
+
 instance Enum LineNumber where
   toEnum                  = LineNumber
   fromEnum (LineNumber a) = fromEnum a
@@ -40,7 +42,7 @@ haskellFormatImport (CommandArguments _ range _ _) = do
   buff     <- vim_get_current_buffer
   allLines <- nvim_buf_get_lines buff (intToInt64 startOfRange) (intToInt64 endOfRange) False
 
-  let allImportLines       = sortImports . filter isImportStatement . zip [LineNumber 1..LineNumber endOfRange] $ allLines
+  let allImportLines       = sortImports . fmap (\(l,s) -> (l,ImportStatement s)) . filter isImportStatement . zip [LineNumber 1..LineNumber endOfRange] $ allLines
       anyImportIsQualified = getQualification allImportLines
       maxLineLength        = MaxLineLength $ foldr max 0 $ fmap (\(_,s) -> length s) allImportLines
       longestModuleName    = getLongestModuleName allImportLines
@@ -83,8 +85,8 @@ padAs n s =
         padDiff    = n - lenModName 
      in mconcat . intersperse (take padDiff (repeat ' ') ++ " as ") $ splitOn " as " s
 
-sortImports :: [(LineNumber, String)] -> [(LineNumber, String)]
-sortImports xs = zip (fmap fst xs) $ sortBy (\a b -> compare (toLower <$> ignoreQualified a) (toLower <$> ignoreQualified b)) (fmap snd xs)
+sortImports :: [(LineNumber, ImportStatement)] -> [(LineNumber, ImportStatement)]
+sortImports xs = zip (fmap (unImportStatement . fst) xs) $ sortBy (\a b -> compare (toLower <$> ignoreQualified a) (toLower <$> ignoreQualified b)) (fmap snd xs)
   where
     ignoreQualified = concat . splitOn "qualified"
 
