@@ -50,7 +50,7 @@ haskellFormatImport (CommandArguments _ range _ _) = do
         $ allLines
 
       anyImportIsQualified = getQualification allImportLines
-      maxLineLength        = MaxLineLength $ foldr max 0 $ fmap (\(_,s) -> length s) allImportLines
+      maxLineLength        = MaxLineLength $ foldr max 0 $ fmap (\(_,s) -> length $ unImportStatement s) allImportLines
       longestModuleName    = getLongestModuleName allImportLines
 
   mapM_ (formatImportLine buff anyImportIsQualified maxLineLength longestModuleName) allImportLines >> return ()
