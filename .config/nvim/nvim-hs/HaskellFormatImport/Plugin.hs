@@ -23,11 +23,9 @@ instance Enum LineNumber where
   toEnum                  = LineNumber
   fromEnum (LineNumber a) = fromEnum a
 
-moduleNameRegex :: Regex
+moduleNameRegex, importRegex :: Regex
 moduleNameRegex = mkRegex "^import\\s[qualified]*\\s*([[:alpha:][:punct:]]+)"
-
-importRegex :: Regex
-importRegex = mkRegex "^import\\s"
+importRegex     = mkRegex "^import\\s"
 
 regexErrorMsg :: String -> String
 regexErrorMsg s = s ++ " does not match the import regex! Please raise an issue on the github page quoting what statement it failed on"
