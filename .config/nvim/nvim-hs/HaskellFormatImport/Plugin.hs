@@ -29,6 +29,9 @@ moduleNameRegex = mkRegex "^import\\s[qualified]*\\s*([[:alpha:][:punct:]]+)"
 importRegex :: Regex
 importRegex = mkRegex "^import\\s"
 
+regexErrorMsg :: String -> String
+regexErrorMsg s = s ++ " does not match the import regex! Please raise an issue on the github page quoting what statement it failed on"
+
 qualifiedPadLength :: Int
 qualifiedPadLength = 10
 
@@ -57,10 +60,9 @@ formatImportLine buff qualifiedImports (MaxLineLength longestImport) longestModu
   = buffer_set_line buff (intToInt64 lineNo) $ padContent lineContent qualifiedImports longestImport longestModuleName
 
 getQualification :: [(LineNumber, String)] -> Qualification
-getQualification xs = go $ filter isQualified xs
-  where
-    go [] = NotPresent
-    go _  = Present
+getQualification xs = go $ filter isQualified xs where
+  go [] = NotPresent
+  go _  = Present
 
 padContent :: String -> Qualification -> Int -> Int -> String
 padContent content NotPresent longestImport longestModuleName = padAs longestModuleName content
@@ -74,9 +76,7 @@ getLengthOfModuleName s = do
     let match = matchRegex moduleNameRegex s
     case match of
       Just m  -> return $ length .concat $ m
-      Nothing -> error $ s ++ " does not match the import regex!"
-                           ++ " Please raise an issue on the github page"
-                           ++ " quoting what statement it failed on"
+      Nothing -> error $ regexErrorMsg s 
 
 padAs :: Int -> String -> String
 padAs n s =
