@@ -1,14 +1,14 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-21 15:54:56.100140189 UTC
+2019-03-21 15:55:17.100573871 UTC
 
 interface main:HaskellFormatImport.Plugin 8064
-  interface hash: f3016c2434d713969e3b574bb14c2c97
-  ABI hash: b9347f7f82c8b95333614ba2ae965a6e
+  interface hash: c0d726732d9bd117fb3c445d454ea6fb
+  ABI hash: 91a8103e09d3d57ced1cfc159d4c2bca
   export-list hash: 70e89af5e08ab6e6c2f4cb7d53dadf96
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: e5fd15702f15e2b7fd2f13ad10fcf15d
-  opt_hash: 6faf2de08de32d19db9870899d88e59a
+  opt_hash: d0a78e7b344f95c7406be35c9b75e196
   hpc_hash: 93b885adfe0da089cdf634904fd59f71
   plugin_hash: ad164012d6b1e14942349d58b1132007
   sig of: Nothing
@@ -136,596 +136,55 @@ import  -/  regex-compat-0.95.1:Text.Regex 389154f2af9016e3bae20075e1794a17
 import  -/  regex-posix-0.95.2:Text.Regex.Posix.Wrap db34d4dabcdc5931ba5ba49688d21cb1
 import  -/  split-0.2.3.3:Data.List.Split 3518b4851dc357bd81ca9eb7a13694f0
 import  -/  split-0.2.3.3:Data.List.Split.Internals b4ab8dde94aedb7514b1f8d89c369cbe
-cc9c2c94df3bab272f49ec37aab23e76
+2a569f114bb500d8228594bfa7c916d4
   $fEnumLineNumber ::
     GHC.Enum.Enum HaskellFormatImport.Plugin.LineNumber
   DFunId
-  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
-     Unfolding: DFun:.
-                  @ HaskellFormatImport.Plugin.LineNumber
-                  HaskellFormatImport.Plugin.$fEnumLineNumber3
-                    `cast`
-                  (<HaskellFormatImport.Plugin.LineNumber>_R
-                   ->_R Sym (HaskellFormatImport.Plugin.N:LineNumber[0]))
-                  HaskellFormatImport.Plugin.$fEnumLineNumber2
-                    `cast`
-                  (<HaskellFormatImport.Plugin.LineNumber>_R
-                   ->_R Sym (HaskellFormatImport.Plugin.N:LineNumber[0]))
-                  (\ (v :: GHC.Types.Int) -> v)
-                    `cast`
-                  (<GHC.Types.Int>_R
-                   ->_R Sym (HaskellFormatImport.Plugin.N:LineNumber[0]))
-                  HaskellFormatImport.Plugin.$fEnumLineNumber1
-                    `cast`
-                  (<HaskellFormatImport.Plugin.LineNumber>_R
-                   ->_R HaskellFormatImport.Plugin.N:LineNumber[0])
-                  HaskellFormatImport.Plugin.$fEnumLineNumber_$cenumFrom
-                  HaskellFormatImport.Plugin.$fEnumLineNumber_$cenumFromThen
-                  HaskellFormatImport.Plugin.$fEnumLineNumber_$cenumFromTo
-                  HaskellFormatImport.Plugin.$fEnumLineNumber_$cenumFromThenTo -}
-cc9c2c94df3bab272f49ec37aab23e76
-  $fEnumLineNumber1 ::
-    HaskellFormatImport.Plugin.LineNumber
-    -> HaskellFormatImport.Plugin.LineNumber
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U(U)>m,
-     Unfolding: InlineRule (1, True, True)
-                (\ (ds :: HaskellFormatImport.Plugin.LineNumber) -> ds) -}
-cc9c2c94df3bab272f49ec37aab23e76
-  $fEnumLineNumber2 ::
-    HaskellFormatImport.Plugin.LineNumber -> GHC.Types.Int
-  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(U)>m,
-     Unfolding: InlineRule (1, True, False)
-                (\ (x1 :: HaskellFormatImport.Plugin.LineNumber) ->
-                 case x1
-                        `cast`
-                      (HaskellFormatImport.Plugin.N:LineNumber[0]) of wild { GHC.Types.I# x2 ->
-                 GHC.Types.I# (GHC.Prim.-# x2 1#) }) -}
-cc9c2c94df3bab272f49ec37aab23e76
-  $fEnumLineNumber3 ::
-    HaskellFormatImport.Plugin.LineNumber -> GHC.Types.Int
-  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(U)>m,
-     Unfolding: InlineRule (1, True, False)
-                (\ (x1 :: HaskellFormatImport.Plugin.LineNumber) ->
-                 case x1
-                        `cast`
-                      (HaskellFormatImport.Plugin.N:LineNumber[0]) of wild { GHC.Types.I# x2 ->
-                 GHC.Types.I# (GHC.Prim.+# x2 1#) }) -}
-cc9c2c94df3bab272f49ec37aab23e76
-  $fEnumLineNumber_$cenumFrom ::
-    HaskellFormatImport.Plugin.LineNumber
-    -> [HaskellFormatImport.Plugin.LineNumber]
-  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(U)>m2,
-     Inline: [2],
-     Unfolding: InlineRule (1, True, False)
-                (\ (w :: HaskellFormatImport.Plugin.LineNumber) ->
-                 case w `cast`
-                      (HaskellFormatImport.Plugin.N:LineNumber[0]) of ww { GHC.Types.I# ww1 ->
-                 HaskellFormatImport.Plugin.$fEnumLineNumber_go ww1 }) -}
-cc9c2c94df3bab272f49ec37aab23e76
-  $fEnumLineNumber_$cenumFromThen ::
-    HaskellFormatImport.Plugin.LineNumber
-    -> HaskellFormatImport.Plugin.LineNumber
-    -> [HaskellFormatImport.Plugin.LineNumber]
-  {- Arity: 2, HasNoCafRefs, Strictness: <S(S),1*U(U)><S(S),1*U(U)>,
-     Unfolding: InlineRule (2, True, False)
-                (\ (x1 :: HaskellFormatImport.Plugin.LineNumber)
-                   (y :: HaskellFormatImport.Plugin.LineNumber) ->
-                 case x1
-                        `cast`
-                      (HaskellFormatImport.Plugin.N:LineNumber[0]) of wild { GHC.Types.I# x2 ->
-                 case y `cast`
-                      (HaskellFormatImport.Plugin.N:LineNumber[0]) of wild1 { GHC.Types.I# x3 ->
-                 (GHC.Enum.efdInt x2 x3)
-                   `cast`
-                 ([Sym (HaskellFormatImport.Plugin.N:LineNumber[0])])_R } }) -}
-cc9c2c94df3bab272f49ec37aab23e76
-  $fEnumLineNumber_$cenumFromThenTo ::
-    HaskellFormatImport.Plugin.LineNumber
-    -> HaskellFormatImport.Plugin.LineNumber
-    -> HaskellFormatImport.Plugin.LineNumber
-    -> [HaskellFormatImport.Plugin.LineNumber]
-  {- Arity: 3, HasNoCafRefs,
-     Strictness: <S(S),1*U(U)><S(S),1*U(U)><S(S),1*U(U)>, Inline: [2],
-     Unfolding: InlineRule (3, True, False)
-                (\ (w :: HaskellFormatImport.Plugin.LineNumber)
-                   (w1 :: HaskellFormatImport.Plugin.LineNumber)
-                   (w2 :: HaskellFormatImport.Plugin.LineNumber) ->
-                 case w `cast`
-                      (HaskellFormatImport.Plugin.N:LineNumber[0]) of ww { GHC.Types.I# ww1 ->
-                 case w1
-                        `cast`
-                      (HaskellFormatImport.Plugin.N:LineNumber[0]) of ww2 { GHC.Types.I# ww3 ->
-                 case w2
-                        `cast`
-                      (HaskellFormatImport.Plugin.N:LineNumber[0]) of ww4 { GHC.Types.I# ww5 ->
-                 HaskellFormatImport.Plugin.$w$cenumFromThenTo ww1 ww3 ww5 } } }) -}
-cc9c2c94df3bab272f49ec37aab23e76
-  $fEnumLineNumber_$cenumFromTo ::
-    HaskellFormatImport.Plugin.LineNumber
-    -> HaskellFormatImport.Plugin.LineNumber
-    -> [HaskellFormatImport.Plugin.LineNumber]
-  {- Arity: 2, HasNoCafRefs, Strictness: <S(S),1*U(U)><S(S),1*U(U)>,
-     Inline: [2],
-     Unfolding: InlineRule (2, True, False)
-                (\ (w :: HaskellFormatImport.Plugin.LineNumber)
-                   (w1 :: HaskellFormatImport.Plugin.LineNumber) ->
-                 case w `cast`
-                      (HaskellFormatImport.Plugin.N:LineNumber[0]) of ww { GHC.Types.I# ww1 ->
-                 case w1
-                        `cast`
-                      (HaskellFormatImport.Plugin.N:LineNumber[0]) of ww2 { GHC.Types.I# ww3 ->
-                 HaskellFormatImport.Plugin.$w$cenumFromTo ww1 ww3 } }) -}
-cc9c2c94df3bab272f49ec37aab23e76
-  $fEnumLineNumber_go ::
-    GHC.Prim.Int# -> [HaskellFormatImport.Plugin.LineNumber]
-  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m2 -}
-cbc8516d2500b7cbd9151993adcf226b
+15b3ca4788aeb4fdc6157a1805d53485
   $fEqImportStatement ::
     GHC.Classes.Eq HaskellFormatImport.Plugin.ImportStatement
   DFunId
-  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
-     Unfolding: DFun:.
-                  @ HaskellFormatImport.Plugin.ImportStatement
-                  GHC.Base.eqString
-                    `cast`
-                  (Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R <GHC.Types.Bool>_R)
-                  GHC.Classes.$fEq[]_$s$c/=1
-                    `cast`
-                  (Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R <GHC.Types.Bool>_R) -}
-cbc8516d2500b7cbd9151993adcf226b
+15b3ca4788aeb4fdc6157a1805d53485
   $fOrdImportStatement ::
     GHC.Classes.Ord HaskellFormatImport.Plugin.ImportStatement
   DFunId
-  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
-     Unfolding: DFun:.
-                  @ HaskellFormatImport.Plugin.ImportStatement
-                  HaskellFormatImport.Plugin.$fEqImportStatement
-                  GHC.Classes.$fOrd[]_$s$ccompare1
-                    `cast`
-                  (Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R <GHC.Types.Ordering>_R)
-                  GHC.Classes.$fOrd[]_$s$c<1
-                    `cast`
-                  (Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R <GHC.Types.Bool>_R)
-                  GHC.Classes.$fOrd[]_$s$c<=1
-                    `cast`
-                  (Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R <GHC.Types.Bool>_R)
-                  GHC.Classes.$fOrd[]_$s$c>1
-                    `cast`
-                  (Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R <GHC.Types.Bool>_R)
-                  GHC.Classes.$fOrd[]_$s$c>=1
-                    `cast`
-                  (Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R <GHC.Types.Bool>_R)
-                  GHC.Classes.$fOrd[]_$s$cmax1
-                    `cast`
-                  (Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R Sym (HaskellFormatImport.Plugin.N:ImportStatement[0]))
-                  GHC.Classes.$fOrd[]_$s$cmin1
-                    `cast`
-                  (Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])
-                   ->_R Sym (HaskellFormatImport.Plugin.N:ImportStatement[0])) -}
-d0e5a0f05e9e19ef37ef4df7f4825df5
+32840996726b75ed2f64338a8e4196ca
   $tc'ImportStatement :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   1855319209852636374##
-                   16089563367413440943##
-                   HaskellFormatImport.Plugin.$trModule
-                   HaskellFormatImport.Plugin.$tc'ImportStatement2
-                   0#
-                   HaskellFormatImport.Plugin.$tc'ImportStatement1) -}
-23e90dd3bc7b01080869cd7c18b4bc2b
-  $tc'ImportStatement1 :: GHC.Types.KindRep
-  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
-74cd9901fbd6be8c40f15ba5a8d69cfa
-  $tc'ImportStatement2 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$tc'ImportStatement3) -}
-ce31111b7fd203c5834a23907355641b
-  $tc'ImportStatement3 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("'ImportStatement"#) -}
-0564ebbded1279ea111a6606116e676c
+e25274392627b8860ea6e17d1c8965f0
   $tc'LineNumber :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   2723890040892779038##
-                   10846686565790116642##
-                   HaskellFormatImport.Plugin.$trModule
-                   HaskellFormatImport.Plugin.$tc'LineNumber2
-                   0#
-                   HaskellFormatImport.Plugin.$tc'LineNumber1) -}
-28cb410a63e7c2b9b7c4e1c52a36c595
-  $tc'LineNumber1 :: GHC.Types.KindRep
-  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
-8eb8a2c0d5868cf8561bf5ae16ea5dbc
-  $tc'LineNumber2 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$tc'LineNumber3) -}
-b554eebdb14a109f2140855b06ba66c5
-  $tc'LineNumber3 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("'LineNumber"#) -}
-13acdb2de1f948cd056495d8b8bc0bcc
+a7c6c43aed276993e87f7f4997131d5b
   $tc'MaxLineLength :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   1437403775776392793##
-                   17713137762250654515##
-                   HaskellFormatImport.Plugin.$trModule
-                   HaskellFormatImport.Plugin.$tc'MaxLineLength2
-                   0#
-                   HaskellFormatImport.Plugin.$tc'MaxLineLength1) -}
-2630e372104b9a264449fc787c8383fd
-  $tc'MaxLineLength1 :: GHC.Types.KindRep
-  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
-c706168235563618553f95230abb63ff
-  $tc'MaxLineLength2 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$tc'MaxLineLength3) -}
-d208e64bcc9ca4b82a3c8a4e732d84bb
-  $tc'MaxLineLength3 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("'MaxLineLength"#) -}
-8a1c47f71ef9a63d1c99129eb51f796a
+86d3a7e806be4722ddade26098a94bb8
   $tc'NotPresent :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   6398596795769330405##
-                   1685323597910378342##
-                   HaskellFormatImport.Plugin.$trModule
-                   HaskellFormatImport.Plugin.$tc'NotPresent2
-                   0#
-                   HaskellFormatImport.Plugin.$tc'NotPresent1) -}
-41aebd1cf68031940b9c700402fbeaa5
-  $tc'NotPresent1 :: GHC.Types.KindRep
-  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
-de31e931e6e182c2807bb4d106cd7b21
-  $tc'NotPresent2 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$tc'NotPresent3) -}
-20a520ce2a44447adb84c3bfa5c553f3
-  $tc'NotPresent3 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("'NotPresent"#) -}
-2f0ca17743423e018cf41403cf3a6835
+9113807016d3a240d67d003b1852f32a
   $tc'Present :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   10162273747649629537##
-                   7512005193652623360##
-                   HaskellFormatImport.Plugin.$trModule
-                   HaskellFormatImport.Plugin.$tc'Present1
-                   0#
-                   HaskellFormatImport.Plugin.$tc'NotPresent1) -}
-3d95163173a5b39e140b37b58ea861cc
-  $tc'Present1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$tc'Present2) -}
-51f3535c2566357a4713fdd65797dca3
-  $tc'Present2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("'Present"#) -}
-40a7db3b37a806cf5d85738f2184f7b0
+db5226cc4efddb1d3384a6061f7097d4
   $tcImportStatement :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   2560732814469233387##
-                   11421355601928258162##
-                   HaskellFormatImport.Plugin.$trModule
-                   HaskellFormatImport.Plugin.$tcImportStatement1
-                   0#
-                   GHC.Types.krep$*) -}
-d90ac7c2bd9bcb8c3fc6364c83af650b
-  $tcImportStatement1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$tcImportStatement2) -}
-d6bb01bb3dd505aa6dfb692e1c4bf2fa
-  $tcImportStatement2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("ImportStatement"#) -}
-cdb637291655f88001a309c3a70a862d
+d6b2c1ca3bc4ba972845fa5daf879b1d
   $tcLineNumber :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   4123369633208721435##
-                   16735305939893931358##
-                   HaskellFormatImport.Plugin.$trModule
-                   HaskellFormatImport.Plugin.$tcLineNumber1
-                   0#
-                   GHC.Types.krep$*) -}
-300eaa1aa0fde2271fefaa8f89b378f2
-  $tcLineNumber1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$tcLineNumber2) -}
-9d4b49d72bbe69e5ac695518534f09e5
-  $tcLineNumber2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("LineNumber"#) -}
-91472d3a0bb55d97b64aa447c901f287
+e08483b6f9f325a973fb0a504ea9dfb4
   $tcMaxLineLength :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   3379975722046161287##
-                   1959201225197349504##
-                   HaskellFormatImport.Plugin.$trModule
-                   HaskellFormatImport.Plugin.$tcMaxLineLength1
-                   0#
-                   GHC.Types.krep$*) -}
-053b0a6a7cc2f4cc42c2dcf81e78bf06
-  $tcMaxLineLength1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$tcMaxLineLength2) -}
-c012bbedd7be7b8075c61d64cd0a38a0
-  $tcMaxLineLength2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("MaxLineLength"#) -}
-b657e7a975d4a9b0423cadb5940872a2
+955a1cf93464b7c303efbd094b73e8d6
   $tcQualification :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   7683273457973417401##
-                   8391711923123319523##
-                   HaskellFormatImport.Plugin.$trModule
-                   HaskellFormatImport.Plugin.$tcQualification1
-                   0#
-                   GHC.Types.krep$*) -}
-dca07f07c1ce1ddccb5bb11eac163a8b
-  $tcQualification1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$tcQualification2) -}
-874b2a1df5f112f9254a41be3983b7c8
-  $tcQualification2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("Qualification"#) -}
-9f6e8e0935c6706526c4c0df05aeeec2
+49596a03322d35faba6bdbf5ea102882
   $trModule :: GHC.Types.Module
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.Module
-                   HaskellFormatImport.Plugin.$trModule3
-                   HaskellFormatImport.Plugin.$trModule1) -}
-51df5fa17329e20f4c56d6775ea93e9c
-  $trModule1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$trModule2) -}
-f46027bce452875ca89866e3631856a2
-  $trModule2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("HaskellFormatImport.Plugin"#) -}
-b2c11148c6bdef36ff18af5c9c3f279c
-  $trModule3 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS
-                   HaskellFormatImport.Plugin.$trModule4) -}
-4824184062f25fc178cbebd522ff61e6
-  $trModule4 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("main"#) -}
-cc9c2c94df3bab272f49ec37aab23e76
-  $w$cenumFromThenTo ::
-    GHC.Prim.Int#
-    -> GHC.Prim.Int#
-    -> GHC.Prim.Int#
-    -> [HaskellFormatImport.Plugin.LineNumber]
-  {- Arity: 3, HasNoCafRefs, Strictness: <S,U><S,U><S,U>,
-     Inline: [2],
-     Unfolding: (\ (ww :: GHC.Prim.Int#)
-                   (ww1 :: GHC.Prim.Int#)
-                   (ww2 :: GHC.Prim.Int#) ->
-                 case GHC.Prim.>=# ww1 ww of lwild {
-                   DEFAULT
-                   -> case GHC.Prim.># ww2 ww1 of lwild1 {
-                        DEFAULT
-                        -> GHC.Types.:
-                             @ HaskellFormatImport.Plugin.LineNumber
-                             (GHC.Types.I# ww)
-                               `cast`
-                             (Sym (HaskellFormatImport.Plugin.N:LineNumber[0]))
-                             (let {
-                                delta :: GHC.Prim.Int# = GHC.Prim.-# ww1 ww
-                              } in
-                              let {
-                                y' :: GHC.Prim.Int# = GHC.Prim.-# ww2 delta
-                              } in
-                              letrec {
-                                go_dn :: GHC.Prim.Int# -> [HaskellFormatImport.Plugin.LineNumber]
-                                  {- Arity: 1, Strictness: <S,U> -}
-                                = \ (x1 :: GHC.Prim.Int#) ->
-                                  case GHC.Prim.<# x1 y' of lwild2 {
-                                    DEFAULT
-                                    -> GHC.Types.:
-                                         @ HaskellFormatImport.Plugin.LineNumber
-                                         (GHC.Types.I# x1)
-                                           `cast`
-                                         (Sym (HaskellFormatImport.Plugin.N:LineNumber[0]))
-                                         (go_dn (GHC.Prim.+# x1 delta))
-                                    1#
-                                    -> GHC.Types.:
-                                         @ HaskellFormatImport.Plugin.LineNumber
-                                         (GHC.Types.I# x1)
-                                           `cast`
-                                         (Sym (HaskellFormatImport.Plugin.N:LineNumber[0]))
-                                         (GHC.Types.[] @ HaskellFormatImport.Plugin.LineNumber) }
-                              } in
-                              go_dn ww1)
-                        1#
-                        -> case GHC.Prim.># ww2 ww of lwild2 {
-                             DEFAULT
-                             -> GHC.Types.:
-                                  @ HaskellFormatImport.Plugin.LineNumber
-                                  (GHC.Types.I# ww)
-                                    `cast`
-                                  (Sym (HaskellFormatImport.Plugin.N:LineNumber[0]))
-                                  (GHC.Types.[] @ HaskellFormatImport.Plugin.LineNumber)
-                             1# -> GHC.Types.[] @ HaskellFormatImport.Plugin.LineNumber } }
-                   1#
-                   -> case GHC.Prim.<# ww2 ww1 of lwild1 {
-                        DEFAULT
-                        -> GHC.Types.:
-                             @ HaskellFormatImport.Plugin.LineNumber
-                             (GHC.Types.I# ww)
-                               `cast`
-                             (Sym (HaskellFormatImport.Plugin.N:LineNumber[0]))
-                             (let {
-                                delta :: GHC.Prim.Int# = GHC.Prim.-# ww1 ww
-                              } in
-                              let {
-                                y' :: GHC.Prim.Int# = GHC.Prim.-# ww2 delta
-                              } in
-                              letrec {
-                                go_up :: GHC.Prim.Int# -> [HaskellFormatImport.Plugin.LineNumber]
-                                  {- Arity: 1, Strictness: <S,U> -}
-                                = \ (x1 :: GHC.Prim.Int#) ->
-                                  case GHC.Prim.># x1 y' of lwild2 {
-                                    DEFAULT
-                                    -> GHC.Types.:
-                                         @ HaskellFormatImport.Plugin.LineNumber
-                                         (GHC.Types.I# x1)
-                                           `cast`
-                                         (Sym (HaskellFormatImport.Plugin.N:LineNumber[0]))
-                                         (go_up (GHC.Prim.+# x1 delta))
-                                    1#
-                                    -> GHC.Types.:
-                                         @ HaskellFormatImport.Plugin.LineNumber
-                                         (GHC.Types.I# x1)
-                                           `cast`
-                                         (Sym (HaskellFormatImport.Plugin.N:LineNumber[0]))
-                                         (GHC.Types.[] @ HaskellFormatImport.Plugin.LineNumber) }
-                              } in
-                              go_up ww1)
-                        1#
-                        -> case GHC.Prim.<# ww2 ww of lwild2 {
-                             DEFAULT
-                             -> GHC.Types.:
-                                  @ HaskellFormatImport.Plugin.LineNumber
-                                  (GHC.Types.I# ww)
-                                    `cast`
-                                  (Sym (HaskellFormatImport.Plugin.N:LineNumber[0]))
-                                  (GHC.Types.[] @ HaskellFormatImport.Plugin.LineNumber)
-                             1#
-                             -> GHC.Types.[] @ HaskellFormatImport.Plugin.LineNumber } } }) -}
-cc9c2c94df3bab272f49ec37aab23e76
-  $w$cenumFromTo ::
-    GHC.Prim.Int#
-    -> GHC.Prim.Int# -> [HaskellFormatImport.Plugin.LineNumber]
-  {- Arity: 2, HasNoCafRefs, Strictness: <S,U><S,U>, Inline: [2],
-     Unfolding: (\ (ww :: GHC.Prim.Int#) (ww1 :: GHC.Prim.Int#) ->
-                 case GHC.Prim.># ww ww1 of lwild {
-                   DEFAULT
-                   -> letrec {
-                        go6 :: GHC.Prim.Int# -> [HaskellFormatImport.Plugin.LineNumber]
-                          {- Arity: 1, Strictness: <L,U> -}
-                        = \ (x1 :: GHC.Prim.Int#) ->
-                          GHC.Types.:
-                            @ HaskellFormatImport.Plugin.LineNumber
-                            (GHC.Types.I# x1)
-                              `cast`
-                            (Sym (HaskellFormatImport.Plugin.N:LineNumber[0]))
-                            (case GHC.Prim.==# x1 ww1 of lwild1 {
-                               DEFAULT -> go6 (GHC.Prim.+# x1 1#)
-                               1# -> GHC.Types.[] @ HaskellFormatImport.Plugin.LineNumber })
-                      } in
-                      go6 ww
-                   1# -> GHC.Types.[] @ HaskellFormatImport.Plugin.LineNumber }) -}
-24ba2088a60dbdf14c0b19aab1684a36
-  $whaskellFormatImport ::
-    GHC.Maybe.Maybe (GHC.Types.Int, GHC.Types.Int)
-    -> GHC.IORef.IORef Control.Monad.Trans.Resource.Internal.ReleaseMap
-    -> Neovim.Context.Internal.Config env
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 4, Strictness: <L,U><L,U><L,U(U(U,U),U,U,U,U,U,U)><S,U>,
-     Inline: [2] -}
-cbc8516d2500b7cbd9151993adcf226b
+15b3ca4788aeb4fdc6157a1805d53485
   newtype ImportStatement
     = ImportStatement {unImportStatement :: GHC.Base.String}
-cc9c2c94df3bab272f49ec37aab23e76
+2a569f114bb500d8228594bfa7c916d4
   newtype LineNumber = LineNumber GHC.Types.Int
 a0c8646adf2a4988f400021c4ef639e1
   newtype MaxLineLength = MaxLineLength GHC.Types.Int
 3710fd1e207da4844dc4f9038e089e08
   data Qualification = Present | NotPresent
-33f2832d587e361b18a822ab2a6f178d
+48405580d87c6c451858245c7f988dc5
   haskellFormatImport ::
     Neovim.Plugin.Classes.CommandArguments
     -> Neovim.Context.Internal.Neovim env ()
-  {- Arity: 4,
-     Strictness: <S,1*U(A,U,A,A)><L,U><L,U(U(U,U),U,U,U,U,U,U)><S,U>,
-     Unfolding: InlineRule (0, True, True)
-                HaskellFormatImport.Plugin.haskellFormatImport1
-                  `cast`
-                (forall (env :: <*>_N).
-                 <Neovim.Plugin.Classes.CommandArguments>_R
-                 ->_R (<GHC.IORef.IORef
-                          Control.Monad.Trans.Resource.Internal.ReleaseMap>_R
-                       ->_R (<Neovim.Context.Internal.Config env>_R
-                             ->_R Sym (GHC.Types.N:IO[0]
-                                           <()>_R)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
-                                                               <Neovim.Context.Internal.Config
-                                                                  env>_R
-                                                               <GHC.Types.IO>_R
-                                                               <()>_N)) ; (Sym (Control.Monad.Trans.Resource.Internal.N:ResourceT[0]
-                                                                                    <Control.Monad.Trans.Reader.ReaderT
-                                                                                       (Neovim.Context.Internal.Config
-                                                                                          env)
-                                                                                       GHC.Types.IO>_R
-                                                                                    <()>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
-                                                                                                       <env>_R) <()>_N)) -}
-6531f11105e6da1f037da4e8056f42eb
-  haskellFormatImport1 ::
-    Neovim.Plugin.Classes.CommandArguments
-    -> GHC.IORef.IORef Control.Monad.Trans.Resource.Internal.ReleaseMap
-    -> Neovim.Context.Internal.Config env
-    -> GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 4,
-     Strictness: <S,1*U(A,U,A,A)><L,U><L,U(U(U,U),U,U,U,U,U,U)><S,U>,
-     Inline: [2],
-     Unfolding: InlineRule (4, True, False)
-                (\ @ env
-                   (w :: Neovim.Plugin.Classes.CommandArguments)
-                   (w1 :: GHC.IORef.IORef
-                            Control.Monad.Trans.Resource.Internal.ReleaseMap)
-                   (w2 :: Neovim.Context.Internal.Config env)
-                   (w3 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
-                 case w of ww { Neovim.Plugin.Classes.CommandArguments ww1 ww2 ww3 ww4 ->
-                 HaskellFormatImport.Plugin.$whaskellFormatImport
-                   @ env
-                   ww2
-                   w1
-                   w2
-                   w3 }) -}
-cbc8516d2500b7cbd9151993adcf226b
+15b3ca4788aeb4fdc6157a1805d53485
   unImportStatement ::
     HaskellFormatImport.Plugin.ImportStatement -> GHC.Base.String
   RecSel Left HaskellFormatImport.Plugin.ImportStatement
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
-     Unfolding: InlineRule (0, True, True)
-                HaskellFormatImport.Plugin.unImportStatement1
-                  `cast`
-                (<HaskellFormatImport.Plugin.ImportStatement>_R
-                 ->_R HaskellFormatImport.Plugin.N:ImportStatement[0]) -}
-cbc8516d2500b7cbd9151993adcf226b
-  unImportStatement1 ::
-    HaskellFormatImport.Plugin.ImportStatement
-    -> HaskellFormatImport.Plugin.ImportStatement
-  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
-     Unfolding: InlineRule (1, True, True)
-                (\ (ds :: HaskellFormatImport.Plugin.ImportStatement) -> ds) -}
 instance GHC.Enum.Enum [HaskellFormatImport.Plugin.LineNumber]
   = HaskellFormatImport.Plugin.$fEnumLineNumber
 instance GHC.Classes.Eq [HaskellFormatImport.Plugin.ImportStatement]
