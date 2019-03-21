@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-20 23:49:09.496757838 UTC
+2019-03-20 23:56:41.931825538 UTC
 
 interface main:HaskellFormatImport 8064
-  interface hash: 15cdc214c50890dff363b13b9708ffd2
+  interface hash: 7960ed0bdcbbb014c3d6689b20ceb315
   ABI hash: d32a9fc36e3bce4e993ef427ab4d7e34
   export-list hash: ce004840623cc01339b4948058bc5933
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -114,8 +114,8 @@ import  -/  base-4.12.0.0:Data.Functor 069b2025a03e32fd228e74a86a58a075
 import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
 import  -/  base-4.12.0.0:GHC.Exception 241d5c93d2929e130965d588cd89f59e
 import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
-import  -/  HaskellFormatImport.Plugin 85dae9d22ea1f394a28fae7ba4c57038
-  exports: 70e89af5e08ab6e6c2f4cb7d53dadf96
+import  -/  HaskellFormatImport.Plugin d21750ffbd41e67c2e31c04e2402dc32
+  exports: cd0ee6d7bbf1dc9ebf30c3df88e61c7b
   haskellFormatImport 48405580d87c6c451858245c7f988dc5
 import  -/  nvim-hs-2.0.0.0:Neovim 167669be48234d69ad1483fe71c0a30e
 import  -/  nvim-hs-2.0.0.0:Neovim.API.TH 5c692f4e109dd3ed6c1c2dd0dd6d0789

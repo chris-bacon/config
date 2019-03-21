@@ -1,5 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
-module HaskellFormatImport.Plugin ( haskellFormatImport ) where
+module HaskellFormatImport.Plugin ( moduleNameRegex, haskellFormatImport ) where
 
 import Data.Char
 import Data.List
@@ -15,12 +15,14 @@ import Data.List.Split
 data Qualification = Present | NotPresent
 
 newtype MaxLineLength = MaxLineLength Int
-
 newtype LineNumber    = LineNumber Int
 
 instance Enum LineNumber where
   toEnum                  = LineNumber
   fromEnum (LineNumber a) = fromEnum a
+
+moduleNameRegex :: Regex
+moduleNameRegex = mkRegex "^import\\s[qualified]*\\s*([[:alpha:][:punct:]]+)"
 
 qualifiedPadLength :: Int
 qualifiedPadLength = 10
@@ -40,9 +42,6 @@ haskellFormatImport (CommandArguments _ range _ _) = do
 
 padMissingQualified :: String
 padMissingQualified = take qualifiedPadLength $ repeat ' '
-
-moduleNameRegex :: Regex
-moduleNameRegex = mkRegex "^import\\s[qualified]*\\s*([[:alpha:][:punct:]]+)"
 
 getLongestModuleName :: [(LineNumber, String)] -> Int
 getLongestModuleName xs 

@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-20 23:49:09.37383417 UTC
+2019-03-20 23:56:41.804223801 UTC
 
 interface main:HaskellFormatImport.Plugin 8064
-  interface hash: e8757f7c4ff5a018f824c0fc47c19270
-  ABI hash: 85dae9d22ea1f394a28fae7ba4c57038
-  export-list hash: 70e89af5e08ab6e6c2f4cb7d53dadf96
+  interface hash: 847a0dfd7bb71419edd73ed6218633d7
+  ABI hash: d21750ffbd41e67c2e31c04e2402dc32
+  export-list hash: cd0ee6d7bbf1dc9ebf30c3df88e61c7b
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: e5fd15702f15e2b7fd2f13ad10fcf15d
   opt_hash: d0a78e7b344f95c7406be35c9b75e196
@@ -16,6 +16,7 @@ interface main:HaskellFormatImport.Plugin 8064
   where
 exports:
   HaskellFormatImport.Plugin.haskellFormatImport
+  HaskellFormatImport.Plugin.moduleNameRegex
 module dependencies:
 package dependencies: ansi-terminal-0.9 ansi-wl-pprint-0.6.8.2
                       array-0.5.3.0 async-2.2.1 base-4.12.0.0 basement-0.0.10
@@ -164,6 +165,8 @@ a0c8646adf2a4988f400021c4ef639e1
   haskellFormatImport ::
     Neovim.Plugin.Classes.CommandArguments
     -> Neovim.Context.Internal.Neovim env ()
+2af7a705d13520f11a45e258e679084e
+  moduleNameRegex :: Text.Regex.Posix.Wrap.Regex
 instance GHC.Enum.Enum [HaskellFormatImport.Plugin.LineNumber]
   = HaskellFormatImport.Plugin.$fEnumLineNumber
 trusted: none
