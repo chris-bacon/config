@@ -42,6 +42,7 @@ Plug 'neovimhaskell/nvim-hs.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'mhinz/vim-grepper'
 Plug 'Shougo/deoplete.nvim'
+Plug 'honza/vim-snippets'
 
 Plug 'SirVer/ultisnips'
 
