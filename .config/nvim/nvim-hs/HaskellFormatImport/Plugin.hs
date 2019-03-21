@@ -58,12 +58,12 @@ haskellFormatImport (CommandArguments _ range _ _) = do
 emptyQualified :: String
 emptyQualified = take qualifiedPadLength $ repeat ' '
 
-getLongestModuleName :: [(LineNumber, String)] -> Int
+getLongestModuleName :: [(LineNumber, ImportStatement)] -> Int
 getLongestModuleName xs 
-  = maximum $ fmap (fromMaybe 0 . getLengthOfModuleName . snd) xs
+  = maximum $ fmap (fromMaybe 0 . getLengthOfModuleName . unImportStatement . snd) xs
 
-formatImportLine :: Buffer -> Qualification -> MaxLineLength -> Int -> (LineNumber, String) -> Neovim env ()
-formatImportLine buff qualifiedImports (MaxLineLength longestImport) longestModuleName (LineNumber lineNo, lineContent) 
+formatImportLine :: Buffer -> Qualification -> MaxLineLength -> Int -> (LineNumber, ImportStatement) -> Neovim env ()
+formatImportLine buff qualifiedImports (MaxLineLength longestImport) longestModuleName (LineNumber lineNo, ImportStatement lineContent) 
   = buffer_set_line buff (intToInt64 lineNo) $ padContent lineContent qualifiedImports longestImport longestModuleName
 
 getQualification :: [(LineNumber, ImportStatement)] -> Qualification
