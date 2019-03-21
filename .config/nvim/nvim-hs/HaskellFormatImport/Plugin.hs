@@ -92,7 +92,7 @@ padAs n s =
      in mconcat . intersperse (take padDiff (repeat ' ') ++ " as ") $ splitOn " as " s
 
 sortImports :: [(LineNumber, ImportStatement)] -> [(LineNumber, ImportStatement)]
-sortImports xs = zip (fmap fst xs) $ sortBy (\a b -> compare (toLower <$> ignoreQualified a) (toLower <$> ignoreQualified b)) (fmap snd xs)
+sortImports xs = zip (fmap fst xs) $ sortBy (\a b -> compare (toLower <$> ignoreQualified (unImportStatement a)) (toLower <$> ignoreQualified (unImportStatement b))) (fmap snd xs)
   where
     ignoreQualified = concat . splitOn "qualified"
 
