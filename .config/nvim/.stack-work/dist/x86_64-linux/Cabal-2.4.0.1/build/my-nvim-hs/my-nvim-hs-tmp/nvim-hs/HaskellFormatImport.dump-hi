@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-20 23:56:41.931825538 UTC
+2019-03-21 00:04:28.716954255 UTC
 
 interface main:HaskellFormatImport 8064
-  interface hash: 7960ed0bdcbbb014c3d6689b20ceb315
+  interface hash: 15cdc214c50890dff363b13b9708ffd2
   ABI hash: d32a9fc36e3bce4e993ef427ab4d7e34
   export-list hash: ce004840623cc01339b4948058bc5933
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -39,12 +39,8 @@ package dependencies: ansi-terminal-0.9 ansi-wl-pprint-0.6.8.2
                       typed-process-0.2.4.0 unix-2.7.2.2 unliftio-0.2.10
                       unliftio-core-0.1.2.0 unordered-containers-0.2.10.0
                       utf8-string-1.0.1.1 vector-0.12.0.2 vector-algorithms-0.8.0.1
-orphans: regex-posix-0.95.2:Text.Regex.Posix.String
-         regex-posix-0.95.2:Text.Regex.Posix.Sequence
-         regex-posix-0.95.2:Text.Regex.Posix.ByteString.Lazy
-         regex-posix-0.95.2:Text.Regex.Posix.ByteString
-         regex-base-0.93.2:Text.Regex.Base.Context
-         network-2.8.0.0:Network.Socket vector-0.12.0.2:Data.Vector.Unboxed
+orphans: network-2.8.0.0:Network.Socket
+         vector-0.12.0.2:Data.Vector.Unboxed
          hashable-1.2.7.0:Data.Hashable.Generic colour-2.3.4:Data.Colour
          data-default-instances-containers-0.0.1:Data.Default.Instances.Containers
          data-default-instances-dlist-0.0.1:Data.Default.Instances.DList
@@ -59,7 +55,12 @@ orphans: regex-posix-0.95.2:Text.Regex.Posix.String
          text-1.2.3.1:Data.Text.Show
          vector-0.12.0.2:Data.Vector.Fusion.Bundle
          transformers-0.5.6.2:Control.Monad.Trans.Error
-         base-4.12.0.0:GHC.Float base-4.12.0.0:GHC.Base
+         regex-posix-0.95.2:Text.Regex.Posix.String
+         regex-posix-0.95.2:Text.Regex.Posix.Sequence
+         regex-posix-0.95.2:Text.Regex.Posix.ByteString.Lazy
+         regex-posix-0.95.2:Text.Regex.Posix.ByteString
+         regex-base-0.93.2:Text.Regex.Base.Context base-4.12.0.0:GHC.Float
+         base-4.12.0.0:GHC.Base
 family instance modules: base-4.12.0.0:Control.Applicative
                          base-4.12.0.0:Data.Complex base-4.12.0.0:Data.Functor.Compose
                          base-4.12.0.0:Data.Functor.Const
@@ -114,8 +115,8 @@ import  -/  base-4.12.0.0:Data.Functor 069b2025a03e32fd228e74a86a58a075
 import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
 import  -/  base-4.12.0.0:GHC.Exception 241d5c93d2929e130965d588cd89f59e
 import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
-import  -/  HaskellFormatImport.Plugin d21750ffbd41e67c2e31c04e2402dc32
-  exports: cd0ee6d7bbf1dc9ebf30c3df88e61c7b
+import  -/  HaskellFormatImport.Plugin 85dae9d22ea1f394a28fae7ba4c57038
+  exports: 70e89af5e08ab6e6c2f4cb7d53dadf96
   haskellFormatImport 48405580d87c6c451858245c7f988dc5
 import  -/  nvim-hs-2.0.0.0:Neovim 167669be48234d69ad1483fe71c0a30e
 import  -/  nvim-hs-2.0.0.0:Neovim.API.TH 5c692f4e109dd3ed6c1c2dd0dd6d0789

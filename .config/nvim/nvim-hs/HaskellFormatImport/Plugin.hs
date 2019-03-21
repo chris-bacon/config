@@ -1,21 +1,23 @@
 {-# LANGUAGE OverloadedStrings #-}
-module HaskellFormatImport.Plugin ( moduleNameRegex, haskellFormatImport ) where
 
+module HaskellFormatImport.Plugin ( haskellFormatImport ) where
+
+import Basement.IntegralConv (intToInt64)
 import Data.Char
 import Data.List
-import Data.Maybe
-import Text.Regex
+import Data.List.Split
+import Data.Maybe            (maybe, fromMaybe)
 import Neovim
 import Neovim.API.String
-import Basement.IntegralConv (intToInt64)
-import Data.List.Split
+import Text.Regex
 
 -- | Qualification in this context means that one of the imports is a qualified import
 -- It is a property that applies to the whole buffer, however.
 data Qualification = Present | NotPresent
 
 newtype MaxLineLength = MaxLineLength Int
-newtype LineNumber    = LineNumber Int
+
+newtype LineNumber = LineNumber Int
 
 instance Enum LineNumber where
   toEnum                  = LineNumber
@@ -23,6 +25,9 @@ instance Enum LineNumber where
 
 moduleNameRegex :: Regex
 moduleNameRegex = mkRegex "^import\\s[qualified]*\\s*([[:alpha:][:punct:]]+)"
+
+importRegex :: Regex
+importRegex = mkRegex "^import\\s"
 
 qualifiedPadLength :: Int
 qualifiedPadLength = 10
@@ -33,7 +38,7 @@ haskellFormatImport (CommandArguments _ range _ _) = do
   buff     <- vim_get_current_buffer
   allLines <- nvim_buf_get_lines buff (intToInt64 startOfRange) (intToInt64 endOfRange) False
 
-  let allImportLines       = sortImports . filter isImportStatement $ zip [LineNumber 1..LineNumber endOfRange] allLines
+  let allImportLines       = sortImports . filter isImportStatement . zip [LineNumber 1..LineNumber endOfRange] $ allLines
       anyImportIsQualified = getQualification allImportLines
       maxLineLength        = MaxLineLength $ foldr max 0 $ fmap (\(_,s) -> length s) allImportLines
       longestModuleName    = getLongestModuleName allImportLines
@@ -85,7 +90,7 @@ sortImports xs = zip (fmap fst xs) $ sortBy (\a b -> compare (toLower <$> ignore
     ignoreQualified = concat . splitOn "qualified"
 
 isImportStatement :: (LineNumber, String) -> Bool
-isImportStatement (_, s) = isInfixOf "import " s
+isImportStatement (_, s) = maybe False (const True) $ matchRegex importRegex s  
 
 isQualified :: (LineNumber, String) -> Bool
 isQualified (_, s) = isInfixOf "qualified " s
