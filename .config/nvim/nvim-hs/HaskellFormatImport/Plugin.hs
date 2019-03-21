@@ -45,8 +45,8 @@ haskellFormatImport (CommandArguments _ range _ _) = do
 
   mapM_ (formatImportLine buff anyImportIsQualified maxLineLength longestModuleName) allImportLines >> return ()
 
-padMissingQualified :: String
-padMissingQualified = take qualifiedPadLength $ repeat ' '
+emptyQualified :: String
+emptyQualified = take qualifiedPadLength $ repeat ' '
 
 getLongestModuleName :: [(LineNumber, String)] -> Int
 getLongestModuleName xs 
@@ -65,9 +65,9 @@ getQualification xs = go $ filter isQualified xs
 padContent :: String -> Qualification -> Int -> Int -> String
 padContent content NotPresent longestImport longestModuleName = padAs longestModuleName content
 padContent content Present longestImport longestModuleName =
-  if "qualified" `isInfixOf` content || ("import" ++ padMissingQualified) `isInfixOf` content
+  if "qualified" `isInfixOf` content || ("import" ++ emptyQualified) `isInfixOf` content
      then padAs longestModuleName content
-     else padAs longestModuleName $ concat $ ("import" ++ padMissingQualified) : splitOn "import" content
+     else padAs longestModuleName $ concat $ ("import" ++ emptyQualified) : splitOn "import" content
 
 getLengthOfModuleName :: String -> Maybe Int
 getLengthOfModuleName s = do
