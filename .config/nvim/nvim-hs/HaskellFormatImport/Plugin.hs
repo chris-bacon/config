@@ -26,6 +26,7 @@ instance Enum LineNumber where
 moduleNameRegex, importRegex :: Regex
 moduleNameRegex = mkRegex "^import\\s[qualified]*\\s*([[:alpha:][:punct:]]+)"
 importRegex     = mkRegex "^import\\s"
+qualifiedRegex  = mkRegex "\\squalified\\s"
 
 regexErrorMsg :: String -> String
 regexErrorMsg s = s ++ " does not match the import regex! Please raise an issue on the github page quoting what statement it failed on"
@@ -91,5 +92,5 @@ isImportStatement :: (LineNumber, String) -> Bool
 isImportStatement (_, s) = maybe False (const True) $ matchRegex importRegex s  
 
 isQualified :: (LineNumber, String) -> Bool
-isQualified (_, s) = isInfixOf "qualified " s
+isQualified (_, s) = maybe False (const True) $ matchRegex qualifiedRegex s --isInfixOf "qualified " s
 
