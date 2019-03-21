@@ -43,7 +43,6 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'mhinz/vim-grepper'
 Plug 'Shougo/deoplete.nvim'
 
-"Plug 'Shougo/neosnippet.vim'
 Plug 'SirVer/ultisnips'
 
 let g:stackThoseErrorsCreateMappings = 1 
