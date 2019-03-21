@@ -1,4 +1,6 @@
 *
+!.vim/
+!.vim/**/*
 !.config/
 !.config/*
 !.config/i3/**/*
