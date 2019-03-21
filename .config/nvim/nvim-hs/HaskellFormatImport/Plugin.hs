@@ -91,7 +91,8 @@ padAs n s =
         padDiff    = n - lenModName 
      in mconcat . intersperse (take padDiff (repeat ' ') ++ " as ") $ splitOn " as " $ removeRedundantWhitespace s
 
-removeRedundantWhitespace s = mconcat $ intersperse " " $ filter (not . isSpace) s
+-- removeRedundantWhitespace = mconcat . intersperse " " . words
+removeRedundantWhitespace s = mconcat $ intersperse " " $ filter (/= "") $ splitOn " " s 
 
 sortImports :: [(LineNumber, ImportStatement)] -> [(LineNumber, ImportStatement)]
 sortImports xs = zip (fmap fst xs) $ sortBy (\a b -> compare (toLower <$> ignoreQualified (unImportStatement a)) (toLower <$> ignoreQualified (unImportStatement b))) (fmap snd xs)
