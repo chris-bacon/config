@@ -45,6 +45,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'honza/vim-snippets'
 
 Plug 'SirVer/ultisnips'
+Plug 'majutsushi/tagbar'
 
 let g:stackThoseErrorsCreateMappings = 1 
 
