@@ -50,7 +50,7 @@ hi PmenuSbar  ctermbg=black
 hi PmenuThumb ctermbg=yellow
 hi! link Visual Search
 
-hi! link haskellType GruvboxBlue
+hi! link haskellType GruvboxFg1
 hi! link haskellIdentifier GruvboxAqua
 hi! link haskellSeparator GruvboxFg4
 hi! link haskellDelimiter GruvboxOrange
