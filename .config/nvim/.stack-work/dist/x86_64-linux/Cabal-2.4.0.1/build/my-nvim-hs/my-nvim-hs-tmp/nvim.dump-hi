@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-29 13:35:28.803999251 UTC
+2019-03-29 14:46:09.849544023 UTC
 
 interface main:Main 8064
-  interface hash: 761e762f474754133803be86a472e1a3
-  ABI hash: 5cbf031fab2cc03031d48064a9e67651
-  export-list hash: 611e9f9ea63d9f5120138c6296fac3b0
+  interface hash: 36857cc7b74b798a77d12507c98284e4
+  ABI hash: 0433fbb5f53a1e68f1d28feef151bdd8
+  export-list hash: 612c08cf4ac7114c0c3f6195877b38f2
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: baef6ab4adda9a28d1b7cfe0c5110608
   opt_hash: 6faf2de08de32d19db9870899d88e59a
@@ -16,14 +16,12 @@ interface main:Main 8064
   where
 exports:
   Main.main
-module dependencies: HaskellFormatImport HaskellFormatImport.Config
-                     HaskellFormatImport.Pad HaskellFormatImport.Plugin
-                     Neovim.Example.Plugin Neovim.Example.Plugin.Fibonacci
-                     Neovim.Example.Plugin.Random
+module dependencies: Neovim.Example.Plugin
+                     Neovim.Example.Plugin.Fibonacci Neovim.Example.Plugin.Random
 package dependencies: ansi-terminal-0.9 ansi-wl-pprint-0.6.8.2
-                      array-0.5.3.0 async-2.2.1 base-4.12.0.0 basement-0.0.10
-                      binary-0.8.6.0 bytestring-0.10.8.2 case-insensitive-1.2.0.11
-                      cereal-0.5.8.0 cereal-conduit-0.8.0 colour-2.3.4 conduit-1.3.1.1
+                      array-0.5.3.0 async-2.2.1 base-4.12.0.0 binary-0.8.6.0
+                      bytestring-0.10.8.2 case-insensitive-1.2.0.11 cereal-0.5.8.0
+                      cereal-conduit-0.8.0 colour-2.3.4 conduit-1.3.1.1
                       containers-0.6.0.1 data-default-0.7.1.1 data-default-class-0.1.2.0
                       data-default-instances-containers-0.0.1
                       data-default-instances-dlist-0.0.1
@@ -35,34 +33,28 @@ package dependencies: ansi-terminal-0.9 ansi-wl-pprint-0.6.8.2
                       old-locale-1.0.0.7 optparse-applicative-0.14.3.0
                       parser-combinators-1.0.1 pretty-1.1.3.6 prettyprinter-1.2.1
                       prettyprinter-ansi-terminal-1.1.1.2 primitive-0.6.4.0
-                      process-1.6.5.0 random-1.1 regex-base-0.93.2 regex-compat-0.95.1
-                      regex-posix-0.95.2 resourcet-1.2.2 split-0.2.3.3 stm-2.5.0.0
-                      streaming-commons-0.2.1.0 template-haskell-2.14.0.0 text-1.2.3.1
-                      time-1.8.0.2 time-locale-compat-0.1.1.5 transformers-0.5.6.2
-                      typed-process-0.2.4.0 unix-2.7.2.2 unliftio-0.2.10
-                      unliftio-core-0.1.2.0 unordered-containers-0.2.10.0
+                      process-1.6.5.0 random-1.1 resourcet-1.2.2 split-0.2.3.3
+                      stm-2.5.0.0 streaming-commons-0.2.1.0 template-haskell-2.14.0.0
+                      text-1.2.3.1 time-1.8.0.2 time-locale-compat-0.1.1.5
+                      transformers-0.5.6.2 typed-process-0.2.4.0 unix-2.7.2.2
+                      unliftio-0.2.10 unliftio-core-0.1.2.0 unordered-containers-0.2.10.0
                       utf8-string-1.0.1.1 vector-0.12.0.2 vector-algorithms-0.8.0.1
 orphans: network-2.8.0.0:Network.Socket
          vector-0.12.0.2:Data.Vector.Unboxed
-         hashable-1.2.7.0:Data.Hashable.Generic colour-2.3.4:Data.Colour
+         vector-0.12.0.2:Data.Vector.Fusion.Bundle
          data-default-instances-containers-0.0.1:Data.Default.Instances.Containers
          data-default-instances-dlist-0.0.1:Data.Default.Instances.DList
          data-default-instances-old-locale-0.0.1:Data.Default.Instances.OldLocale
-         time-1.8.0.2:Data.Time.Format.Parse
+         hashable-1.2.7.0:Data.Hashable.Generic
+         stm-2.5.0.0:Control.Monad.STM time-1.8.0.2:Data.Time.Format.Parse
          time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
          time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
          time-1.8.0.2:Data.Time.Calendar.Gregorian
-         stm-2.5.0.0:Control.Monad.STM text-1.2.3.1:Data.Text.Lazy
+         transformers-0.5.6.2:Control.Monad.Trans.Error
+         colour-2.3.4:Data.Colour text-1.2.3.1:Data.Text.Lazy
          text-1.2.3.1:Data.Text binary-0.8.6.0:Data.Binary.Generic
          bytestring-0.10.8.2:Data.ByteString.Builder
-         text-1.2.3.1:Data.Text.Show
-         vector-0.12.0.2:Data.Vector.Fusion.Bundle
-         transformers-0.5.6.2:Control.Monad.Trans.Error
-         regex-posix-0.95.2:Text.Regex.Posix.String
-         regex-posix-0.95.2:Text.Regex.Posix.Sequence
-         regex-posix-0.95.2:Text.Regex.Posix.ByteString.Lazy
-         regex-posix-0.95.2:Text.Regex.Posix.ByteString
-         regex-base-0.93.2:Text.Regex.Base.Context base-4.12.0.0:GHC.Float
+         text-1.2.3.1:Data.Text.Show base-4.12.0.0:GHC.Float
          base-4.12.0.0:GHC.Base
 family instance modules: base-4.12.0.0:Control.Applicative
                          base-4.12.0.0:Data.Complex base-4.12.0.0:Data.Functor.Compose
@@ -116,9 +108,6 @@ family instance modules: base-4.12.0.0:Control.Applicative
 import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
 import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
 import  -/  ghc-prim-0.5.3:GHC.Types 57064c9f957b09bc2e360061ad5cae0b
-import  -/  HaskellFormatImport dfed08fea4aadce63a261416d0e3502a
-  exports: ce004840623cc01339b4948058bc5933
-  plugin 9df21439ca7379d04253cef4124ab721
 import  -/  Neovim.Example.Plugin 1c16ba4d3f895d2752d7f8370f75f4b9
   exports: 9eb854ef4dbe7d68097be0b0a36c45b8
   plugin 01218e76119d660d58f59866b2df08fd
@@ -143,12 +132,12 @@ e5875966b74dad2d29772660b8a75e33
 d026be77cb9ced20e35a61514e0458aa
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-f2925c20f413538f6a937fbff884e5fc
+5add0506a8034d7afd592bad85879cb3
   main :: GHC.Types.IO ()
   {- Arity: 1,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-ce2ce0a8d3e1c9fdb39deaf8abf75b83
+8a815dae0d585263a1973cd776e918f0
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -161,13 +150,13 @@ ce2ce0a8d3e1c9fdb39deaf8abf75b83
                     ->_R <Neovim.Context.Internal.Config Neovim.RPC.Common.RPCConfig>_R
                     ->_R Sym (GHC.Types.N:IO[0] <()>_R))
                    Main.main2) -}
-eed4e8871e669b28b6816a03e4b24d59
+db26fccde4dae0767e46e36f5693c3b2
   main2 :: Neovim.Config.NeovimConfig
   {- Strictness: m,
      Unfolding: (Neovim.Config.Config
                    Main.main3
                    (GHC.Maybe.Nothing @ (GHC.IO.FilePath, System.Log.Priority))) -}
-434b5d967716a8dc6b9a85ebe8c56e54
+3707e3769d400854f4d9a244945b27b9
   main3 ::
     [Neovim.Context.Internal.Neovim
        () Neovim.Plugin.Internal.NeovimPlugin]
@@ -192,37 +181,11 @@ eed4e8871e669b28b6816a03e4b24d59
                                                                                                                                                        GHC.Types.IO>_R
                                                                                                                                                     <Neovim.Plugin.Internal.NeovimPlugin>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
                                                                                                                                                                                                         <()>_R) <Neovim.Plugin.Internal.NeovimPlugin>_N))
-                   Main.main4) -}
-9f230f627a0f8a68c84e19481b728cde
-  main4 ::
-    [Neovim.Context.Internal.Neovim
-       () Neovim.Plugin.Internal.NeovimPlugin]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ (Neovim.Context.Internal.Neovim
-                        () Neovim.Plugin.Internal.NeovimPlugin)
-                   HaskellFormatImport.plugin1
-                     `cast`
-                   ((<GHC.IORef.IORef
-                        Control.Monad.Trans.Resource.Internal.ReleaseMap>_R
-                     ->_R (<Neovim.Context.Internal.Config ()>_R
-                           ->_R Sym (GHC.Types.N:IO[0]
-                                         <Neovim.Plugin.Internal.NeovimPlugin>_R)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
-                                                                                              <Neovim.Context.Internal.Config
-                                                                                                 ()>_R
-                                                                                              <GHC.Types.IO>_R
-                                                                                              <Neovim.Plugin.Internal.NeovimPlugin>_N)) ; (Sym (Control.Monad.Trans.Resource.Internal.N:ResourceT[0]
-                                                                                                                                                    <Control.Monad.Trans.Reader.ReaderT
-                                                                                                                                                       (Neovim.Context.Internal.Config
-                                                                                                                                                          ())
-                                                                                                                                                       GHC.Types.IO>_R
-                                                                                                                                                    <Neovim.Plugin.Internal.NeovimPlugin>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
-                                                                                                                                                                                                        <()>_R) <Neovim.Plugin.Internal.NeovimPlugin>_N))
                    (GHC.Types.[]
                       @ (Neovim.Context.Internal.Neovim
                            () Neovim.Plugin.Internal.NeovimPlugin))) -}
-fa947384ee1e88180f9dd565d98ac4e9
-  main5 ::
+528e8a95be6f48cbffb9e4186e9df8a5
+  main4 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
