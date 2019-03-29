@@ -1,0 +1,146 @@
+
+==================== FINAL INTERFACE ====================
+2019-03-29 13:35:28.239926507 UTC
+
+interface main:HaskellFormatImport.Config 8064
+  interface hash: 204408fe205181f37850c659e197127b
+  ABI hash: 2eab1f3ebfc9cdf7c1312d275e3f4ba7
+  export-list hash: c0321fbf8e500cc8c3e4f6ab7903f412
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: ce42fda95c7149c77b28e8802464797c
+  opt_hash: 6faf2de08de32d19db9870899d88e59a
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  plugin_hash: ad164012d6b1e14942349d58b1132007
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  HaskellFormatImport.Config.importRegex
+  HaskellFormatImport.Config.moduleNameRegex
+  HaskellFormatImport.Config.qualifiedPadLength
+  HaskellFormatImport.Config.qualifiedRegex
+  HaskellFormatImport.Config.regexErrorMsg
+module dependencies:
+package dependencies: array-0.5.3.0 base-4.12.0.0
+                      bytestring-0.10.8.2 containers-0.6.0.1 deepseq-1.4.4.0
+                      ghc-prim-0.5.3 integer-gmp-1.0.2.0 regex-base-0.93.2
+                      regex-compat-0.95.1 regex-posix-0.95.2
+orphans: regex-posix-0.95.2:Text.Regex.Posix.String
+         regex-posix-0.95.2:Text.Regex.Posix.Sequence
+         regex-posix-0.95.2:Text.Regex.Posix.ByteString.Lazy
+         regex-posix-0.95.2:Text.Regex.Posix.ByteString
+         regex-base-0.93.2:Text.Regex.Base.Context base-4.12.0.0:GHC.Float
+         base-4.12.0.0:GHC.Base
+family instance modules: base-4.12.0.0:Control.Applicative
+                         base-4.12.0.0:Data.Complex base-4.12.0.0:Data.Functor.Compose
+                         base-4.12.0.0:Data.Functor.Const
+                         base-4.12.0.0:Data.Functor.Identity
+                         base-4.12.0.0:Data.Functor.Product base-4.12.0.0:Data.Functor.Sum
+                         base-4.12.0.0:Data.Monoid base-4.12.0.0:Data.Semigroup
+                         base-4.12.0.0:Data.Semigroup.Internal base-4.12.0.0:Data.Version
+                         base-4.12.0.0:Data.Void base-4.12.0.0:GHC.Exts
+                         base-4.12.0.0:GHC.Generics base-4.12.0.0:GHC.IO.Exception
+                         containers-0.6.0.1:Data.Sequence.Internal
+import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
+import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
+import  -/  regex-compat-0.95.1:Text.Regex 389154f2af9016e3bae20075e1794a17
+import  -/  regex-posix-0.95.2:Text.Regex.Posix.Wrap db34d4dabcdc5931ba5ba49688d21cb1
+6899f5b03e1f633ab3b4a42c2349c76d
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   HaskellFormatImport.Config.$trModule3
+                   HaskellFormatImport.Config.$trModule1) -}
+1eb2b16e17817f6f214bb0157a0c7d9a
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   HaskellFormatImport.Config.$trModule2) -}
+0ef6ea19f3b7fdebc92289be336b8427
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("HaskellFormatImport.Config"#) -}
+faf00c44271d1a95f2d300ad372c901b
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   HaskellFormatImport.Config.$trModule4) -}
+44f22d23b475e713f97b44ddc4b2bdda
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("main"#) -}
+cb93cfbc95d6e45550f47785f1aa643d
+  importRegex :: Text.Regex.Posix.Wrap.Regex
+  {- Unfolding: (Text.Regex.Posix.String.$fRegexMakerRegexCompOptionExecOption[]_$cmakeRegexOpts
+                   Text.Regex.mkRegex1
+                     `cast`
+                   (Sym (Foreign.C.Types.N:CInt[0]) ; Sym (Text.Regex.Posix.Wrap.N:CompOption[0]))
+                   Text.Regex.Posix.Wrap.$fRegexOptionsRegexCompOptionExecOption2
+                     `cast`
+                   (Sym (Foreign.C.Types.N:CInt[0]) ; Sym (Text.Regex.Posix.Wrap.N:ExecOption[0]))
+                   (GHC.CString.unpackCString#
+                      HaskellFormatImport.Config.importRegex1)) -}
+eddf06ee7120557501f40294d43120a2
+  importRegex1 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("^import\\s"#) -}
+5890d8bd3ede0f87b28bb55d7994d017
+  moduleNameRegex :: Text.Regex.Posix.Wrap.Regex
+  {- Unfolding: (Text.Regex.Posix.String.$fRegexMakerRegexCompOptionExecOption[]_$cmakeRegexOpts
+                   Text.Regex.mkRegex1
+                     `cast`
+                   (Sym (Foreign.C.Types.N:CInt[0]) ; Sym (Text.Regex.Posix.Wrap.N:CompOption[0]))
+                   Text.Regex.Posix.Wrap.$fRegexOptionsRegexCompOptionExecOption2
+                     `cast`
+                   (Sym (Foreign.C.Types.N:CInt[0]) ; Sym (Text.Regex.Posix.Wrap.N:ExecOption[0]))
+                   (GHC.CString.unpackCString#
+                      HaskellFormatImport.Config.moduleNameRegex1)) -}
+8cf0027938ef81f89a0b7f52acf36dd2
+  moduleNameRegex1 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("^import\\s[qualified]*\\s*([[:alpha:][:punct:]]+)"#) -}
+ba97c20d5748f3d6ddafbbe17331ab40
+  qualifiedPadLength :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 10#) -}
+23533b2e8050fd65857feada7c4473d5
+  qualifiedRegex :: Text.Regex.Posix.Wrap.Regex
+  {- Unfolding: (Text.Regex.Posix.String.$fRegexMakerRegexCompOptionExecOption[]_$cmakeRegexOpts
+                   Text.Regex.mkRegex1
+                     `cast`
+                   (Sym (Foreign.C.Types.N:CInt[0]) ; Sym (Text.Regex.Posix.Wrap.N:CompOption[0]))
+                   Text.Regex.Posix.Wrap.$fRegexOptionsRegexCompOptionExecOption2
+                     `cast`
+                   (Sym (Foreign.C.Types.N:CInt[0]) ; Sym (Text.Regex.Posix.Wrap.N:ExecOption[0]))
+                   (GHC.CString.unpackCString#
+                      HaskellFormatImport.Config.qualifiedRegex1)) -}
+a9a5a64e4fb3b990a2b5790acf123b5b
+  qualifiedRegex1 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("\\squalified\\s"#) -}
+7da98b63e3db93b275a82517f4763d1f
+  regexErrorMsg :: GHC.Base.String -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (s :: GHC.Base.String) ->
+                 GHC.Base.build
+                   @ GHC.Types.Char
+                   (\ @ b
+                      (c :: GHC.Types.Char -> b -> b)[OneShot]
+                      (n :: b)[OneShot] ->
+                    GHC.Base.foldr
+                      @ GHC.Types.Char
+                      @ b
+                      c
+                      (GHC.CString.unpackFoldrCString#
+                         @ b
+                         HaskellFormatImport.Config.regexErrorMsg1
+                         c
+                         n)
+                      s)) -}
+25d12008217eb112b59cd5db7a802807
+  regexErrorMsg1 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: (" does not match the import regex! Please raise an issue on the github page quoting what statement it failed on"#) -}
+trusted: none
+require own pkg trusted: False
+module header:
+  Nothing
+declaration docs:
+arg docs:
+

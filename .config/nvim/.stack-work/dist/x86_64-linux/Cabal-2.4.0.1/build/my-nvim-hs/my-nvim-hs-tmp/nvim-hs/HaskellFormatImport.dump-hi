@@ -1,14 +1,14 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-21 15:55:17.182074761 UTC
+2019-03-29 13:35:28.749402516 UTC
 
 interface main:HaskellFormatImport 8064
-  interface hash: 6eef3e734e4cfa787eb6564ac713c8e6
-  ABI hash: d32a9fc36e3bce4e993ef427ab4d7e34
+  interface hash: 6836f188f3421dd15865e2664df545cf
+  ABI hash: dfed08fea4aadce63a261416d0e3502a
   export-list hash: ce004840623cc01339b4948058bc5933
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 30a727c15f9cacf7883195c464fa10af
-  opt_hash: d0a78e7b344f95c7406be35c9b75e196
+  opt_hash: 6faf2de08de32d19db9870899d88e59a
   hpc_hash: 93b885adfe0da089cdf634904fd59f71
   plugin_hash: ad164012d6b1e14942349d58b1132007
   sig of: Nothing
@@ -16,7 +16,8 @@ interface main:HaskellFormatImport 8064
   where
 exports:
   HaskellFormatImport.plugin
-module dependencies: HaskellFormatImport.Plugin
+module dependencies: HaskellFormatImport.Config
+                     HaskellFormatImport.Pad HaskellFormatImport.Plugin
 package dependencies: ansi-terminal-0.9 ansi-wl-pprint-0.6.8.2
                       array-0.5.3.0 async-2.2.1 base-4.12.0.0 basement-0.0.10
                       binary-0.8.6.0 bytestring-0.10.8.2 case-insensitive-1.2.0.11
@@ -115,9 +116,9 @@ import  -/  base-4.12.0.0:Data.Functor 069b2025a03e32fd228e74a86a58a075
 import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
 import  -/  base-4.12.0.0:GHC.Exception 241d5c93d2929e130965d588cd89f59e
 import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
-import  -/  HaskellFormatImport.Plugin 91a8103e09d3d57ced1cfc159d4c2bca
+import  -/  HaskellFormatImport.Plugin 46a29726c4ff301bca2fe5627f83afab
   exports: 70e89af5e08ab6e6c2f4cb7d53dadf96
-  haskellFormatImport 48405580d87c6c451858245c7f988dc5
+  haskellFormatImport 33f2832d587e361b18a822ab2a6f178d
 import  -/  nvim-hs-2.0.0.0:Neovim 167669be48234d69ad1483fe71c0a30e
 import  -/  nvim-hs-2.0.0.0:Neovim.API.TH 5c692f4e109dd3ed6c1c2dd0dd6d0789
 import  -/  nvim-hs-2.0.0.0:Neovim.Classes af89bdb97e589d25d0744c97548b2668
@@ -129,12 +130,207 @@ import  -/  nvim-hs-2.0.0.0:Neovim.Plugin.Internal 00410a85c606261f395f5d2b5d6ee
 import  -/  prettyprinter-1.2.1:Data.Text.Prettyprint.Doc.Internal 4b53c6eed7145944e9bd73c7468bb048
 import  -/  prettyprinter-ansi-terminal-1.1.1.2:Data.Text.Prettyprint.Doc.Render.Terminal.Internal 0cdd13f068aeb2852b7dc0a6c5e759bb
 import  -/  utf8-string-1.0.1.1:Data.ByteString.UTF8 55cfc5163ea7ac112ba8a971498f63b1
-2a59ef9d7a0d4b0db309ae877025d745
+a8297a62b02d168d3a458bf74108536e
   $trModule :: GHC.Types.Module
-6d74b00ed2440500ec5b42d70d01cf90
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   HaskellFormatImport.$trModule3
+                   HaskellFormatImport.$trModule1) -}
+f6a255407a04590f9f2850c318acd7cb
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS HaskellFormatImport.$trModule2) -}
+fbfc36cb9a3418efcce45a299034dfb1
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("HaskellFormatImport"#) -}
+01d0fe2c510da75ad5ae40c73833ca43
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS HaskellFormatImport.$trModule4) -}
+98475758442f8dfa4bce6e2b925062c2
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("main"#) -}
+9df21439ca7379d04253cef4124ab721
   plugin ::
     Neovim.Context.Internal.Neovim
       () Neovim.Plugin.Internal.NeovimPlugin
+  {- Arity: 3, Strictness: <L,A><L,A><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                HaskellFormatImport.plugin1
+                  `cast`
+                ((<GHC.IORef.IORef
+                     Control.Monad.Trans.Resource.Internal.ReleaseMap>_R
+                  ->_R (<Neovim.Context.Internal.Config ()>_R
+                        ->_R Sym (GHC.Types.N:IO[0]
+                                      <Neovim.Plugin.Internal.NeovimPlugin>_R)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                           <Neovim.Context.Internal.Config
+                                                                                              ()>_R
+                                                                                           <GHC.Types.IO>_R
+                                                                                           <Neovim.Plugin.Internal.NeovimPlugin>_N)) ; (Sym (Control.Monad.Trans.Resource.Internal.N:ResourceT[0]
+                                                                                                                                                 <Control.Monad.Trans.Reader.ReaderT
+                                                                                                                                                    (Neovim.Context.Internal.Config
+                                                                                                                                                       ())
+                                                                                                                                                    GHC.Types.IO>_R
+                                                                                                                                                 <Neovim.Plugin.Internal.NeovimPlugin>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
+                                                                                                                                                                                                     <()>_R) <Neovim.Plugin.Internal.NeovimPlugin>_N)) -}
+452a3824e870baba18b6c865b21fac74
+  plugin1 ::
+    GHC.IORef.IORef Control.Monad.Trans.Resource.Internal.ReleaseMap
+    -> Neovim.Context.Internal.Config ()
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          Neovim.Plugin.Internal.NeovimPlugin #)
+  {- Arity: 3, Strictness: <L,A><L,A><S,U>,
+     Unfolding: InlineRule (3, True, True)
+                (\ (eta1 :: GHC.IORef.IORef
+                              Control.Monad.Trans.Resource.Internal.ReleaseMap)
+                   (eta2 :: Neovim.Context.Internal.Config ())
+                   (eta3 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 (# eta3, HaskellFormatImport.plugin_eta #)) -}
+16676e05703c0d5adab33f28d854c6e7
+  plugin10 :: [Neovim.Plugin.Classes.CommandOption]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Neovim.Plugin.Classes.CommandOption
+                   HaskellFormatImport.plugin14
+                   HaskellFormatImport.plugin11) -}
+71a47b6f12442871ca4b854e1321e722
+  plugin11 :: [Neovim.Plugin.Classes.CommandOption]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Neovim.Plugin.Classes.CommandOption
+                   HaskellFormatImport.plugin12
+                   (GHC.Types.[] @ Neovim.Plugin.Classes.CommandOption)) -}
+1079bf4ec7be00c156849f6ca91c23e8
+  plugin12 :: Neovim.Plugin.Classes.CommandOption
+  {- Unfolding: (Neovim.Plugin.Classes.$fIsStringCommandOption_$cfromString
+                   (GHC.CString.unpackCString# HaskellFormatImport.plugin13)) -}
+29fba1a765d07f7768530c7c345e0f37
+  plugin13 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("sync"#) -}
+a97ddce5ffaf6e4f43b793a1dc31bb3f
+  plugin14 :: Neovim.Plugin.Classes.CommandOption
+  {- Unfolding: (Neovim.Plugin.Classes.$fIsStringCommandOption_$cfromString
+                   (GHC.CString.unpackCString# HaskellFormatImport.plugin15)) -}
+8164b5971bf6c7860d0280894fcd832c
+  plugin15 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("%"#) -}
+7a0b9d6eb19b3c6c603b8e790449cf25
+  plugin16 :: Neovim.Plugin.Classes.CommandOption
+  {- Strictness: m3,
+     Unfolding: (Neovim.Plugin.Classes.CmdNargs
+                   HaskellFormatImport.plugin17) -}
+3202749abf32a7b89e91ae12b8040e91
+  plugin17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   HaskellFormatImport.plugin18) -}
+5b7055879522b90824fe7b25cefaf462
+  plugin18 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("0"#) -}
+795649087fa9a4f6447b4d8bc6cb5540
+  plugin19 :: Data.ByteString.Internal.ByteString
+  {- Unfolding: (Data.ByteString.UTF8.fromString
+                   (GHC.CString.unpackCString# HaskellFormatImport.$trModule2)) -}
+0dc43b9b59be8bd20012c44a0388f2e7
+  plugin2 :: Neovim.Plugin.Internal.Plugin ()
+  {- Strictness: m,
+     Unfolding: (Neovim.Plugin.Internal.Plugin
+                   @ ()
+                   GHC.Tuple.()
+                   HaskellFormatImport.plugin3) -}
+356950ea4995847fb54e785d1a9ff76c
+  plugin3 :: [Neovim.Plugin.Internal.ExportedFunctionality ()]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (Neovim.Plugin.Internal.ExportedFunctionality ())
+                   HaskellFormatImport.plugin4
+                     `cast`
+                   (Sym (Neovim.Plugin.Internal.N:ExportedFunctionality[0] <()>_R))
+                   (GHC.Types.[]
+                      @ (Neovim.Plugin.Internal.ExportedFunctionality ()))) -}
+5dfc5678cbf38ce4f2e665bb304dc7ef
+  plugin4 ::
+    (Neovim.Plugin.Classes.FunctionalityDescription,
+     [Data.MessagePack.Object]
+     -> Neovim.Context.Internal.Neovim () Data.MessagePack.Object)
+  {- Strictness: m,
+     Unfolding: ((HaskellFormatImport.plugin7,
+                  HaskellFormatImport.plugin5)) -}
+d6ef2bbac2336fbab6efa3d6c5e3b189
+  plugin5 ::
+    [Data.MessagePack.Object]
+    -> Neovim.Context.Internal.Neovim () Data.MessagePack.Object
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (args :: [Data.MessagePack.Object]) ->
+                 case args of wild {
+                   [] -> HaskellFormatImport.plugin6
+                   : x ds
+                   -> case ds of wild1 {
+                        []
+                        -> case Neovim.Plugin.Classes.$fNvimObjectCommandArguments_$cfromObject
+                                  x of wild2 {
+                             Data.Either.Left x1
+                             -> Neovim.Context.err @ () @ Data.MessagePack.Object x1
+                             Data.Either.Right y
+                             -> (\ (r :: GHC.IORef.IORef
+                                           Control.Monad.Trans.Resource.Internal.ReleaseMap)
+                                   (eta :: Neovim.Context.Internal.Config ())
+                                   (eta1 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                                 case y of ww { Neovim.Plugin.Classes.CommandArguments ww1 ww2 ww3 ww4 ->
+                                 case HaskellFormatImport.Plugin.$whaskellFormatImport
+                                        @ ()
+                                        ww2
+                                        r
+                                        eta
+                                        eta1 of ds1 { (#,#) ipv ipv1 ->
+                                 (# ipv, Data.MessagePack.ObjectNil #) } })
+                                  `cast`
+                                ((<GHC.IORef.IORef
+                                     Control.Monad.Trans.Resource.Internal.ReleaseMap>_R
+                                  ->_R (<Neovim.Context.Internal.Config ()>_R
+                                        ->_R Sym (GHC.Types.N:IO[0]
+                                                      <Data.MessagePack.Object>_R)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                               <Neovim.Context.Internal.Config
+                                                                                                  ()>_R
+                                                                                               <GHC.Types.IO>_R
+                                                                                               <Data.MessagePack.Object>_N)) ; (Sym (Control.Monad.Trans.Resource.Internal.N:ResourceT[0]
+                                                                                                                                         <Control.Monad.Trans.Reader.ReaderT
+                                                                                                                                            (Neovim.Context.Internal.Config
+                                                                                                                                               ())
+                                                                                                                                            GHC.Types.IO>_R
+                                                                                                                                         <Data.MessagePack.Object>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
+                                                                                                                                                                                 <()>_R) <Data.MessagePack.Object>_N)) }
+                        : ipv ipv1 -> HaskellFormatImport.plugin6 } }) -}
+598f4293112646ee77e86ec483946219
+  plugin6 ::
+    Neovim.Context.Internal.Neovim () Data.MessagePack.Object
+  {- Strictness: x -}
+ade96e79a97d8f78e0f9de29088e18e9
+  plugin7 :: Neovim.Plugin.Classes.FunctionalityDescription
+  {- Strictness: m2,
+     Unfolding: (Neovim.Plugin.Classes.Command
+                   HaskellFormatImport.plugin19
+                     `cast`
+                   (Sym (Neovim.Plugin.Classes.N:FunctionName[0]))
+                   HaskellFormatImport.plugin8
+                     `cast`
+                   (Sym (Neovim.Plugin.Classes.N:CommandOptions[0]))) -}
+95f541d736d038b9eda7ce9549ea82e1
+  plugin8 :: [Neovim.Plugin.Classes.CommandOption]
+  {- Unfolding: (Neovim.Plugin.Classes.mkCommandOptions_g
+                   HaskellFormatImport.plugin9) -}
+4e9668c9cf8713876438b9a0cf5654e6
+  plugin9 :: [Neovim.Plugin.Classes.CommandOption]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Neovim.Plugin.Classes.CommandOption
+                   HaskellFormatImport.plugin16
+                   HaskellFormatImport.plugin10) -}
+470fd4abce589c64d06c1802c5656eb2
+  plugin_eta :: Neovim.Plugin.Internal.NeovimPlugin
+  {- Unfolding: (Neovim.Plugin.Internal.NeovimPlugin
+                   @ ()
+                   HaskellFormatImport.plugin2) -}
 trusted: none
 require own pkg trusted: False
 module header:

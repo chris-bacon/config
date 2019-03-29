@@ -23,6 +23,8 @@ executable my-nvim-hs
                      , HaskellFormatImport.Plugin
                      , HaskellFormatImport.Plugin
                      , HaskellFormatImport
+                     , HaskellFormatImport.Config
+                     , HaskellFormatImport.Pad
   build-depends:       base >= 4.7 && < 5
                      , nvim-hs >= 2 && < 3
                      -- The dependencies below are only needed for the example plugin

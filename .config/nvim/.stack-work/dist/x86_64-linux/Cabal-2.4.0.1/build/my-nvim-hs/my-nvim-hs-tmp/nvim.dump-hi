@@ -1,14 +1,14 @@
 
 ==================== FINAL INTERFACE ====================
-2019-03-21 15:55:17.210514319 UTC
+2019-03-29 13:35:28.803999251 UTC
 
 interface main:Main 8064
-  interface hash: acf3a036da843af002c61866e92619b4
-  ABI hash: 05a930ce3514ab68322c649fe451a250
+  interface hash: 761e762f474754133803be86a472e1a3
+  ABI hash: 5cbf031fab2cc03031d48064a9e67651
   export-list hash: 611e9f9ea63d9f5120138c6296fac3b0
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: baef6ab4adda9a28d1b7cfe0c5110608
-  opt_hash: d0a78e7b344f95c7406be35c9b75e196
+  opt_hash: 6faf2de08de32d19db9870899d88e59a
   hpc_hash: 93b885adfe0da089cdf634904fd59f71
   plugin_hash: ad164012d6b1e14942349d58b1132007
   sig of: Nothing
@@ -16,7 +16,8 @@ interface main:Main 8064
   where
 exports:
   Main.main
-module dependencies: HaskellFormatImport HaskellFormatImport.Plugin
+module dependencies: HaskellFormatImport HaskellFormatImport.Config
+                     HaskellFormatImport.Pad HaskellFormatImport.Plugin
                      Neovim.Example.Plugin Neovim.Example.Plugin.Fibonacci
                      Neovim.Example.Plugin.Random
 package dependencies: ansi-terminal-0.9 ansi-wl-pprint-0.6.8.2
@@ -115,19 +116,119 @@ family instance modules: base-4.12.0.0:Control.Applicative
 import  -/  base-4.12.0.0:GHC.Base c00b75f0b052d05c55ba6a4dd1c63b26
 import  -/  base-4.12.0.0:Prelude 3c779dfd6448bdd8e234c336802c2acb
 import  -/  ghc-prim-0.5.3:GHC.Types 57064c9f957b09bc2e360061ad5cae0b
-import  -/  HaskellFormatImport d32a9fc36e3bce4e993ef427ab4d7e34
+import  -/  HaskellFormatImport dfed08fea4aadce63a261416d0e3502a
   exports: ce004840623cc01339b4948058bc5933
-  plugin 6d74b00ed2440500ec5b42d70d01cf90
-import  -/  Neovim.Example.Plugin 17d832ea93d9f8929c3c0e11a3a21848
+  plugin 9df21439ca7379d04253cef4124ab721
+import  -/  Neovim.Example.Plugin 1c16ba4d3f895d2752d7f8370f75f4b9
   exports: 9eb854ef4dbe7d68097be0b0a36c45b8
-  plugin 07e6b0290594c41433c0cc4f17514b1f
+  plugin 01218e76119d660d58f59866b2df08fd
 import  -/  nvim-hs-2.0.0.0:Neovim 167669be48234d69ad1483fe71c0a30e
 import  -/  nvim-hs-2.0.0.0:Neovim.Config 8369131e4d0efa69b46b62a5f021948f
 import  -/  nvim-hs-2.0.0.0:Neovim.Main fb1174ff6ddc81cf500af34cc7ea1371
-1ca40dc83a9c879effdb760462cc9a2d
+be86c9d078d3acbf19ba91fe74a24273
   $trModule :: GHC.Types.Module
-8a003a8627e6dbfb4e082e8733b2589f
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Main.$trModule3 Main.$trModule1) -}
+b09d86f2c49dd5176b544d8d13ddb6c5
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Main.$trModule2) -}
+e5875966b74dad2d29772660b8a75e33
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Main"#) -}
+23b03bd7d075a00f5ad1ee10e6add7b8
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Main.$trModule4) -}
+d026be77cb9ced20e35a61514e0458aa
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("main"#) -}
+f2925c20f413538f6a937fbff884e5fc
   main :: GHC.Types.IO ()
+  {- Arity: 1,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+ce2ce0a8d3e1c9fdb39deaf8abf75b83
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (Neovim.Main.neovim3
+                   @ ()
+                   Neovim.Main.neovim2
+                     `cast`
+                   (<[Control.Concurrent.Async.Async ()]>_R
+                    ->_R <Neovim.Context.Internal.Config Neovim.RPC.Common.RPCConfig>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <()>_R))
+                   Main.main2) -}
+eed4e8871e669b28b6816a03e4b24d59
+  main2 :: Neovim.Config.NeovimConfig
+  {- Strictness: m,
+     Unfolding: (Neovim.Config.Config
+                   Main.main3
+                   (GHC.Maybe.Nothing @ (GHC.IO.FilePath, System.Log.Priority))) -}
+434b5d967716a8dc6b9a85ebe8c56e54
+  main3 ::
+    [Neovim.Context.Internal.Neovim
+       () Neovim.Plugin.Internal.NeovimPlugin]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (Neovim.Context.Internal.Neovim
+                        () Neovim.Plugin.Internal.NeovimPlugin)
+                   Neovim.Example.Plugin.plugin1
+                     `cast`
+                   ((<GHC.IORef.IORef
+                        Control.Monad.Trans.Resource.Internal.ReleaseMap>_R
+                     ->_R (<Neovim.Context.Internal.Config ()>_R
+                           ->_R Sym (GHC.Types.N:IO[0]
+                                         <Neovim.Plugin.Internal.NeovimPlugin>_R)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                              <Neovim.Context.Internal.Config
+                                                                                                 ()>_R
+                                                                                              <GHC.Types.IO>_R
+                                                                                              <Neovim.Plugin.Internal.NeovimPlugin>_N)) ; (Sym (Control.Monad.Trans.Resource.Internal.N:ResourceT[0]
+                                                                                                                                                    <Control.Monad.Trans.Reader.ReaderT
+                                                                                                                                                       (Neovim.Context.Internal.Config
+                                                                                                                                                          ())
+                                                                                                                                                       GHC.Types.IO>_R
+                                                                                                                                                    <Neovim.Plugin.Internal.NeovimPlugin>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
+                                                                                                                                                                                                        <()>_R) <Neovim.Plugin.Internal.NeovimPlugin>_N))
+                   Main.main4) -}
+9f230f627a0f8a68c84e19481b728cde
+  main4 ::
+    [Neovim.Context.Internal.Neovim
+       () Neovim.Plugin.Internal.NeovimPlugin]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ (Neovim.Context.Internal.Neovim
+                        () Neovim.Plugin.Internal.NeovimPlugin)
+                   HaskellFormatImport.plugin1
+                     `cast`
+                   ((<GHC.IORef.IORef
+                        Control.Monad.Trans.Resource.Internal.ReleaseMap>_R
+                     ->_R (<Neovim.Context.Internal.Config ()>_R
+                           ->_R Sym (GHC.Types.N:IO[0]
+                                         <Neovim.Plugin.Internal.NeovimPlugin>_R)) ; Sym (Control.Monad.Trans.Reader.N:ReaderT[0]
+                                                                                              <Neovim.Context.Internal.Config
+                                                                                                 ()>_R
+                                                                                              <GHC.Types.IO>_R
+                                                                                              <Neovim.Plugin.Internal.NeovimPlugin>_N)) ; (Sym (Control.Monad.Trans.Resource.Internal.N:ResourceT[0]
+                                                                                                                                                    <Control.Monad.Trans.Reader.ReaderT
+                                                                                                                                                       (Neovim.Context.Internal.Config
+                                                                                                                                                          ())
+                                                                                                                                                       GHC.Types.IO>_R
+                                                                                                                                                    <Neovim.Plugin.Internal.NeovimPlugin>_N) ; Sym (Neovim.Context.Internal.N:Neovim[0]
+                                                                                                                                                                                                        <()>_R) <Neovim.Plugin.Internal.NeovimPlugin>_N))
+                   (GHC.Types.[]
+                      @ (Neovim.Context.Internal.Neovim
+                           () Neovim.Plugin.Internal.NeovimPlugin))) -}
+fa947384ee1e88180f9dd565d98ac4e9
+  main5 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
 trusted: none
 require own pkg trusted: False
 module header:
