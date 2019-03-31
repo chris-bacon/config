@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/chrisbacon/.config/nvim/nvim-hs/Neovim/Example'
 let g:netrw_dirhist_2='/home/chrisbacon/.config/nvim/nvim-hs/Neovim'
 let g:netrw_dirhist_3='/home/chrisbacon/.config/nvim/nvim-hs'
@@ -7,3 +7,5 @@ let g:netrw_dirhist_4='/home/chrisbacon/.config/nvim'
 let g:netrw_dirhist_5='/home/chrisbacon/.config/nvim/nvim-hs'
 let g:netrw_dirhist_6='/home/chrisbacon/haskell-format-import'
 let g:netrw_dirhist_7='/home/chrisbacon/haskell-format-import/src/HaskellFormatImport'
+let g:netrw_dirhist_8='/home/chrisbacon/src/tracs-enterprise/master/parse-csv/test'
+let g:netrw_dirhist_9='/home/chrisbacon/src/tracs-enterprise/master/parse-csv/test/ParseCSV'
