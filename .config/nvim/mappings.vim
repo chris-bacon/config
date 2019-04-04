@@ -22,19 +22,20 @@ nnoremap <leader>ii  :echo synIDattr(synID(line('.'), col('.'), 1), 'name')<cr>
 noremap  <C-n>       :NERDTreeToggle<cr>
 nnoremap <leader>-   :CopyLineAndPaste<cr>
 
+" {{{ FZF
 nnoremap <C-p> :FZF<cr>
 nnoremap <C-b> :Buffers<cr>
 nnoremap <C-l> :BLines<cr>
-
+" }}}
 
 nnoremap <leader><space> :HighlightWholeWord<cr>
 " Escape out of terminal mode
 tnoremap <ESC> <C-\><C-n>  
-nmap \\\ <Plug>CommentaryLine
+nmap \\ <Plug>CommentaryLine
 vmap \\ <Plug>Commentary
-vnoremap <leader>=   :AlignOnEquals<cr>
-vnoremap <leader>-   :AlignOnDash<cr>
-vnoremap <leader>:   :AlignOnColon<cr>
+vnoremap <leader>= :AlignOnEquals<cr>
+vnoremap <leader>- :AlignOnDash<cr>
+vnoremap <leader>: :AlignOnColon<cr>
 " Copy vscode's CMD-D
 " Use with # or * in N-mode to change all occurances of a word
 nnoremap <leader>d 
