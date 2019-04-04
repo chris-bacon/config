@@ -1,7 +1,7 @@
 nnoremap <space> <nop>
 let mapleader = "\<Space>"
 
-" Functions ---------------------{{{
+" Functions -------------------{{{
 function! ToUppercase()
     execute "normal! viwU"
 endfunction
@@ -63,4 +63,12 @@ xmap \S
   \ :cfdo %s/<C-r>s// \| update
   \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent loadview
+augroup END
+
+
 " vim: set fdl=0 fdm=marker:
+
