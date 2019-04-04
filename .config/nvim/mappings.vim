@@ -21,7 +21,16 @@ nnoremap <leader>sv  :source $MYVIMRC<cr>
 nnoremap <leader>ii  :echo synIDattr(synID(line('.'), col('.'), 1), 'name')<cr>
 noremap  <C-n>       :NERDTreeToggle<cr>
 nnoremap <leader>-   :CopyLineAndPaste<cr>
-nnoremap <C-p>       :FZF<cr>
+
+" ******
+" FZF
+
+nnoremap <C-p> :FZF<cr>
+nnoremap <C-b> :Buffers<cr>
+nnoremap <C-l> :BLines<cr>
+
+" ******
+
 nnoremap <leader><space> :HighlightWholeWord<cr>
 " Escape out of terminal mode
 tnoremap <ESC> <C-\><C-n>  
