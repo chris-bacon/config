@@ -1,16 +1,20 @@
 nnoremap <space> <nop>
 let mapleader = "\<Space>"
 
+" Functions ---------------------{{{
 function! ToUppercase()
     execute "normal! viwU"
 endfunction
+" }}}
 
+" Commands --------------------{{{
 command! AlignOnEquals :Tab /=
 command! AlignOnDash   :Tab /->
 command! AlignOnColon  :Tab /::
 command! CopyLineAndPaste execute "normal yyp"
 command! HighlightWholeWord execute "normal viw"
 command! ClearSearch :nohl
+" }}}
 
 vnoremap <leader>ef  :ExtractHaskellFunction<cr>
 vnoremap <leader>et  :ExtractHaskellType<cr>
@@ -22,7 +26,7 @@ nnoremap <leader>ii  :echo synIDattr(synID(line('.'), col('.'), 1), 'name')<cr>
 noremap  <C-n>       :NERDTreeToggle<cr>
 nnoremap <leader>-   :CopyLineAndPaste<cr>
 
-" {{{ FZF
+" FZF --------------------{{{
 nnoremap <C-p> :FZF<cr>
 nnoremap <C-b> :Buffers<cr>
 nnoremap <C-l> :BLines<cr>
@@ -59,4 +63,4 @@ xmap \S
   \ :cfdo %s/<C-r>s// \| update
   \<Left><Left><Left><Left><Left><Left><Left><Left><Left><Left>
 
-"g:himporterCreateMappings = 1
+" vim: set fdl=0 fdm=marker:
